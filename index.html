@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informe Encuesta Burano 2026 - Construyendo Comunidad</title>
+<style>
+  :root { --primary: #1a3a5c; --accent: #2980b9; --green: #27ae60; --yellow: #f39c12; --red: #e74c3c; --bg: #f8f9fa; --card: #fff; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg); color: #333; line-height: 1.6; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+  .header { background: linear-gradient(135deg, var(--primary) 0%, #2c5f8a 100%); color: white; padding: 40px 30px; border-radius: 12px; margin-bottom: 30px; }
+  .header h1 { font-size: 28px; margin-bottom: 8px; }
+  .header .subtitle { font-size: 16px; opacity: 0.9; }
+  .header .meta { margin-top: 15px; display: flex; gap: 30px; font-size: 14px; opacity: 0.85; }
+  .section { background: var(--card); border-radius: 10px; padding: 25px 30px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .section h2 { color: var(--primary); font-size: 20px; border-bottom: 2px solid var(--accent); padding-bottom: 8px; margin-bottom: 18px; }
+  .section h3 { color: var(--primary); font-size: 16px; margin: 18px 0 10px 0; }
+  .section h4 { color: #555; font-size: 14px; margin: 12px 0 6px 0; }
+  .q-text { color: #666; font-size: 13px; font-style: italic; margin-bottom: 12px; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0 18px 0; font-size: 13px; }
+  th { background: #eef2f7; color: var(--primary); text-align: left; padding: 8px 10px; font-weight: 600; }
+  td { padding: 6px 10px; border-bottom: 1px solid #eee; }
+  .num { text-align: center; }
+  .bar { height: 16px; background: var(--accent); border-radius: 3px; min-width: 2px; }
+  .bar-pro { background: var(--green); }
+  .bar-pas { background: var(--yellow); }
+  .bar-det { background: var(--red); }
+  .nps-container { display: flex; align-items: center; gap: 30px; margin: 15px 0; }
+  .nps-gauge { width: 110px; height: 110px; border-radius: 50%; border: 6px solid; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .nps-score { font-size: 36px; font-weight: 800; }
+  .nps-label { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+  .nps-stats { flex: 1; }
+  .nps-cat { padding: 4px 0; font-size: 14px; }
+  .nps-cat.pro { color: var(--green); }
+  .nps-cat.pas { color: var(--yellow); }
+  .nps-cat.det { color: var(--red); }
+  .dist-table { max-width: 500px; }
+  .conclusion { background: #eef6ff; border-left: 4px solid var(--accent); padding: 12px 16px; margin: 15px 0; border-radius: 0 6px 6px 0; font-size: 14px; }
+  .alert { background: #fef3e6; border-left: 4px solid var(--yellow); padding: 12px 16px; margin: 15px 0; border-radius: 0 6px 6px 0; font-size: 14px; }
+  .critical { background: #fde8e8; border-left: 4px solid var(--red); padding: 12px 16px; margin: 15px 0; border-radius: 0 6px 6px 0; font-size: 14px; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0; }
+  .kpi { background: #f4f8fc; border-radius: 8px; padding: 15px; text-align: center; }
+  .kpi .value { font-size: 32px; font-weight: 800; color: var(--primary); }
+  .kpi .label { font-size: 12px; color: #888; margin-top: 4px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } .nps-container { flex-direction: column; } }
+  ul { margin: 5px 0 10px 20px; font-size: 13px; }
+  li { margin: 4px 0; }
+  .toc { columns: 2; font-size: 14px; }
+  .toc a { color: var(--accent); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .exec-summary { background: linear-gradient(135deg, #f0f7ff, #e8f4f8); padding: 25px; border-radius: 10px; margin: 20px 0; }
+  .exec-summary h2 { border-color: var(--primary); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+    <h1>Burano 2026: Construyendo Comunidad</h1>
+    <div class="subtitle">Informe de Resultados — Encuesta de Diagnóstico Estratégico y Satisfacción</div>
+    <div class="meta">
+        <span>Total Respuestas: <b>192</b></span>
+        <span>Comentarios Abiertos: <b>104</b></span>
+        <span>Torres Representadas: <b>17</b></span>
+        <span>Fecha: Marzo 2026</span>
+    </div>
+</div>
+
+<!-- RESUMEN EJECUTIVO -->
+<div class="section exec-summary">
+<h2>Resumen Ejecutivo</h2>
+<div class="kpi-grid">
+    <div class="kpi"><div class="value" style="color:#f39c12">43.4</div><div class="label">NPS Recomendación</div></div>
+    <div class="kpi"><div class="value" style="color:#f39c12">15.5</div><div class="label">NPS Experiencia Serena</div></div>
+    <div class="kpi"><div class="value">8.46</div><div class="label">Media Recomendación (0-10)</div></div>
+    <div class="kpi"><div class="value">7.8</div><div class="label">Media Experiencia (0-10)</div></div>
+</div>
+<p style="font-size:14px;margin-top:15px"><b>Hallazgos clave:</b></p>
+<ul style="font-size:14px">
+    <li>La comunidad otorga un <b>NPS de 43.4</b>, indicando una base de promotores sólida (56.0%) pero con un 12.6% de detractores que requieren atención.</li>
+    <li>La experiencia "Serena del Mar" registra un NPS más bajo (<b>15.5</b>), revelando una brecha entre expectativa y realidad que impacta la percepción de valor.</li>
+    <li>El <b>Mantenimiento y Aseo</b> es el dolor principal: aparece como tema #1 tanto en preguntas cerradas como en comentarios abiertos (30.8% de menciones).</li>
+    <li>La comunidad apuesta mayoritariamente por un <b>modelo híbrido</b> de vigilancia y se muestra abierta a la <b>transformación digital</b>.</li>
+    <li>Los propietarios residentes con mayor antigüedad (2018-2019) son quienes más dolor expresan respecto al mantenimiento.</li>
+</ul>
+</div>
+
+<!-- I. PERFILAMIENTO -->
+<div class="section" id="s1">
+<h2>I. Perfilamiento — Conociendo Nuestra Comunidad</h2>
+
+<h3>P2. Tipo de Relación con Burano</h3>
+<p class="q-text">¿Cuál es tu vínculo con Burano? (n=190)</p>
+<table>
+        <tr><th>Vínculo</th><th>n</th><th>%</th><th>Distribución</th></tr>
+        <tr>
+            <td style="max-width:350px">Propietario Residente</td>
+            <td class="num">114</td>
+            <td class="num">60.0%</td>
+            <td><div class="bar" style="width:120.0px"></div></td>
+        </tr><tr>
+            <td style="max-width:350px">Propietario No Residente</td>
+            <td class="num">52</td>
+            <td class="num">27.4%</td>
+            <td><div class="bar" style="width:54.8px"></div></td>
+        </tr><tr>
+            <td style="max-width:350px">Residente Arrendatario</td>
+            <td class="num">24</td>
+            <td class="num">12.6%</td>
+            <td><div class="bar" style="width:25.2px"></div></td>
+        </tr>
+    </table>
+<div class="conclusion"><b>Conclusión:</b> La muestra tiene una presencia dominante de <b>Propietarios Residentes</b>, lo que le da alta validez a los datos de experiencia de vida diaria. Los Propietarios No Residentes representan una voz clave para temas de inversión y valorización.</div>
+
+<div class="two-col">
+<div>
+<h3>P1. Distribución por Torres</h3>
+<table><tr><th>Torre</th><th>n</th><th></th></tr><tr><td>Torre 1</td><td class="num">4</td><td><div class="bar" style="width:20px"></div></td></tr><tr><td>Torre 2</td><td class="num">17</td><td><div class="bar" style="width:85px"></div></td></tr><tr><td>Torre 3</td><td class="num">21</td><td><div class="bar" style="width:105px"></div></td></tr><tr><td>Torre 4</td><td class="num">17</td><td><div class="bar" style="width:85px"></div></td></tr><tr><td>Torre 5</td><td class="num">17</td><td><div class="bar" style="width:85px"></div></td></tr><tr><td>Torre 6</td><td class="num">10</td><td><div class="bar" style="width:50px"></div></td></tr><tr><td>Torre 7</td><td class="num">9</td><td><div class="bar" style="width:45px"></div></td></tr><tr><td>Torre 8</td><td class="num">9</td><td><div class="bar" style="width:45px"></div></td></tr><tr><td>Torre 9</td><td class="num">10</td><td><div class="bar" style="width:50px"></div></td></tr><tr><td>Torre 10</td><td class="num">9</td><td><div class="bar" style="width:45px"></div></td></tr><tr><td>Torre 11</td><td class="num">11</td><td><div class="bar" style="width:55px"></div></td></tr><tr><td>Torre 12</td><td class="num">13</td><td><div class="bar" style="width:65px"></div></td></tr><tr><td>Torre 13</td><td class="num">9</td><td><div class="bar" style="width:45px"></div></td></tr><tr><td>Torre 14</td><td class="num">10</td><td><div class="bar" style="width:50px"></div></td></tr><tr><td>Torre 15</td><td class="num">10</td><td><div class="bar" style="width:50px"></div></td></tr><tr><td>Torre 16</td><td class="num">13</td><td><div class="bar" style="width:65px"></div></td></tr><tr><td>Torre 17</td><td class="num">3</td><td><div class="bar" style="width:15px"></div></td></tr></table>
+</div>
+<div>
+<h3>P3. Antigüedad en Burano</h3>
+<table><tr><th>Año</th><th>n</th><th></th></tr><tr><td>2018</td><td class="num">26</td><td><div class="bar" style="width:104px"></div></td></tr><tr><td>2019</td><td class="num">59</td><td><div class="bar" style="width:236px"></div></td></tr><tr><td>2020</td><td class="num">30</td><td><div class="bar" style="width:120px"></div></td></tr><tr><td>2021</td><td class="num">16</td><td><div class="bar" style="width:64px"></div></td></tr><tr><td>2022</td><td class="num">5</td><td><div class="bar" style="width:20px"></div></td></tr><tr><td>2023</td><td class="num">13</td><td><div class="bar" style="width:52px"></div></td></tr><tr><td>2024</td><td class="num">16</td><td><div class="bar" style="width:64px"></div></td></tr><tr><td>2025</td><td class="num">19</td><td><div class="bar" style="width:76px"></div></td></tr></table>
+</div>
+</div>
+<div class="conclusion"><b>Conclusión:</b> Las cohortes más representadas son 2019 y 2020, lo que indica que la mayoría de encuestados llevan entre 5 y 7 años en Burano. Se tiene representación de las 17 torres.</div>
+
+<h3>P4. Composición del Hogar (Solo Residentes)</h3>
+<p class="q-text">¿Quiénes conforman tu núcleo familiar? — Selección múltiple: cada hogar puede marcar varias categorías (n=134 hogares)</p>
+
+<h4>Presencia por tipo de miembro</h4>
+<table>
+<tr><th>Miembro del Hogar</th><th>Hogares</th><th>%</th><th></th></tr>
+<tr><td>Adultos / Parejas</td><td class="num">95</td><td class="num">70.9%</td><td><div class="bar" style="width:177px"></div></td></tr>
+<tr><td>Adultos Mayores (60+)</td><td class="num">55</td><td class="num">41.0%</td><td><div class="bar" style="width:102px"></div></td></tr>
+<tr><td>Niños y/o Bebés</td><td class="num">47</td><td class="num">35.1%</td><td><div class="bar" style="width:88px"></div></td></tr>
+<tr><td>Personal de Apoyo Externo</td><td class="num">42</td><td class="num">31.3%</td><td><div class="bar" style="width:78px"></div></td></tr>
+<tr><td>Mascotas</td><td class="num">26</td><td class="num">19.4%</td><td><div class="bar" style="width:49px"></div></td></tr>
+<tr><td>Adolescentes</td><td class="num">21</td><td class="num">15.7%</td><td><div class="bar" style="width:39px"></div></td></tr>
+<tr><td>Personal de Apoyo Interno</td><td class="num">7</td><td class="num">5.2%</td><td><div class="bar" style="width:13px"></div></td></tr>
+</table>
+
+<h4>Perfiles de Composición Familiar (combinaciones reales)</h4>
+<p class="q-text">Un mismo hogar puede clasificar en más de un perfil. Los perfiles son mutuamente excluyentes donde se indica.</p>
+<table>
+<tr><th>Perfil del Hogar</th><th>Hogares</th><th>%</th><th></th></tr>
+<tr><td><b>Familias con Niños/Bebés</b> (adultos + niños)</td><td class="num">44</td><td class="num">32.8%</td><td><div class="bar" style="width:82px;background:#2980b9"></div></td></tr>
+<tr><td><b>Solo Adultos/Parejas</b> (sin hijos ni adultos mayores)</td><td class="num">32</td><td class="num">23.9%</td><td><div class="bar" style="width:60px;background:#27ae60"></div></td></tr>
+<tr><td><b>Adultos Mayores sin otros adultos/niños</b></td><td class="num">32</td><td class="num">23.9%</td><td><div class="bar" style="width:60px;background:#8e44ad"></div></td></tr>
+<tr><td><b>Hogares Multigeneracionales</b> (adultos mayores + otros)</td><td class="num">23</td><td class="num">17.2%</td><td><div class="bar" style="width:43px;background:#f39c12"></div></td></tr>
+<tr><td><b>Familias con Adolescentes</b> (sin niños pequeños)</td><td class="num">13</td><td class="num">9.7%</td><td><div class="bar" style="width:24px;background:#e67e22"></div></td></tr>
+</table>
+
+<div class="conclusion"><b>Conclusión:</b> Burano <b>no</b> es un conjunto de un solo perfil. La comunidad se divide en tres grandes segmentos de tamaño similar: <b>Familias con niños</b> (32.8%), <b>Parejas/Adultos solos</b> (23.9%) y <b>Adultos Mayores viviendo solos</b> (23.9%). Este último dato es significativo: casi 1 de cada 4 hogares está compuesto exclusivamente por adultos mayores sin acompañantes, lo que tiene implicaciones directas en accesibilidad, seguridad y tipo de servicios requeridos. El 36.6% cuenta con personal de apoyo (mayoritariamente externo), lo que explica el tránsito diario de personas no residentes. Las mascotas están presentes en el 19.4% de hogares, distribuidas tanto en parejas como en familias con niños.</div>
+
+<h3>P5. Uso del Inmueble (Propietarios No Residentes)</h3>
+<p class="q-text">¿Qué uso le das actualmente al apartamento? (n=51)</p>
+<table>
+        <tr><th>Uso</th><th>n</th><th>%</th><th>Distribución</th></tr>
+        <tr>
+            <td style="max-width:350px">Renta Larga Estancia (Lo tengo arrendado a residentes fijos)</td>
+            <td class="num">25</td>
+            <td class="num">49.0%</td>
+            <td><div class="bar" style="width:98.0px"></div></td>
+        </tr><tr>
+            <td style="max-width:350px">Uso Vacacional</td>
+            <td class="num">19</td>
+            <td class="num">37.3%</td>
+            <td><div class="bar" style="width:74.6px"></div></td>
+        </tr><tr>
+            <td style="max-width:350px">Sin Uso (El apartamento permanece desocupado/vacío)  </td>
+            <td class="num">4</td>
+            <td class="num">7.8%</td>
+            <td><div class="bar" style="width:15.6px"></div></td>
+        </tr><tr>
+            <td style="max-width:350px">Recreo Frecuente (Vengo casi todos los fines de semana)</td>
+            <td class="num">3</td>
+            <td class="num">5.9%</td>
+            <td><div class="bar" style="width:11.8px"></div></td>
+        </tr>
+    </table>
+<div class="conclusion"><b>Conclusión:</b> Entre los no residentes, el uso predominante es <b>Vacacional y Renta Larga Estancia</b>, lo que implica una rotación de ocupantes que tiene implicaciones directas en la convivencia y seguridad.</div>
+</div>
+
+<!-- II. EXPERIENCIA DE VIDA Y VALORIZACIÓN -->
+<div class="section" id="s2">
+<h2>II. Experiencia de Vida y Valorización</h2>
+
+
+    <h3>P6. Índice de Recomendación (NPS)</h3>
+    <p class="q-text">¿Recomendarías a un amigo o familiar vivir o invertir en Burano?</p>
+    <div class="nps-container">
+        <div class="nps-gauge" style="border-color:#f39c12">
+            <div class="nps-score" style="color:#f39c12">43.4</div>
+            <div class="nps-label">NPS</div>
+        </div>
+        <div class="nps-stats">
+            <div class="nps-cat pro">Promotores (9-10): <b>102</b> (56.0%)</div>
+            <div class="nps-cat pas">Pasivos (7-8): <b>57</b> (31.3%)</div>
+            <div class="nps-cat det">Detractores (0-6): <b>23</b> (12.6%)</div>
+            <div style="margin-top:8px">Media: <b>8.46</b> | Mediana: <b>9.0</b> | n=182</div>
+        </div>
+    </div>
+    <table class="dist-table">
+        <tr><th>Puntuación</th><th>n</th><th>Distribución</th></tr>
+        <tr><td class="num">0</td><td class="num">2</td><td><div class="bar bar-det" style="width:16px"></div></td></tr><tr><td class="num">1</td><td class="num">0</td><td><div class="bar bar-det" style="width:0px"></div></td></tr><tr><td class="num">2</td><td class="num">1</td><td><div class="bar bar-det" style="width:8px"></div></td></tr><tr><td class="num">3</td><td class="num">1</td><td><div class="bar bar-det" style="width:8px"></div></td></tr><tr><td class="num">4</td><td class="num">1</td><td><div class="bar bar-det" style="width:8px"></div></td></tr><tr><td class="num">5</td><td class="num">5</td><td><div class="bar bar-det" style="width:40px"></div></td></tr><tr><td class="num">6</td><td class="num">13</td><td><div class="bar bar-det" style="width:104px"></div></td></tr><tr><td class="num">7</td><td class="num">21</td><td><div class="bar bar-pas" style="width:168px"></div></td></tr><tr><td class="num">8</td><td class="num">36</td><td><div class="bar bar-pas" style="width:288px"></div></td></tr><tr><td class="num">9</td><td class="num">28</td><td><div class="bar bar-pro" style="width:224px"></div></td></tr><tr><td class="num">10</td><td class="num">74</td><td><div class="bar bar-pro" style="width:592px"></div></td></tr>
+    </table>
+<div class="conclusion"><b>Conclusión:</b> Un NPS de <b>43.4</b> se sitúa en zona positiva-moderada. La media de 8.46 es alta, pero el 12.6% de detractores señala que existe un grupo insatisfecho cuyas necesidades no están siendo atendidas. El objetivo debe ser migrar pasivos a promotores y reducir detractores.</div>
+
+
+    <h3>P7. Experiencia "Serena del Mar"</h3>
+    <p class="q-text">¿Sientes que tu estilo de vida actual corresponde a la promesa de valor de "La Ciudad Soñada"?</p>
+    <div class="nps-container">
+        <div class="nps-gauge" style="border-color:#f39c12">
+            <div class="nps-score" style="color:#f39c12">15.5</div>
+            <div class="nps-label">NPS</div>
+        </div>
+        <div class="nps-stats">
+            <div class="nps-cat pro">Promotores (9-10): <b>64</b> (35.4%)</div>
+            <div class="nps-cat pas">Pasivos (7-8): <b>81</b> (44.8%)</div>
+            <div class="nps-cat det">Detractores (0-6): <b>36</b> (19.9%)</div>
+            <div style="margin-top:8px">Media: <b>7.8</b> | Mediana: <b>8.0</b> | n=181</div>
+        </div>
+    </div>
+    <table class="dist-table">
+        <tr><th>Puntuación</th><th>n</th><th>Distribución</th></tr>
+        <tr><td class="num">0</td><td class="num">1</td><td><div class="bar bar-det" style="width:8px"></div></td></tr><tr><td class="num">1</td><td class="num">0</td><td><div class="bar bar-det" style="width:0px"></div></td></tr><tr><td class="num">2</td><td class="num">0</td><td><div class="bar bar-det" style="width:0px"></div></td></tr><tr><td class="num">3</td><td class="num">2</td><td><div class="bar bar-det" style="width:16px"></div></td></tr><tr><td class="num">4</td><td class="num">6</td><td><div class="bar bar-det" style="width:48px"></div></td></tr><tr><td class="num">5</td><td class="num">13</td><td><div class="bar bar-det" style="width:104px"></div></td></tr><tr><td class="num">6</td><td class="num">14</td><td><div class="bar bar-det" style="width:112px"></div></td></tr><tr><td class="num">7</td><td class="num">28</td><td><div class="bar bar-pas" style="width:224px"></div></td></tr><tr><td class="num">8</td><td class="num">53</td><td><div class="bar bar-pas" style="width:424px"></div></td></tr><tr><td class="num">9</td><td class="num">27</td><td><div class="bar bar-pro" style="width:216px"></div></td></tr><tr><td class="num">10</td><td class="num">37</td><td><div class="bar bar-pro" style="width:296px"></div></td></tr>
+    </table>
+<div class="alert"><b>Alerta:</b> El NPS de experiencia (<b>15.5</b>) es <b>significativamente más bajo</b> que el NPS de recomendación (43.4). Esto indica que aunque la gente recomienda Burano, siente que la promesa de "La Ciudad Soñada" no se está cumpliendo plenamente. La brecha de 27.9 puntos es una oportunidad crítica de mejora.</div>
+
+<h3>Cruces: NPS Burano y Experiencia Serena por Segmento</h3>
+
+<h4>Por Tipo de Vínculo</h4>
+<p class="q-text">Comparación de ambos indicadores NPS según relación con Burano</p>
+<table>
+<tr><th>Vínculo</th><th colspan="3" style="text-align:center;background:#d5e8d4">NPS Recomendación Burano</th><th colspan="3" style="text-align:center;background:#dae8fc">NPS Experiencia Serena</th></tr>
+<tr><th></th><th>NPS</th><th>Media</th><th>n</th><th>NPS</th><th>Media</th><th>n</th></tr>
+<tr>
+    <td>Propietario Residente</td>
+    <td class="num" style="color:#27ae60;font-weight:bold">50.9</td><td class="num">8.70</td><td class="num">110</td>
+    <td class="num" style="color:#f39c12;font-weight:bold">14.5</td><td class="num">7.86</td><td class="num">110</td>
+</tr>
+<tr>
+    <td>Residente Arrendatario</td>
+    <td class="num" style="color:#f39c12;font-weight:bold">39.1</td><td class="num">8.00</td><td class="num">23</td>
+    <td class="num" style="color:#f39c12;font-weight:bold">17.4</td><td class="num">7.91</td><td class="num">23</td>
+</tr>
+<tr>
+    <td>Propietario No Residente</td>
+    <td class="num" style="color:#f39c12;font-weight:bold">28.6</td><td class="num">8.12</td><td class="num">49</td>
+    <td class="num" style="color:#f39c12;font-weight:bold">16.7</td><td class="num">7.60</td><td class="num">48</td>
+</tr>
+</table>
+<div class="conclusion"><b>Conclusión:</b> Los <b>Propietarios Residentes</b> son los mayores promotores de Burano (NPS 50.9), pero también quienes sienten la mayor brecha con la promesa de Serena (caída de 50.9 a 14.5). Los <b>Propietarios No Residentes</b> son el segmento más frío en recomendación (NPS 28.6): quienes no viven el día a día son más escépticos al recomendar la inversión. Los <b>Arrendatarios</b> muestran consistencia entre ambos indicadores, sugiriendo expectativas más calibradas.</div>
+
+<h4>Por Perfil de Hogar (Solo Residentes)</h4>
+<p class="q-text">NPS según composición familiar del hogar — perfiles mutuamente excluyentes</p>
+<table>
+<tr><th>Perfil del Hogar</th><th colspan="3" style="text-align:center;background:#d5e8d4">NPS Recomendación Burano</th><th colspan="3" style="text-align:center;background:#dae8fc">NPS Experiencia Serena</th></tr>
+<tr><th></th><th>NPS</th><th>Media</th><th>n</th><th>NPS</th><th>Media</th><th>n</th></tr>
+<tr>
+    <td>Familias con Niños/Adolescentes</td>
+    <td class="num" style="color:#27ae60;font-weight:bold">64.9</td><td class="num">8.77</td><td class="num">57</td>
+    <td class="num" style="color:#f39c12;font-weight:bold">31.6</td><td class="num">8.05</td><td class="num">57</td>
+</tr>
+<tr>
+    <td>Solo Adultos Mayores</td>
+    <td class="num" style="color:#f39c12;font-weight:bold">40.6</td><td class="num">8.59</td><td class="num">32</td>
+    <td class="num" style="color:#f39c12;font-weight:bold">12.5</td><td class="num">8.03</td><td class="num">32</td>
+</tr>
+<tr>
+    <td>Solo Adultos/Parejas</td>
+    <td class="num" style="color:#f39c12;font-weight:bold">32.3</td><td class="num">8.29</td><td class="num">31</td>
+    <td class="num" style="color:#e74c3c;font-weight:bold">-12.9</td><td class="num">7.45</td><td class="num">31</td>
+</tr>
+</table>
+<div class="alert"><b>Hallazgo clave:</b> Las <b>Familias con niños</b> son los mayores embajadores de Burano (NPS 64.9) y también los más satisfechos con la experiencia Serena (NPS 31.6). En contraste, los <b>Adultos/Parejas sin hijos</b> son el segmento más crítico: su NPS de experiencia Serena es <b>negativo (-12.9)</b>, lo que significa que tienen más detractores que promotores. Este grupo siente que la promesa de "La Ciudad Soñada" no se cumple para su estilo de vida. Es un segmento que requiere atención prioritaria para evitar que su insatisfacción se convierta en rotación o desvalorice la percepción del conjunto.</div>
+
+<h3>P8. Oportunidad de Mejora Prioritaria</h3>
+<p class="q-text">Si pudieras resolver de inmediato un único aspecto para elevar el nivel de Burano, ¿cuál elegirías? (n=181)</p>
+<table>
+        <tr><th>Aspecto</th><th>n</th><th>%</th><th>Distribución</th></tr>
+        <tr>
+            <td style="max-width:350px">Mantenimiento (Quiero ver las zonas comunes impecables)</td>
+            <td class="num">56</td>
+            <td class="num">30.9%</td>
+            <td><div class="bar" style="width:61.8px"></div></td>
+        </tr><tr>
+            <td style="max-width:350px">Seguridad</td>
+            <td class="num">48</td>
+            <td class="num">26.5%</td>
+            <td><div class="bar" style="width:53.0px"></div></td>
+        </tr><tr>
+            <td style="max-width:350px">Gestión y Servicio</td>
+            <td class="num">31</td>
+            <td class="num">17.1%</td>
+            <td><div class="bar" style="width:34.2px"></div></td>
+        </tr><tr>
+            <td style="max-width:350px">Valor de la Administración</td>
+            <td class="num">28</td>
+            <td class="num">15.5%</td>
+            <td><div class="bar" style="width:31.0px"></div></td>
+        </tr><tr>
+            <td style="max-width:350px">Convivencia (Quiero solución a ruidos, mascotas y vecinos)</td>
+            <td class="num">18</td>
+            <td class="num">9.9%</td>
+            <td><div class="bar" style="width:19.8px"></div></td>
+        </tr>
+    </table>
+
+<h4>Cruce: Mejora Prioritaria por Vínculo</h4>
+<p class="q-text">¿Qué prioriza cada segmento? El tamaño y color de cada celda refleja el peso relativo dentro de cada grupo.</p>
+<table>
+<tr>
+    <th style="width:200px">Aspecto</th>
+    <th style="text-align:center">Prop. No Residente<br><small>(n=48)</small></th>
+    <th style="text-align:center">Prop. Residente<br><small>(n=110)</small></th>
+    <th style="text-align:center">Arrendatario<br><small>(n=23)</small></th>
+</tr>
+<tr>
+    <td><b>Mantenimiento</b></td>
+    <td class="num"><div style="background:#e74c3c;color:white;padding:6px;border-radius:4px;font-weight:bold;text-align:center">41.7% <small>(20)</small></div></td>
+    <td class="num"><div style="background:#f5b7b1;padding:6px;border-radius:4px;text-align:center">23.6% <small>(26)</small></div></td>
+    <td class="num"><div style="background:#e74c3c;color:white;padding:6px;border-radius:4px;font-weight:bold;text-align:center">43.5% <small>(10)</small></div></td>
+</tr>
+<tr>
+    <td><b>Seguridad</b></td>
+    <td class="num"><div style="background:#f5b7b1;padding:6px;border-radius:4px;text-align:center">25.0% <small>(12)</small></div></td>
+    <td class="num"><div style="background:#e74c3c;color:white;padding:6px;border-radius:4px;font-weight:bold;text-align:center">25.5% <small>(28)</small></div></td>
+    <td class="num"><div style="background:#f1948a;color:white;padding:6px;border-radius:4px;font-weight:bold;text-align:center">34.8% <small>(8)</small></div></td>
+</tr>
+<tr>
+    <td><b>Gestión y Servicio</b></td>
+    <td class="num"><div style="background:#fdebd0;padding:6px;border-radius:4px;text-align:center">2.1% <small>(1)</small></div></td>
+    <td class="num"><div style="background:#f1948a;color:white;padding:6px;border-radius:4px;font-weight:bold;text-align:center">24.5% <small>(27)</small></div></td>
+    <td class="num"><div style="background:#fad7a0;padding:6px;border-radius:4px;text-align:center">13.0% <small>(3)</small></div></td>
+</tr>
+<tr>
+    <td><b>Valor de la Administración</b></td>
+    <td class="num"><div style="background:#f1948a;color:white;padding:6px;border-radius:4px;font-weight:bold;text-align:center">20.8% <small>(10)</small></div></td>
+    <td class="num"><div style="background:#fad7a0;padding:6px;border-radius:4px;text-align:center">16.4% <small>(18)</small></div></td>
+    <td class="num"><div style="background:#fdebd0;padding:6px;border-radius:4px;text-align:center">0.0% <small>(0)</small></div></td>
+</tr>
+<tr>
+    <td><b>Convivencia</b></td>
+    <td class="num"><div style="background:#fad7a0;padding:6px;border-radius:4px;text-align:center">10.4% <small>(5)</small></div></td>
+    <td class="num"><div style="background:#fad7a0;padding:6px;border-radius:4px;text-align:center">10.0% <small>(11)</small></div></td>
+    <td class="num"><div style="background:#fdebd0;padding:6px;border-radius:4px;text-align:center">8.7% <small>(2)</small></div></td>
+</tr>
+</table>
+<div class="conclusion"><b>Conclusión:</b> Las prioridades son diferentes según el vínculo con Burano. Para los <b>No Residentes</b> y <b>Arrendatarios</b>, el <b>Mantenimiento</b> es la prioridad #1 con más del 40% del peso (protegen su inversión y su experiencia visual). Para los <b>Propietarios Residentes</b>, las prioridades están más repartidas entre Seguridad, Gestión y Mantenimiento — reflejando que viven el día a día y sienten múltiples frentes por mejorar. Notablemente, <b>Gestión y Servicio</b> es casi exclusivamente una prioridad de quienes viven aquí (24.5%) vs. quienes no (2.1%), algo lógico: solo quien interactúa diariamente con la administración siente esa fricción.</div>
+</div>
+
+<!-- III. SEGURIDAD Y MODELO DE VIGILANCIA -->
+<div class="section" id="s3">
+<h2>III. Seguridad y Modelo de Vigilancia</h2>
+
+<h3>P9. Percepción de Tranquilidad por Espacio</h3>
+<p class="q-text">¿Cuál es tu nivel de tranquilidad cuando estás en estos espacios? (0=Vulnerable, 10=Totalmente a salvo)</p>
+<table><tr><th>Espacio</th><th>Media</th><th>Mediana</th><th>n</th><th></th></tr><tr><td>Portería Principal</td><td class="num"><b>8.34</b></td><td class="num">8.0</td><td class="num">127</td><td><div class="bar" style="width:166.8px;background:#27ae60"></div></td></tr><tr><td>Piscina / Zonas Húmedas</td><td class="num"><b>8.36</b></td><td class="num">9.0</td><td class="num">126</td><td><div class="bar" style="width:167.2px;background:#27ae60"></div></td></tr><tr><td>Zonas Sociales / Multicancha</td><td class="num"><b>7.93</b></td><td class="num">8.0</td><td class="num">127</td><td><div class="bar" style="width:158.6px;background:#f39c12"></div></td></tr><tr><td>Pasillos / Ascensores</td><td class="num"><b>7.96</b></td><td class="num">8.0</td><td class="num">127</td><td><div class="bar" style="width:159.2px;background:#f39c12"></div></td></tr></table>
+<div class="conclusion"><b>Conclusión:</b> Los niveles de tranquilidad son moderados-altos. La <b>Portería Principal</b> y los <b>Pasillos/Ascensores</b> son los espacios donde los residentes se sienten más y menos seguros respectivamente. Las zonas comunes exteriores mantienen buenas calificaciones.</div>
+
+<h3>P10. Rigor en el Acceso — Análisis en Profundidad</h3>
+<p class="q-text">Pensando en el ingreso de tus visitas y en la prohibición de entrada a domiciliarios y taxis, ¿cómo calificas el trabajo de la portería? (n=126 residentes)</p>
+
+<div style="display:flex;gap:10px;margin:12px 0;flex-wrap:wrap">
+    <div style="flex:1;min-width:140px;background:#fdebd0;border-radius:8px;padding:10px 14px;text-align:center;border:2px solid #f39c12">
+        <div style="font-size:24px;font-weight:800;color:#f39c12">58.7%</div>
+        <div style="font-size:12px;color:#333"><b>Equilibrado</b> (74)</div>
+    </div>
+    <div style="flex:1;min-width:140px;background:#fde8e8;border-radius:8px;padding:10px 14px;text-align:center;border:2px solid #e74c3c">
+        <div style="font-size:24px;font-weight:800;color:#e74c3c">37.3%</div>
+        <div style="font-size:12px;color:#333"><b>Muy Permisivo</b> (47)</div>
+    </div>
+    <div style="flex:1;min-width:140px;background:#eef6ff;border-radius:8px;padding:10px 14px;text-align:center;border:2px solid #2980b9">
+        <div style="font-size:24px;font-weight:800;color:#2980b9">4.0%</div>
+        <div style="font-size:12px;color:#333"><b>Exagerado</b> (5)</div>
+    </div>
+</div>
+<div class="alert"><b>Lectura clave:</b> Aunque "Equilibrado" gana la mayoría, el dato real es que <b>casi 4 de cada 10 residentes (37.3%)</b> sienten que el control es insuficiente. Si se suman los que perciben permisividad más los que sienten que el control es exagerado, <b>el 41.3% no está conforme</b> con el modelo actual de acceso.</div>
+
+<h4>¿Quién siente más la permisividad?</h4>
+<p class="q-text">Percepción de rigor según perfil de hogar</p>
+<table>
+<tr><th>Perfil del Hogar</th><th style="text-align:center">Muy Permisivo</th><th style="text-align:center">Equilibrado</th><th style="text-align:center">Exagerado</th><th>n</th></tr>
+<tr><td><b>Solo Adultos Mayores</b></td><td class="num"><div style="background:#e74c3c;color:white;padding:4px 8px;border-radius:4px;font-weight:bold;display:inline-block">45.2%</div></td><td class="num">54.8%</td><td class="num">0.0%</td><td class="num">31</td></tr>
+<tr><td>Solo Adultos/Parejas</td><td class="num"><div style="background:#f1948a;color:white;padding:4px 8px;border-radius:4px;font-weight:bold;display:inline-block">36.7%</div></td><td class="num">53.3%</td><td class="num">10.0%</td><td class="num">30</td></tr>
+<tr><td>Familias con Niños/Adolescentes</td><td class="num"><div style="background:#f5b7b1;padding:4px 8px;border-radius:4px;display:inline-block">33.3%</div></td><td class="num">63.0%</td><td class="num">3.7%</td><td class="num">54</td></tr>
+</table>
+
+<h4>¿Cómo impacta la percepción de permisividad en la experiencia?</h4>
+<table style="max-width:650px">
+<tr><th>Percepción de Rigor</th><th>NPS Burano</th><th>Tranquilidad Portería<br><small>(media 0-10)</small></th><th>n</th></tr>
+<tr><td><span style="color:#f39c12;font-weight:bold">Equilibrado</span></td><td class="num" style="font-weight:bold">50.0</td><td class="num" style="color:#27ae60;font-weight:bold">8.57</td><td class="num">74</td></tr>
+<tr><td><span style="color:#e74c3c;font-weight:bold">Muy Permisivo</span></td><td class="num" style="font-weight:bold">48.9</td><td class="num" style="color:#f39c12;font-weight:bold">7.89</td><td class="num">47</td></tr>
+<tr><td><span style="color:#2980b9;font-weight:bold">Exagerado</span></td><td class="num" style="font-weight:bold">60.0</td><td class="num" style="color:#27ae60;font-weight:bold">9.00</td><td class="num">5</td></tr>
+</table>
+
+<div class="critical"><b>Diagnóstico integrado — La brecha entre dato y realidad:</b><br><br>
+El 58.7% que dice "Equilibrado" puede reflejar que el protocolo <i>existe</i>, no que se <i>cumple consistentemente</i>. Los datos de contexto lo confirman:
+<ul style="margin-top:8px">
+<li>Quienes perciben permisividad califican la tranquilidad en portería <b>0.68 puntos por debajo</b> (7.89 vs 8.57).</li>
+<li>Los <b>Adultos Mayores</b> — el segmento más vulnerable — son quienes más sienten la falta de control (<b>45.2% percibe permisividad</b>), y ninguno considera el control exagerado.</li>
+<li>Solo el <b>4%</b> siente controles exagerados: el riesgo NO está en exceso de seguridad sino en su opuesto.</li>
+<li>La reciente instalación de biometría facial es un paso correcto, pero los datos sugieren que la tecnología sola no basta si no se acompaña de <b>cumplimiento consistente del protocolo</b> de ingreso.</li>
+</ul>
+</div>
+
+<h3>P11. Decisión Estratégica — Modelo de Vigilancia</h3>
+<p class="q-text">¿Cómo visualizas el futuro de la vigilancia en Burano? (n=152)</p>
+<table><tr><th>Modelo</th><th>n</th><th>%</th><th>Distribución</th></tr><tr><td style="max-width:350px">Modelo Híbrido</td><td class="num">72</td><td class="num">47.4%</td><td><div class="bar" style="width:94.8px"></div></td></tr><tr><td style="max-width:350px">Modelo Tradicional</td><td class="num">63</td><td class="num">41.4%</td><td><div class="bar" style="width:82.8px"></div></td></tr><tr><td style="max-width:350px">Modelo Smart Security</td><td class="num">17</td><td class="num">11.2%</td><td><div class="bar" style="width:22.4px"></div></td></tr></table>
+<div class="conclusion"><b>Conclusión:</b> La comunidad muestra una fuerte inclinación hacia modelos de vigilancia tecnológicos. Smart Security y Modelo Híbrido combinados superan ampliamente al Modelo Tradicional. Esto representa un mandato claro para modernizar la seguridad.</div>
+</div>
+
+<!-- IV. COMUNICACIÓN Y TRANSFORMACIÓN DIGITAL -->
+<div class="section" id="s4">
+<h2>IV. Comunicación y Transformación Digital</h2>
+
+<h3>P12. Canal de Información Efectivo</h3>
+<p class="q-text">¿Cuál es el medio más efectivo por el que te enteras de las noticias de Burano? (n=172)</p>
+<table><tr><th>Canal</th><th>n</th><th>%</th><th>Distribución</th></tr><tr><td style="max-width:350px">WhatsApp Oficial (Listas de difusión de la Administración)</td><td class="num">108</td><td class="num">62.8%</td><td><div class="bar" style="width:125.6px"></div></td></tr><tr><td style="max-width:350px">Chats de Vecinos</td><td class="num">43</td><td class="num">25.0%</td><td><div class="bar" style="width:50.0px"></div></td></tr><tr><td style="max-width:350px">Correo Electrónico (Comunicados formales / Mailing)</td><td class="num">13</td><td class="num">7.6%</td><td><div class="bar" style="width:15.2px"></div></td></tr><tr><td style="max-width:350px">Desinformado</td><td class="num">8</td><td class="num">4.7%</td><td><div class="bar" style="width:9.4px"></div></td></tr></table>
+
+<h3>P13. Transparencia Financiera</h3>
+<p class="q-text">¿Sientes que las cuentas son claras y confías en la información presentada? (0=Confusa, 10=Transparente)</p>
+<div class="kpi-grid">
+    <div class="kpi"><div class="value">7.21</div><div class="label">Media (n=150)</div></div>
+    <div class="kpi"><div class="value">8.0</div><div class="label">Mediana</div></div>
+</div>
+
+<h3>P14. Visibilidad de la Gestión</h3>
+<p class="q-text">¿Sientes que estás enterado de las obras y tareas de la Administración? (n=149)</p>
+<table><tr><th>Nivel de información</th><th>n</th><th>%</th><th>Distribución</th></tr><tr><td style="max-width:350px">A medias (Me entero de muy poco / falta comunicación)</td><td class="num">65</td><td class="num">43.6%</td><td><div class="bar" style="width:87.2px"></div></td></tr><tr><td style="max-width:350px">Lo noto</td><td class="num">36</td><td class="num">24.2%</td><td><div class="bar" style="width:48.4px"></div></td></tr><tr><td style="max-width:350px">Muy enterado (Leo los informes y sé qué hacen)</td><td class="num">33</td><td class="num">22.1%</td><td><div class="bar" style="width:44.2px"></div></td></tr><tr><td style="max-width:350px">Desinformado (Sinceramente, no sé qué gestión realizan)</td><td class="num">15</td><td class="num">10.1%</td><td><div class="bar" style="width:20.2px"></div></td></tr></table>
+
+<h3>P15. Cultura Digital</h3>
+<p class="q-text">¿Te sentirías cómodo manejando la gestión desde una App? (n=170)</p>
+<table><tr><th>Preferencia</th><th>n</th><th>%</th><th>Distribución</th></tr>
+<tr><td>Híbrido (App + respaldo humano)</td><td class="num">95</td><td class="num">55.9%</td><td><div class="bar" style="width:112px"></div></td></tr>
+<tr><td>Sí, 100% Digital</td><td class="num">60</td><td class="num">35.3%</td><td><div class="bar" style="width:71px"></div></td></tr>
+<tr><td>No (Presencial)</td><td class="num">15</td><td class="num">8.8%</td><td><div class="bar" style="width:18px"></div></td></tr>
+</table>
+
+<h4>Cruce: Disposición Digital por Vínculo y Perfil de Hogar</h4>
+<table>
+<tr><th>Segmento</th><th style="text-align:center">100% Digital</th><th style="text-align:center">Híbrido</th><th style="text-align:center">Presencial</th><th>n</th></tr>
+<tr><td><b>Residente Arrendatario</b></td>
+    <td class="num"><div style="background:#27ae60;color:white;padding:3px 8px;border-radius:4px;font-weight:bold;display:inline-block">42.9%</div></td>
+    <td class="num">47.6%</td><td class="num">9.5%</td><td class="num">21</td></tr>
+<tr><td><b>Propietario Residente</b></td>
+    <td class="num"><div style="background:#2ecc71;color:white;padding:3px 8px;border-radius:4px;display:inline-block">36.9%</div></td>
+    <td class="num">51.5%</td><td class="num">11.7%</td><td class="num">103</td></tr>
+<tr><td><b>Propietario No Residente</b></td>
+    <td class="num">28.3%</td>
+    <td class="num"><div style="background:#2980b9;color:white;padding:3px 8px;border-radius:4px;font-weight:bold;display:inline-block">69.6%</div></td>
+    <td class="num">2.2%</td><td class="num">46</td></tr>
+<tr style="border-top:2px solid #ccc"><td><b>Solo Adultos Mayores</b></td>
+    <td class="num">37.9%</td><td class="num">34.5%</td>
+    <td class="num"><div style="background:#e74c3c;color:white;padding:3px 8px;border-radius:4px;font-weight:bold;display:inline-block">27.6%</div></td>
+    <td class="num">29</td></tr>
+<tr><td><b>Familias con Niños/Adol.</b></td>
+    <td class="num">37.0%</td><td class="num">57.4%</td><td class="num">5.6%</td><td class="num">54</td></tr>
+<tr><td><b>Solo Adultos/Parejas</b></td>
+    <td class="num">40.0%</td><td class="num">50.0%</td><td class="num">10.0%</td><td class="num">30</td></tr>
+</table>
+
+<h4>Cruce clave: ¿Qué quieren los que piden mejor Gestión?</h4>
+<p class="q-text">De los 30 encuestados que eligieron "Gestión y Servicio" como mejora prioritaria:</p>
+<table style="max-width:700px">
+<tr><th>Dato</th><th>Resultado</th></tr>
+<tr><td>Preferencia digital</td><td><b>86.6%</b> quiere App (33.3% digital puro + 53.3% con respaldo humano)</td></tr>
+<tr><td>Visibilidad de la gestión actual (P14)</td><td><b>67.8%</b> se siente "A medias" o "Desinformado" sobre lo que hace la Administración</td></tr>
+</table>
+
+<div class="alert"><b>Hallazgo estratégico:</b> El <b>91.2%</b> de la comunidad está dispuesto a usar herramientas digitales (35.3% totalmente digital + 55.9% híbrido). Solo el 8.8% prefiere exclusivamente lo presencial. Sin embargo, los datos revelan una <b>advertencia importante</b>: quienes más piden mejora en la gestión (P8) son a su vez quienes más se sienten desinformados (67.8% en P14). Esto sugiere que el problema de fondo no es la ausencia de canales digitales sino la <b>calidad y actualización de la información</b> que fluye por ellos. Una App que no refleje en tiempo real el estado de solicitudes, obras en curso, estados de cuenta y actas generará la misma frustración que los canales actuales. La adopción tecnológica solo cerrará la brecha de percepción si va acompañada de un compromiso operativo de alimentar las plataformas con datos actualizados y respuestas oportunas.</div>
+
+<div class="conclusion"><b>Conclusión Sección IV:</b> <b>WhatsApp Oficial</b> es el canal rey hoy. La comunidad está lista para la digitalización — los <b>Propietarios No Residentes</b> son quienes más valoran el modelo híbrido (69.6%) pues necesitan gestionar a distancia. El <b>27.6% de Adultos Mayores</b> que prefiere atención presencial es un segmento que no debe quedar excluido: toda solución digital debe mantener un canal humano complementario. La clave del éxito no será la App en sí, sino que la información dentro de ella sea confiable, actualizada y útil.</div>
+</div>
+
+<!-- V. MANTENIMIENTO Y AMENIDADES -->
+<div class="section" id="s5">
+<h2>V. Mantenimiento y Amenidades</h2>
+
+<h3>P16. Frecuencia de Uso Real de Amenidades</h3>
+<p class="q-text">¿Con qué frecuencia disfrutas de estos espacios? (n=124) — Agrupado en Uso Activo (≥1x/mes) vs. Bajo Uso (&lt;1x/mes)</p>
+<div style="display:flex;gap:12px;margin:10px 0 15px 0;font-size:12px">
+    <span><span style="display:inline-block;width:14px;height:14px;background:#27ae60;border-radius:2px;vertical-align:middle"></span> Semanal</span>
+    <span><span style="display:inline-block;width:14px;height:14px;background:#f39c12;border-radius:2px;vertical-align:middle"></span> Mensual</span>
+    <span><span style="display:inline-block;width:14px;height:14px;background:#e74c3c;opacity:0.4;border-radius:2px;vertical-align:middle"></span> Bajo Uso</span>
+</div>
+<table>
+<tr><th>Amenidad</th><th>Uso Activo<br><small>(≥1x/mes)</small></th><th>Semanal</th><th>Mensual</th><th>Bajo Uso<br><small>(&lt;1x/mes)</small></th><th>Distribución Visual</th><th>n</th></tr>
+<tr><td><b>Piscinas / Zonas Húmedas</b></td><td class="num" style="color:#27ae60;font-weight:bold">62.1%</td><td class="num">21.8%</td><td class="num">40.3%</td><td class="num" style="color:#e74c3c">37.9%</td><td><div style="display:flex;height:18px;border-radius:3px;overflow:hidden;width:250px"><div style="width:54.5px;background:#27ae60"></div><div style="width:100.75px;background:#f39c12"></div><div style="width:94.75px;background:#e74c3c;opacity:0.4"></div></div></td><td class="num">124</td></tr><tr><td><b>Gimnasio</b></td><td class="num" style="color:#f39c12;font-weight:bold">40.3%</td><td class="num">18.5%</td><td class="num">21.8%</td><td class="num" style="color:#e74c3c">59.7%</td><td><div style="display:flex;height:18px;border-radius:3px;overflow:hidden;width:250px"><div style="width:46.25px;background:#27ae60"></div><div style="width:54.5px;background:#f39c12"></div><div style="width:149.25px;background:#e74c3c;opacity:0.4"></div></div></td><td class="num">124</td></tr><tr><td><b>Parque de Niños</b></td><td class="num" style="color:#f39c12;font-weight:bold">30.6%</td><td class="num">19.4%</td><td class="num">11.3%</td><td class="num" style="color:#e74c3c">69.4%</td><td><div style="display:flex;height:18px;border-radius:3px;overflow:hidden;width:250px"><div style="width:48.5px;background:#27ae60"></div><div style="width:28.25px;background:#f39c12"></div><div style="width:173.5px;background:#e74c3c;opacity:0.4"></div></div></td><td class="num">124</td></tr><tr><td><b>Salón Social</b></td><td class="num" style="color:#e74c3c;font-weight:bold">14.5%</td><td class="num">0.0%</td><td class="num">14.5%</td><td class="num" style="color:#e74c3c">85.5%</td><td><div style="display:flex;height:18px;border-radius:3px;overflow:hidden;width:250px"><div style="width:0.0px;background:#27ae60"></div><div style="width:36.25px;background:#f39c12"></div><div style="width:213.75px;background:#e74c3c;opacity:0.4"></div></div></td><td class="num">124</td></tr><tr><td><b>Multicancha</b></td><td class="num" style="color:#e74c3c;font-weight:bold">13.7%</td><td class="num">8.9%</td><td class="num">4.8%</td><td class="num" style="color:#e74c3c">86.3%</td><td><div style="display:flex;height:18px;border-radius:3px;overflow:hidden;width:250px"><div style="width:22.25px;background:#27ae60"></div><div style="width:12.0px;background:#f39c12"></div><div style="width:215.75px;background:#e74c3c;opacity:0.4"></div></div></td><td class="num">124</td></tr>
+</table>
+<div class="conclusion"><b>Lectura rápida:</b> La <b>Piscina</b> es la amenidad insignia: 6 de cada 10 residentes la usan al menos 1x/mes. El <b>Salón Social</b> y la <b>Multicancha</b> son utilizados activamente por menos del 15%.</div>
+
+<h3>P17. Estado Percibido de Amenidades — Matriz de Impacto</h3>
+<p class="q-text">¿En qué estado se encuentran hoy estos espacios? (0=Muy Deteriorado, 10=Impecable) — Cruzado con frecuencia de uso para determinar prioridad de intervención</p>
+
+<table>
+<tr>
+    <th>Espacio</th>
+    <th>Estado<br><small>(media 0-10)</small></th>
+    <th>Exposición</th>
+    <th style="text-align:center">Prioridad</th>
+</tr>
+<tr style="background:#fde8e8">
+    <td><b>Fachadas y Pintura</b></td>
+    <td class="num"><b style="color:#e74c3c;font-size:18px">5.21</b></td>
+    <td>Visibilidad diaria — todos</td>
+    <td class="num"><div style="background:#e74c3c;color:white;padding:4px 12px;border-radius:4px;font-weight:bold;display:inline-block">CRÍTICA</div></td>
+</tr>
+<tr style="background:#fde8e8">
+    <td><b>Gimnasio</b></td>
+    <td class="num"><b style="color:#e74c3c;font-size:18px">5.68</b></td>
+    <td>40.3% lo usa al menos 1x/mes</td>
+    <td class="num"><div style="background:#f39c12;color:white;padding:4px 12px;border-radius:4px;font-weight:bold;display:inline-block">ALTA</div></td>
+</tr>
+<tr>
+    <td>Multicancha</td>
+    <td class="num"><b style="color:#f39c12">6.87</b></td>
+    <td>13.7% uso activo</td>
+    <td class="num"><div style="background:#fad7a0;padding:4px 12px;border-radius:4px;display:inline-block">MEDIA</div></td>
+</tr>
+<tr>
+    <td>Aseo Torres / Pasillos</td>
+    <td class="num"><b style="color:#f39c12">7.09</b></td>
+    <td>Visibilidad diaria — todos</td>
+    <td class="num"><div style="background:#f39c12;color:white;padding:4px 12px;border-radius:4px;font-weight:bold;display:inline-block">ALTA</div></td>
+</tr>
+<tr>
+    <td>Parque de Niños</td>
+    <td class="num"><b>7.22</b></td>
+    <td>30.6% uso activo</td>
+    <td class="num"><div style="background:#fad7a0;padding:4px 12px;border-radius:4px;display:inline-block">MEDIA</div></td>
+</tr>
+<tr>
+    <td>Piscinas / Zonas Húmedas</td>
+    <td class="num"><b>7.43</b></td>
+    <td>62.1% uso activo — la más usada</td>
+    <td class="num"><div style="background:#f39c12;color:white;padding:4px 12px;border-radius:4px;font-weight:bold;display:inline-block">ALTA</div></td>
+</tr>
+<tr>
+    <td>Salón Social</td>
+    <td class="num"><b>7.66</b></td>
+    <td>14.5% uso activo</td>
+    <td class="num"><div style="background:#d5f5e3;padding:4px 12px;border-radius:4px;display:inline-block">BAJA</div></td>
+</tr>
+<tr>
+    <td>Jardines y Paisajismo</td>
+    <td class="num"><b style="color:#27ae60">7.89</b></td>
+    <td>Visibilidad diaria — todos</td>
+    <td class="num"><div style="background:#d5f5e3;padding:4px 12px;border-radius:4px;display:inline-block">BAJA</div></td>
+</tr>
+</table>
+
+<div class="alert"><b>La paradoja del Gimnasio:</b> Con una calificación de <b>5.68/10</b>, el Gimnasio comparte con Fachadas el fondo de la tabla en percepción de estado. Sin embargo, su uso activo (40.3%) es cuatro veces mayor que el del Salón Social o la Multicancha. Esto coloca al Gimnasio en una zona de decisión interesante: su deterioro percibido afecta a una base de usuarios activos considerable, pero la comunidad no lo prioriza como frente de inversión (ver P18). Los datos sugieren que un <b>mantenimiento correctivo focalizado</b> — no una renovación mayor — podría elevar la percepción sin desviar recursos de los frentes que la comunidad sí considera prioritarios.</div>
+
+<div class="critical"><b>Fachadas: el dato más duro del informe.</b> Con <b>5.21/10</b> es el espacio peor calificado de todo Burano, y su impacto es universal: todos los residentes, propietarios y visitantes las ven a diario. Además, quienes priorizan invertir en infraestructura/fachadas (P18) las califican aún peor: <b>4.70/10</b>. Los Propietarios Residentes, que conviven con ellas diariamente, las puntúan en <b>5.08</b>. Este es el frente donde la brecha entre expectativa y realidad es más visible y tiene mayor impacto en la percepción de valorización del conjunto.</div>
+
+<h3>P18. Priorización de Inversión</h3>
+<p class="q-text">¿En qué frente deberíamos enfocar la inversión? — Solo Propietarios (n=146)</p>
+
+<table>
+<tr>
+    <th>Frente de Inversión</th>
+    <th style="text-align:center">Prop. Residente<br><small>(n=100)</small></th>
+    <th style="text-align:center">Prop. No Residente<br><small>(n=46)</small></th>
+    <th style="text-align:center">Total</th>
+</tr>
+<tr>
+    <td><b>Infraestructura y Fachadas</b></td>
+    <td class="num"><div style="background:#e74c3c;color:white;padding:3px 8px;border-radius:4px;font-weight:bold;display:inline-block">64.0%</div></td>
+    <td class="num"><div style="background:#e74c3c;color:white;padding:3px 8px;border-radius:4px;font-weight:bold;display:inline-block">69.6%</div></td>
+    <td class="num"><b>65.8%</b></td>
+</tr>
+<tr>
+    <td>Amenidades y Bienestar</td>
+    <td class="num">18.0%</td>
+    <td class="num">13.0%</td>
+    <td class="num">16.4%</td>
+</tr>
+<tr>
+    <td>Tecnología de Seguridad</td>
+    <td class="num">16.0%</td>
+    <td class="num">15.2%</td>
+    <td class="num">15.8%</td>
+</tr>
+<tr>
+    <td>Paisajismo y Entorno</td>
+    <td class="num">2.0%</td>
+    <td class="num">2.2%</td>
+    <td class="num">2.1%</td>
+</tr>
+</table>
+
+<div class="conclusion"><b>Conclusión Sección V:</b> Los datos convergen en un mensaje claro: <b>Infraestructura y Fachadas</b> es el frente de inversión prioritario con un consenso aplastante del 65.8% de los propietarios — tanto residentes como no residentes coinciden. Las fachadas concentran el peor estado percibido (5.21/10) y la mayor exposición visual. La Piscina, siendo la amenidad más utilizada (62.1%), merece atención de mantenimiento continuo para proteger lo que sí funciona. Los espacios con bajo uso y calificación aceptable (Salón Social, Multicancha) pueden mantenerse con intervención mínima sin afectar la percepción general.</div>
+</div>
+
+<!-- VI. GESTIÓN ADMINISTRATIVA -->
+<div class="section" id="s6">
+<h2>VI. Gestión Administrativa</h2>
+
+<h3>P19. Contacto con la Administración</h3>
+<p class="q-text">¿Has tenido que contactar a la Administración en el último año? (n=167)</p>
+
+<div style="display:flex;gap:10px;margin:12px 0;flex-wrap:wrap">
+    <div style="flex:1;min-width:140px;background:#fdebd0;border-radius:8px;padding:10px 14px;text-align:center;border:2px solid #f39c12">
+        <div style="font-size:24px;font-weight:800;color:#f39c12">75.4%</div>
+        <div style="font-size:12px;color:#333"><b>SÍ contactó</b> (126)</div>
+    </div>
+    <div style="flex:1;min-width:140px;background:#eef6ff;border-radius:8px;padding:10px 14px;text-align:center;border:2px solid #2980b9">
+        <div style="font-size:24px;font-weight:800;color:#2980b9">24.6%</div>
+        <div style="font-size:12px;color:#333"><b>NO contactó</b> (41)</div>
+    </div>
+</div>
+
+<h4>¿Quién contacta más a la Administración?</h4>
+<table>
+<tr><th>Segmento</th><th style="text-align:center">% que contactó</th><th>n</th></tr>
+<tr><td><b>Propietario Residente</b></td><td class="num"><div style="background:#e74c3c;color:white;padding:3px 8px;border-radius:4px;font-weight:bold;display:inline-block">85.0%</div></td><td class="num">100</td></tr>
+<tr><td>Residente Arrendatario</td><td class="num"><div style="background:#f1948a;color:white;padding:3px 8px;border-radius:4px;font-weight:bold;display:inline-block">71.4%</div></td><td class="num">21</td></tr>
+<tr><td>Propietario No Residente</td><td class="num">56.5%</td><td class="num">46</td></tr>
+</table>
+
+<div class="conclusion"><b>Lectura:</b> 3 de cada 4 encuestados han necesitado contactar a la Administración en el último año. Los <b>Propietarios Residentes</b> son quienes más demandan atención (85%), lo cual es esperable al vivir el día a día. Que el 56.5% de los No Residentes también haya contactado — a pesar de no vivir aquí — indica que la gestión remota genera fricción significativa.</div>
+
+<h3>P19a vs P19b: La brecha entre experiencia directa y percepción</h3>
+
+<div style="display:flex;gap:8px;margin:10px 0;flex-wrap:wrap">
+    <div style="flex:1;min-width:130px;background:#fff;border-radius:6px;padding:6px 10px;text-align:center;border:2px solid #f39c12">
+        <div style="font-size:9px;color:#888;text-transform:uppercase;letter-spacing:0.5px">SÍ contactaron</div>
+        <div style="font-size:20px;font-weight:800;color:#f39c12;margin:2px 0">6.90</div>
+        <div style="font-size:9px;color:#666">Evaluación (n=126)</div>
+    </div>
+    <div style="flex:1;min-width:130px;background:#fff;border-radius:6px;padding:6px 10px;text-align:center;border:2px solid #27ae60">
+        <div style="font-size:9px;color:#888;text-transform:uppercase;letter-spacing:0.5px">NO contactaron</div>
+        <div style="font-size:20px;font-weight:800;color:#27ae60;margin:2px 0">7.98</div>
+        <div style="font-size:9px;color:#666">Percepción (n=41)</div>
+    </div>
+</div>
+
+<div class="alert"><b>La brecha de 1.08 puntos</b> entre quienes contactaron (6.90) y quienes no (7.98) es reveladora: la imagen de la Administración es mejor de lejos que de cerca. El punto de dolor está en <b>la ejecución del servicio</b>, no en la percepción general.</div>
+
+<h4>P19a: Evaluación de respuesta por segmento</h4>
+<table style="max-width:600px">
+<tr><th>Segmento</th><th>Media (0-10)</th><th>n</th></tr>
+<tr><td>Residente Arrendatario</td><td class="num"><b>7.00</b></td><td class="num">15</td></tr>
+<tr><td>Propietario Residente</td><td class="num"><b>6.94</b></td><td class="num">85</td></tr>
+<tr><td>Propietario No Residente</td><td class="num"><b style="color:#e74c3c">6.73</b></td><td class="num">26</td></tr>
+</table>
+
+<h4>Cruce clave: quienes piden mejor Gestión, ¿qué experiencia tuvieron?</h4>
+<p class="q-text">Comparación entre los 30 encuestados que eligieron "Gestión y Servicio" como mejora prioritaria (P8) vs. el resto</p>
+<table style="max-width:700px">
+<tr><th>Indicador</th><th style="text-align:center">Priorizan Gestión<br><small>(n=29-30)</small></th><th style="text-align:center">Resto<br><small>(n=92+)</small></th><th>Brecha</th></tr>
+<tr>
+    <td>Evaluación respuesta Admin (P19a)</td>
+    <td class="num"><b style="color:#e74c3c;font-size:16px">5.97</b></td>
+    <td class="num"><b style="color:#27ae60">7.24</b></td>
+    <td class="num" style="color:#e74c3c;font-weight:bold">-1.27</td>
+</tr>
+<tr>
+    <td>Calificación Equipo Admin (P20)</td>
+    <td class="num"><b style="color:#e74c3c;font-size:16px">7.17</b></td>
+    <td class="num"><b style="color:#27ae60">8.58</b></td>
+    <td class="num" style="color:#e74c3c;font-weight:bold">-1.41</td>
+</tr>
+</table>
+
+<div class="critical"><b>Hallazgo estratégico:</b> Quienes piden mejor gestión no lo hacen en abstracto — lo piden porque su experiencia directa fue deficiente. Evalúan la respuesta con <b>5.97/10</b> (vs. 7.24) y al equipo con <b>7.17</b> (vs. 8.58). Esta brecha confirma que la demanda de "mejor gestión" nace de experiencias concretas de frustración.</div>
+
+<h4>Impacto de la gestión en la lealtad</h4>
+<table style="max-width:550px">
+<tr><th>Experiencia con la Administración</th><th>NPS Burano<br><small>(media)</small></th><th>n</th></tr>
+<tr><td>Evalúan respuesta <b>≥ 8</b> (satisfechos)</td><td class="num" style="color:#27ae60;font-weight:bold">8.82</td><td class="num">57</td></tr>
+<tr><td>Evalúan respuesta <b>≤ 5</b> (insatisfechos)</td><td class="num" style="color:#e74c3c;font-weight:bold">7.75</td><td class="num">28</td></tr>
+</table>
+<div class="conclusion"><b>Conclusión:</b> Quienes tuvieron mala experiencia recomiendan Burano <b>1.07 puntos menos</b>. La gestión administrativa impacta directamente la disposición a recomendar el conjunto.</div>
+
+<h3>P20. Calidad Humana y Servicio</h3>
+<p class="q-text">¿Cómo calificas la actitud y amabilidad de los equipos? (0=Mala actitud, 10=Muy amables)</p>
+<table>
+<tr><th>Equipo</th><th>Media</th><th style="text-align:center">Bajo (≤6)</th><th style="text-align:center">Medio (7-8)</th><th style="text-align:center">Alto (≥9)</th><th>n</th></tr>
+<tr><td>Equipo de Vigilantes</td><td class="num"><b style="color:#27ae60;font-size:16px">8.90</b></td><td class="num">1.7%</td><td class="num">28.9%</td><td class="num"><div style="background:#27ae60;color:white;padding:2px 8px;border-radius:4px;display:inline-block">69.4%</div></td><td class="num">121</td></tr>
+<tr><td>Personal de Aseo y Zonas Comunes</td><td class="num"><b style="color:#27ae60;font-size:16px">8.69</b></td><td class="num">6.7%</td><td class="num">30.8%</td><td class="num"><div style="background:#27ae60;color:white;padding:2px 8px;border-radius:4px;display:inline-block">62.5%</div></td><td class="num">120</td></tr>
+<tr><td>Personal de Piscinas</td><td class="num"><b>8.31</b></td><td class="num">9.1%</td><td class="num">41.8%</td><td class="num">49.1%</td><td class="num">110</td></tr>
+<tr style="background:#fef3e6"><td><b>Equipo de Administración</b></td><td class="num"><b style="color:#f39c12;font-size:16px">8.24</b></td><td class="num"><div style="background:#e74c3c;color:white;padding:2px 8px;border-radius:4px;display:inline-block">11.6%</div></td><td class="num">41.3%</td><td class="num">47.1%</td><td class="num">121</td></tr>
+</table>
+
+<div class="alert"><b>El Equipo de Administración cierra la tabla</b> con 8.24/10 y el mayor porcentaje de evaluaciones bajas (11.6% ≤6). Esto se conecta con P19: es el equipo con mayor volumen de interacciones (85% de residentes la contactan) y la calidad percibida de esas interacciones arrastra la evaluación.</div>
+
+<div class="conclusion"><b>Conclusión Sección VI:</b> La Administración enfrenta un reto de <b>volumen + calidad</b>: es contactada por el 85% de los residentes, pero quienes la contactan la evalúan 1.08 puntos por debajo. Tres focos de acción: (1) <b>Tiempos de respuesta</b> — el 5.97/10 de quienes piden mejor gestión refleja casos sin resolución oportuna; (2) <b>Gestión remota</b> — los No Residentes necesitan canales efectivos desde otras ciudades; (3) <b>Consistencia</b> — el equipo es percibido como amable (8.24) pero la ejecución no acompaña. Mejorar la experiencia de servicio tiene impacto directo en el NPS (+1.07 puntos).</div>
+</div>
+
+<!-- VII. CONVIVENCIA Y CULTURA CIUDADANA -->
+<div class="section" id="s7">
+<h2>VII. Convivencia y Cultura Ciudadana</h2>
+
+<h3>P21. Armonía Comunitaria</h3>
+<p class="q-text">¿Cómo sientes el ambiente entre los vecinos de Burano? (1=Tenso, 10=Armónico)</p>
+<div class="kpi-grid">
+    <div class="kpi"><div class="value" style="color:{'#27ae60' if R['armonia']['mean']>=7 else '#f39c12'}">{R['armonia']['mean']}</div><div class="label">Media (n={R['armonia']['n']})</div></div>
+</div>
+
+<h3>P22. Interacción con el Comité de Convivencia</h3>
+<table><tr><th>Respuesta</th><th>n</th><th>%</th><th>Distribución</th></tr><tr><td style="max-width:350px">NO, nunca los he necesitado</td><td class="num">104</td><td class="num">88.9%</td><td><div class="bar" style="width:177.8px"></div></td></tr><tr><td style="max-width:350px">SÍ, solicité su apoyo</td><td class="num">13</td><td class="num">11.1%</td><td><div class="bar" style="width:22.2px"></div></td></tr></table>
+<div class="two-col">
+<div><h4>P22a. Efectividad del Comité</h4><div class="kpi"><div class="value">5.62</div><div class="label">Media (n=13)</div></div></div>
+<div><h4>P22b. Visibilidad del Comité</h4><div class="kpi"><div class="value">6.42</div><div class="label">Media (n=104)</div></div></div>
+</div>
+
+<h3>P23. Retos de Convivencia (Selección múltiple, máx. 2)</h3>
+<p class="q-text">¿Cuáles son los 2 temas que más afectan hoy tu tranquilidad?</p>
+<table><tr><th>Tema</th><th>Selecciones</th><th>% del total</th><th></th></tr><tr><td>Cultura en Zonas Comunes</td><td class="num">65</td><td class="num">34.2%</td><td><div class="bar" style="width:195px"></div></td></tr><tr><td>Mascotas</td><td class="num">51</td><td class="num">26.8%</td><td><div class="bar" style="width:153px"></div></td></tr><tr><td>Vehículos</td><td class="num">43</td><td class="num">22.6%</td><td><div class="bar" style="width:129px"></div></td></tr><tr><td>Ruido</td><td class="num">17</td><td class="num">8.9%</td><td><div class="bar" style="width:51px"></div></td></tr><tr><td>Ninguno</td><td class="num">14</td><td class="num">7.4%</td><td><div class="bar" style="width:42px"></div></td></tr></table>
+
+<h3>P24. Tenencia de Mascotas</h3>
+<table>
+        <tr><th>Opinión</th><th>n</th><th>%</th><th>Distribución</th></tr>
+        <tr>
+            <td style="max-width:350px">Regular</td>
+            <td class="num">60</td>
+            <td class="num">51.7%</td>
+            <td><div class="bar" style="width:103.4px"></div></td>
+        </tr><tr>
+            <td style="max-width:350px">Responsable</td>
+            <td class="num">31</td>
+            <td class="num">26.7%</td>
+            <td><div class="bar" style="width:53.4px"></div></td>
+        </tr><tr>
+            <td style="max-width:350px">Crítica</td>
+            <td class="num">25</td>
+            <td class="num">21.6%</td>
+            <td><div class="bar" style="width:43.2px"></div></td>
+        </tr>
+    </table>
+
+<h3>P25. Manual de Convivencia</h3>
+<table>
+        <tr><th>Conocimiento</th><th>n</th><th>%</th><th>Distribución</th></tr>
+        <tr>
+            <td style="max-width:350px">Sé que existe</td>
+            <td class="num">51</td>
+            <td class="num">44.3%</td>
+            <td><div class="bar" style="width:88.6px"></div></td>
+        </tr><tr>
+            <td style="max-width:350px">Lo he leído (Conozco mis deberes y derechos)</td>
+            <td class="num">40</td>
+            <td class="num">34.8%</td>
+            <td><div class="bar" style="width:69.6px"></div></td>
+        </tr><tr>
+            <td style="max-width:350px">No lo tengo</td>
+            <td class="num">24</td>
+            <td class="num">20.9%</td>
+            <td><div class="bar" style="width:41.8px"></div></td>
+        </tr>
+    </table>
+
+<h3>P26. Convivencia y Rentabilidad (Propietarios No Residentes)</h3>
+<table>
+        <tr><th>Experiencia</th><th>n</th><th>%</th><th>Distribución</th></tr>
+        <tr>
+            <td style="max-width:350px">No (Todo ha fluido bien)</td>
+            <td class="num">19</td>
+            <td class="num">86.4%</td>
+            <td><div class="bar" style="width:172.8px"></div></td>
+        </tr><tr>
+            <td style="max-width:350px">Mi Arrendatario se ha quejado</td>
+            <td class="num">2</td>
+            <td class="num">9.1%</td>
+            <td><div class="bar" style="width:18.2px"></div></td>
+        </tr><tr>
+            <td style="max-width:350px">Me han reportado a mi Arrendatario</td>
+            <td class="num">1</td>
+            <td class="num">4.5%</td>
+            <td><div class="bar" style="width:9.0px"></div></td>
+        </tr>
+    </table>
+
+<div class="alert"><b>Conclusión Sección VII:</b> Las <b>Mascotas</b> y el <b>Ruido</b> encabezan los retos de convivencia. La percepción sobre la tenencia de mascotas es mayoritariamente "Regular" o "Crítica", lo que indica un problema cultural importante. Un porcentaje significativo no conoce a fondo el Manual de Convivencia, lo que sugiere la necesidad de campañas de socialización.</div>
+</div>
+
+<!-- VIII. GOBERNANZA -->
+<div class="section" id="s8">
+<h2>VIII. Gobernanza y Consejo de Administración</h2>
+
+<h3>P27. Interacción con el Consejo</h3>
+<table>
+        <tr><th>Respuesta</th><th>n</th><th>%</th><th>Distribución</th></tr>
+        <tr>
+            <td style="max-width:350px">NO, no he tenido necesidad</td>
+            <td class="num">108</td>
+            <td class="num">76.6%</td>
+            <td><div class="bar" style="width:153.2px"></div></td>
+        </tr><tr>
+            <td style="max-width:350px">SÍ, he gestionado temas con ellos</td>
+            <td class="num">33</td>
+            <td class="num">23.4%</td>
+            <td><div class="bar" style="width:46.8px"></div></td>
+        </tr>
+    </table>
+
+<div class="two-col">
+<div><h4>P27a. Satisfacción (quienes gestionaron)</h4><div class="kpi"><div class="value">6.09</div><div class="label">Media (n=34)</div></div></div>
+<div><h4>P28. Percepción Dirección (general)</h4><div class="kpi"><div class="value">6.48</div><div class="label">Media (n=141)</div></div></div>
+</div>
+
+<h3>P29. Perfil Ideal del Consejero</h3>
+<table>
+        <tr><th>Cualidad</th><th>n</th><th>%</th><th>Distribución</th></tr>
+        <tr>
+            <td style="max-width:350px">Mix Equilibrado: Una combinación equilibrada de ambos perfiles.</td>
+            <td class="num">67</td>
+            <td class="num">47.5%</td>
+            <td><div class="bar" style="width:95.0px"></div></td>
+        </tr><tr>
+            <td style="max-width:350px">Conocimiento Vivencial: Que conozcan y vivan el día a día de Burano para entender las necesidades reales.</td>
+            <td class="num">49</td>
+            <td class="num">34.8%</td>
+            <td><div class="bar" style="width:69.6px"></div></td>
+        </tr><tr>
+            <td style="max-width:350px">Perfil Gerencial: Que tengan experiencia directiva y estratégica, sin que sea indispensable su presencia permanente.</td>
+            <td class="num">25</td>
+            <td class="num">17.7%</td>
+            <td><div class="bar" style="width:35.4px"></div></td>
+        </tr>
+    </table>
+<div class="conclusion"><b>Conclusión:</b> La comunidad valora un <b>perfil equilibrado (Mix)</b> para los consejeros: que conozcan la realidad diaria del conjunto pero también tengan visión estratégica. La percepción del Consejo actual tiene espacio considerable de mejora.</div>
+</div>
+
+<!-- IX. CIERRE -->
+<div class="section" id="s9">
+<h2>IX. Cierre — Visión 2026 y Voz Abierta</h2>
+
+<h3>P30. Foco 2026</h3>
+<p class="q-text">En una palabra, ¿cuál debe ser el foco del 2026? (n=162)</p>
+<table>
+        <tr><th>Foco</th><th>n</th><th>%</th><th>Distribución</th></tr>
+        <tr>
+            <td style="max-width:350px">Mantenimiento</td>
+            <td class="num">57</td>
+            <td class="num">35.2%</td>
+            <td><div class="bar" style="width:70.4px"></div></td>
+        </tr><tr>
+            <td style="max-width:350px">Eficiencia Financiera</td>
+            <td class="num">39</td>
+            <td class="num">24.1%</td>
+            <td><div class="bar" style="width:48.2px"></div></td>
+        </tr><tr>
+            <td style="max-width:350px">Seguridad (Blindar el conjunto y mejorar controles)</td>
+            <td class="num">33</td>
+            <td class="num">20.4%</td>
+            <td><div class="bar" style="width:40.8px"></div></td>
+        </tr><tr>
+            <td style="max-width:350px">Valorización</td>
+            <td class="num">25</td>
+            <td class="num">15.4%</td>
+            <td><div class="bar" style="width:30.8px"></div></td>
+        </tr><tr>
+            <td style="max-width:350px">Convivencia (Lograr paz, armonía y respeto entre vecinos)</td>
+            <td class="num">8</td>
+            <td class="num">4.9%</td>
+            <td><div class="bar" style="width:9.8px"></div></td>
+        </tr>
+    </table>
+
+<h4>Cruce: Foco 2026 por Vínculo</h4>
+<table><tr><th>Foco 2026</th><th>Propietario No Resid</th><th>Propietario Resident</th><th>Residente Arrendatar</th></tr><tr><td>Convivencia</td><td class='num'>0</td><td class='num'>5</td><td class='num'>3</td></tr><tr><td>Eficiencia Financiera</td><td class='num'>14</td><td class='num'>23</td><td class='num'>2</td></tr><tr><td>Mantenimiento</td><td class='num'>17</td><td class='num'>34</td><td class='num'>6</td></tr><tr><td>Seguridad</td><td class='num'>7</td><td class='num'>18</td><td class='num'>8</td></tr><tr><td>Valorización</td><td class='num'>8</td><td class='num'>15</td><td class='num'>2</td></tr></table>
+<div class="conclusion"><b>Conclusión:</b> <b>Seguridad</b> y <b>Convivencia</b> lideran la visión 2026, seguidas de Mantenimiento. Existe un consenso transversal entre todos los tipos de residentes sobre estas prioridades.</div>
+</div>
+
+<!-- PAIN POINTS -->
+<div class="section" id="s10">
+<h2>X. Análisis de Puntos de Dolor (Comentarios Abiertos)</h2>
+<p class="q-text">P31: ¿Se nos escapó algo importante? — 104 comentarios recibidos de 192 encuestados (54.2% de participación en esta pregunta)</p>
+
+<h3>Frecuencia de Temas Mencionados</h3>
+<table><tr><th>Categoría</th><th>Menciones</th><th>% de comentarios</th><th></th></tr><tr><td>Mantenimiento / Aseo</td><td class="num">32</td><td class="num">30.8%</td><td><div class="bar bar-det" style="width:92.4px"></div></td></tr><tr><td>Seguridad / Vigilancia</td><td class="num">20</td><td class="num">19.2%</td><td><div class="bar bar-det" style="width:57.599999999999994px"></div></td></tr><tr><td>Administración / Gestión</td><td class="num">20</td><td class="num">19.2%</td><td><div class="bar bar-det" style="width:57.599999999999994px"></div></td></tr><tr><td>Convivencia general</td><td class="num">16</td><td class="num">15.4%</td><td><div class="bar bar-det" style="width:46.2px"></div></td></tr><tr><td>Mascotas</td><td class="num">10</td><td class="num">9.6%</td><td><div class="bar bar-det" style="width:28.799999999999997px"></div></td></tr><tr><td>Parqueadero / Vehículos</td><td class="num">10</td><td class="num">9.6%</td><td><div class="bar bar-det" style="width:28.799999999999997px"></div></td></tr><tr><td>Piscina</td><td class="num">5</td><td class="num">4.8%</td><td><div class="bar bar-det" style="width:14.399999999999999px"></div></td></tr><tr><td>Ruido</td><td class="num">4</td><td class="num">3.8%</td><td><div class="bar bar-det" style="width:11.399999999999999px"></div></td></tr><tr><td>Ascensores</td><td class="num">3</td><td class="num">2.9%</td><td><div class="bar bar-det" style="width:8.7px"></div></td></tr><tr><td>Comunicación</td><td class="num">3</td><td class="num">2.9%</td><td><div class="bar bar-det" style="width:8.7px"></div></td></tr></table>
+
+<h3>Top 3 Problemas Más Recurrentes</h3>
+
+<div class="critical">
+<b>1. Mantenimiento y Aseo (30.8% de comentarios)</b><br>
+El problema más mencionado. Los residentes expresan insatisfacción con el estado de fachadas, limpieza de torres/pasillos y deterioro general. <b>Segmento más afectado:</b> Propietarios Residentes con antigüedad 2018-2019 (los más veteranos, que han visto el deterioro progresivo).
+</div>
+
+<div class="critical">
+<b>2. Seguridad y Vigilancia (19.2% de comentarios)</b><br>
+Preocupaciones sobre control de acceso, presencia de vigilancia y sensación de protección. <b>Segmento más afectado:</b> Propietarios No Residentes (22.6%) y residentes nuevos (2025: 40% de sus comentarios son sobre seguridad).
+</div>
+
+<div class="critical">
+<b>3. Administración y Gestión (19.2% de comentarios)</b><br>
+Solicitudes de mayor agilidad, transparencia y presencia de la administración. <b>Segmento más afectado:</b> Propietarios No Residentes (22.6%) y cohorte 2020 (22.2% de sus comentarios).
+</div>
+
+<h3>Muestra de Comentarios Representativos por Categoría</h3>
+<h4>Mantenimiento / Aseo</h4><ul><li><em>"El tema del aseo en áreas públicas,  shut, ascensores,  pasillos.  El ruido de animales y niños a altas horas de la madrugada.  "</em></li><li><em>"Si bien hay muchos frentes por trabajar como el mantenimiento, zonas comunes limpias y seguras, espacios cuidados y confortables, es necesario tener eventos para conocernos y compartir, y crear comuni..."</em></li><li><em>"El estado de mantenimiento del conjunto es deplorable, estamos perdiendo valor patrimonial día tras día. 
+No se exige el cumplimiento del Reglamento de PH, hay propietarios que han modificado las vent..."</em></li></ul><h4>Seguridad / Vigilancia</h4><ul><li><em>"Aunque no sea una prioridad como la infraestructura, considero que el personal de aseo y jardinería podría entrenarse para poder hacer un mejor mantenimiento y embellecimiento de las zonas. 
+
+La segur..."</em></li><li><em>"Fortalecer la comunicación con dueños de mascotas para que eviten que estás se orinen en zonas comunes y jardines.
+La puerta de shut de basuras primer piso Torre 11 está inservible.
+Las escaleras de a..."</em></li><li><em>"Entiendo que las fachadas ya están en el presupuesto para mejorarlas por eso pienso más en seguridad casi todos los días entro por la mañana y la puerta está completamente abierta- las talanqueras he ..."</em></li></ul><h4>Administración / Gestión</h4><ul><li><em>"Si bien hay muchos frentes por trabajar como el mantenimiento, zonas comunes limpias y seguras, espacios cuidados y confortables, es necesario tener eventos para conocernos y compartir, y crear comuni..."</em></li><li><em>"Así hace 1 año no tenga problemas de convivencia, tuve un problema grave con una vecina ruidosa, de fiesta hasta el amanecer y por 2 o 3 años las administraciones anteriores no hicieron absolutamente ..."</em></li><li><em>"Entiendo que las fachadas ya están en el presupuesto para mejorarlas por eso pienso más en seguridad casi todos los días entro por la mañana y la puerta está completamente abierta- las talanqueras he ..."</em></li></ul><h4>Convivencia general</h4><ul><li><em>"Me encanta el ambiente de naturaleza de burano, creo q es único. Sin embargo hay muchos detalles sencillos que desvalorizándose mucho la propiedad. Los sótanos siempre encharcados, las alfombras de lo..."</em></li><li><em>"Me gustaría que por lo menos una vez al año se programe una actividad de integración de vecinos residentes"</em></li><li><em>"Así hace 1 año no tenga problemas de convivencia, tuve un problema grave con una vecina ruidosa, de fiesta hasta el amanecer y por 2 o 3 años las administraciones anteriores no hicieron absolutamente ..."</em></li></ul><h4>Mascotas</h4><ul><li><em>"El tema del aseo en áreas públicas,  shut, ascensores,  pasillos.  El ruido de animales y niños a altas horas de la madrugada.  "</em></li><li><em>"Me encanta el ambiente de naturaleza de burano, creo q es único. Sin embargo hay muchos detalles sencillos que desvalorizándose mucho la propiedad. Los sótanos siempre encharcados, las alfombras de lo..."</em></li><li><em>"Fortalecer la comunicación con dueños de mascotas para que eviten que estás se orinen en zonas comunes y jardines.
+La puerta de shut de basuras primer piso Torre 11 está inservible.
+Las escaleras de a..."</em></li></ul>
+</div>
+
+<!-- CONCLUSIÓN FINAL -->
+<div class="section" style="background: linear-gradient(135deg, #1a3a5c, #2c5f8a); color: white;">
+<h2 style="color: white; border-color: rgba(255,255,255,0.3);">Conclusión Estratégica Final</h2>
+<p style="font-size:15px; margin-bottom:15px"><b>¿Quiénes son?</b> Una comunidad compuesta mayoritariamente por propietarios residentes (parejas y familias con mascotas), con una antigüedad promedio de 5-7 años, complementada por un segmento de inversionistas que usan sus apartamentos vacacionalmente o los arriendan.</p>
+<p style="font-size:15px; margin-bottom:15px"><b>¿Cuál es su experiencia?</b> Burano mantiene un NPS positivo (43.4), pero la promesa de "La Ciudad Soñada" tiene una brecha de percepción importante (NPS experiencia: 15.5). La satisfacción es mayor entre quienes llevan menos tiempo, mientras que los más veteranos acumulan frustración por el deterioro.</p>
+<p style="font-size:15px; margin-bottom:15px"><b>¿Qué quieren?</b> En orden de prioridad: (1) Seguridad robusta y moderna, (2) Convivencia armónica, (3) Mantenimiento impecable, (4) Gestión transparente y digital. La comunidad respalda abrumadoramente la modernización tecnológica tanto en seguridad como en gestión.</p>
+<p style="font-size:15px"><b>¿Qué les molesta?</b> El deterioro visible (fachadas, aseo), la falta de cultura de convivencia (especialmente en tenencia de mascotas), la percepción de insuficiente control de acceso, y una administración que necesita ser más ágil y comunicativa.</p>
+</div>
+
+</div>
+</body>
+</html>
