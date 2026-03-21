@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Presupuesto 2026 - Conjunto Residencial Burano</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700&display=swap');
+
+  :root {
+    --navy: #1B2A4A;
+    --navy-light: #2D4373;
+    --gold: #C9A84C;
+    --gold-light: #E8D48B;
+    --teal: #2A9D8F;
+    --coral: #E76F51;
+    --sky: #468FAF;
+    --lavender: #7B68AE;
+    --sage: #6B8F71;
+    --sand: #D4A574;
+    --rose: #C97B84;
+    --slate: #708090;
+    --bg: #F8F6F1;
+    --text: #2C2C2C;
+    --text-light: #5A5A5A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .page {
+    width: 1100px;
+    margin: 0 auto;
+    padding: 40px 48px;
+    background: white;
+    min-height: 100vh;
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    text-align: center;
+    padding-bottom: 28px;
+    border-bottom: 3px solid var(--navy);
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 3px;
+    background: var(--gold);
+  }
+  .header-badge {
+    display: inline-block;
+    background: var(--navy);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: var(--navy);
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+  .header h1 em {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .header .subtitle {
+    font-size: 14px;
+    color: var(--text-light);
+    font-weight: 400;
+  }
+
+  /* ===== CONCEPT BANNER ===== */
+  .concept-banner {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: white;
+    border-radius: 14px;
+    padding: 20px 28px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .concept-icon {
+    font-size: 42px;
+    flex-shrink: 0;
+  }
+  .concept-text h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--gold-light);
+  }
+  .concept-text p {
+    font-size: 13px;
+    line-height: 1.5;
+    opacity: 0.92;
+  }
+
+  /* ===== MAIN GRID ===== */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+
+  /* ===== SECTION TITLES ===== */
+  .section-title {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    color: var(--navy);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #ddd;
+  }
+  .section-title .icon { font-size: 16px; }
+
+  /* ===== DONUT CHART ===== */
+  .donut-section { }
+  .donut-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .donut-svg-wrap {
+    flex-shrink: 0;
+    position: relative;
+    width: 210px;
+    height: 210px;
+  }
+  .donut-center {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .donut-center .amount {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--navy);
+    display: block;
+  }
+  .donut-center .label {
+    font-size: 9px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .legend {
+    list-style: none;
+    font-size: 11.5px;
+  }
+  .legend li {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    margin-bottom: 6px;
+    line-height: 1.35;
+  }
+  .legend .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .legend .cat-name {
+    font-weight: 600;
+    color: var(--text);
+  }
+  .legend .cat-pct {
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .legend .cat-val {
+    color: var(--text-light);
+    font-size: 10px;
+  }
+
+  /* ===== BAR CHART ===== */
+  .bar-section { }
+  .bar-chart {
+    margin-top: 8px;
+  }
+  .bar-year {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+  }
+  .bar-year .year-label {
+    width: 38px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--navy);
+    text-align: right;
+  }
+  .bar-track {
+    flex: 1;
+    height: 28px;
+    background: #EEE;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    color: white;
+    transition: width 0.5s;
+  }
+  .bar-growth {
+    font-size: 11px;
+    font-weight: 700;
+    width: 55px;
+    text-align: left;
+  }
+  .growth-positive { color: var(--coral); }
+
+  /* ===== TOP 3 VARIATIONS ===== */
+  .variations-section {
+    grid-column: 1 / -1;
+  }
+  .variations-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+  }
+  .var-card {
+    border-radius: 12px;
+    padding: 16px 18px;
+    position: relative;
+    overflow: hidden;
+  }
+  .var-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px;
+    height: 100%;
+  }
+  .var-card:nth-child(1) { background: #FFF5F3; }
+  .var-card:nth-child(1)::before { background: var(--coral); }
+  .var-card:nth-child(2) { background: #F0F7FF; }
+  .var-card:nth-child(2)::before { background: var(--sky); }
+  .var-card:nth-child(3) { background: #F2FBF5; }
+  .var-card:nth-child(3)::before { background: var(--teal); }
+
+  .var-rank {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+    opacity: 0.7;
+  }
+  .var-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .var-numbers {
+    font-size: 11px;
+    color: var(--text-light);
+    margin-bottom: 6px;
+  }
+  .var-numbers strong {
+    color: var(--text);
+  }
+  .var-change {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+  }
+  .var-card:nth-child(1) .var-change { background: #FCDDD6; color: var(--coral); }
+  .var-card:nth-child(2) .var-change { background: #D6E8F7; color: var(--sky); }
+  .var-card:nth-child(3) .var-change { background: #D4F0DC; color: var(--sage); }
+  .var-reason {
+    font-size: 11px;
+    color: var(--text-light);
+    line-height: 1.45;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    padding-top: 6px;
+  }
+
+  /* ===== PESO BREAKDOWN ===== */
+  .peso-section {
+    grid-column: 1 / -1;
+  }
+  .peso-bar-container {
+    margin-top: 8px;
+    margin-bottom: 10px;
+  }
+  .peso-stacked {
+    display: flex;
+    height: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .peso-seg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+    transition: flex 0.3s;
+    position: relative;
+  }
+  .peso-seg span { z-index: 1; }
+  .peso-labels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    margin-top: 8px;
+  }
+  .peso-label-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10.5px;
+  }
+  .peso-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  /* ===== INSIGHT BOX ===== */
+  .insight-section {
+    grid-column: 1 / -1;
+  }
+  .insight-box {
+    background: linear-gradient(135deg, #FFFBEB 0%, #FFF8E1 100%);
+    border: 2px solid var(--gold);
+    border-radius: 14px;
+    padding: 18px 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .insight-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+  }
+  .insight-content h3 {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .insight-content p {
+    font-size: 12.5px;
+    color: var(--text);
+    line-height: 1.55;
+  }
+  .insight-content .highlight {
+    font-weight: 700;
+    color: var(--coral);
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    text-align: center;
+    padding-top: 18px;
+    border-top: 2px solid var(--navy);
+    margin-top: 8px;
+    font-size: 11px;
+    color: var(--text-light);
+  }
+  .footer strong { color: var(--navy); }
+
+  /* ===== PRINT ===== */
+  @media print {
+    body { background: white; }
+    .page { width: 100%; padding: 24px 32px; box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-badge">Asamblea General 2026</div>
+    <h1>Invirtiendo en el Valor <em>de Nuestro Hogar</em></h1>
+    <div class="subtitle">Conjunto Residencial Burano &mdash; Presupuesto Anual 2026</div>
+  </div>
+
+  <!-- CONCEPT BANNER -->
+  <div class="concept-banner">
+    <div class="concept-icon">🏗️</div>
+    <div class="concept-text">
+      <h2>2026: El año de la recuperacion de nuestras fachadas</h2>
+      <p>Este presupuesto prioriza la <strong>restauracion integral de fachadas</strong>, un proyecto que protege la estructura del edificio, evita daños mayores y <strong>preserva el valor de cada apartamento</strong>. Cada peso invertido hoy nos ahorra costos mucho mas altos manana.</p>
+    </div>
+  </div>
+
+  <div class="main-grid">
+
+    <!-- LEFT: DONUT CHART -->
+    <div class="donut-section">
+      <div class="section-title"><span class="icon">📊</span> A donde va cada peso de tu cuota</div>
+      <div class="donut-container">
+        <div class="donut-svg-wrap">
+          <svg viewBox="0 0 200 200" width="210" height="210">
+            <!-- Donut segments - calculated from percentages -->
+            <!-- Total: 3,998,683,832 -->
+            <!-- Fachadas 20.2%, Seguridad 18.2%, Serena 16.9%, Aseo 16.4%, Mant 11.1%, Admin 9.8%, Serv.Pub 6.5%, Reserva 1.0% -->
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#F0F0F0" stroke-width="32"/>
+            <!-- Fachadas 20.2% = 72.7deg -->
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#E76F51" stroke-width="32"
+              stroke-dasharray="88.6 351.9" stroke-dashoffset="110" transform="rotate(-90 100 100)"/>
+            <!-- Seguridad 18.2% = 65.5deg -->
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#468FAF" stroke-width="32"
+              stroke-dasharray="80.1 360.4" stroke-dashoffset="21.4" transform="rotate(-90 100 100)"/>
+            <!-- Serena del Mar 16.9% = 60.8deg -->
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#7B68AE" stroke-width="32"
+              stroke-dasharray="74.3 366.2" stroke-dashoffset="-58.7" transform="rotate(-90 100 100)"/>
+            <!-- Aseo/Piscina 16.4% = 59deg -->
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#2A9D8F" stroke-width="32"
+              stroke-dasharray="72.1 368.4" stroke-dashoffset="-133" transform="rotate(-90 100 100)"/>
+            <!-- Mantenimiento 11.1% = 40deg -->
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#C9A84C" stroke-width="32"
+              stroke-dasharray="48.9 391.6" stroke-dashoffset="-205.1" transform="rotate(-90 100 100)"/>
+            <!-- Admin 9.8% = 35.1deg -->
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#708090" stroke-width="32"
+              stroke-dasharray="42.9 397.6" stroke-dashoffset="-254" transform="rotate(-90 100 100)"/>
+            <!-- Serv. Publicos 6.5% = 23.2deg -->
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#D4A574" stroke-width="32"
+              stroke-dasharray="28.4 412.1" stroke-dashoffset="-296.9" transform="rotate(-90 100 100)"/>
+            <!-- Fondo Reserva 1.0% = 3.5deg -->
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#6B8F71" stroke-width="32"
+              stroke-dasharray="4.4 436.1" stroke-dashoffset="-325.3" transform="rotate(-90 100 100)"/>
+          </svg>
+          <div class="donut-center">
+            <span class="amount">$4.000 M</span>
+            <span class="label">Presupuesto 2026</span>
+          </div>
+        </div>
+        <ul class="legend">
+          <li><span class="dot" style="background:#E76F51"></span><div><span class="cat-name">Proyecto Fachadas</span> <span class="cat-pct">20,2%</span><br><span class="cat-val">$807 M</span></div></li>
+          <li><span class="dot" style="background:#468FAF"></span><div><span class="cat-name">Seguridad y Vigilancia</span> <span class="cat-pct">18,2%</span><br><span class="cat-val">$727 M</span></div></li>
+          <li><span class="dot" style="background:#7B68AE"></span><div><span class="cat-name">Cuota Serena del Mar</span> <span class="cat-pct">16,9%</span><br><span class="cat-val">$676 M</span></div></li>
+          <li><span class="dot" style="background:#2A9D8F"></span><div><span class="cat-name">Aseo, Piscina y Zonas</span> <span class="cat-pct">16,4%</span><br><span class="cat-val">$655 M</span></div></li>
+          <li><span class="dot" style="background:#C9A84C"></span><div><span class="cat-name">Mant. Equipos</span> <span class="cat-pct">11,1%</span><br><span class="cat-val">$446 M</span></div></li>
+          <li><span class="dot" style="background:#708090"></span><div><span class="cat-name">Administracion</span> <span class="cat-pct">9,8%</span><br><span class="cat-val">$390 M</span></div></li>
+          <li><span class="dot" style="background:#D4A574"></span><div><span class="cat-name">Servicios Publicos</span> <span class="cat-pct">6,5%</span><br><span class="cat-val">$258 M</span></div></li>
+          <li><span class="dot" style="background:#6B8F71"></span><div><span class="cat-name">Fondo Reserva</span> <span class="cat-pct">1,0%</span><br><span class="cat-val">$40 M</span></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RIGHT: BAR CHART - HISTORICAL -->
+    <div class="bar-section">
+      <div class="section-title"><span class="icon">📈</span> Evolucion del presupuesto</div>
+      <div class="bar-chart">
+        <div class="bar-year">
+          <span class="year-label">2023</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:56.4%; background: linear-gradient(90deg, #B0C4DE, #708090);">$2.255 M</div>
+          </div>
+          <span class="bar-growth" style="color:#708090">&mdash;</span>
+        </div>
+        <div class="bar-year">
+          <span class="year-label">2024</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:63.6%; background: linear-gradient(90deg, #93B5CF, #5A8FAF);">$2.544 M</div>
+          </div>
+          <span class="bar-growth growth-positive">+12,8%</span>
+        </div>
+        <div class="bar-year">
+          <span class="year-label">2025</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:78.9%; background: linear-gradient(90deg, #7BAAC7, #468FAF);">$3.153 M</div>
+          </div>
+          <span class="bar-growth growth-positive">+23,9%</span>
+        </div>
+        <div class="bar-year">
+          <span class="year-label">2026</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:100%; background: linear-gradient(90deg, var(--navy-light), var(--navy));">$3.999 M</div>
+          </div>
+          <span class="bar-growth growth-positive">+26,8%</span>
+        </div>
+      </div>
+      <div style="margin-top:14px; padding:12px 16px; background:#F8F6F1; border-radius:10px; font-size:11.5px; color:var(--text-light); line-height:1.5;">
+        <strong style="color:var(--navy);">&#9432; Por que sube el presupuesto?</strong><br>
+        El crecimiento del 26,8% en 2026 se explica principalmente por el <strong style="color:var(--coral)">proyecto de restauracion de fachadas ($807 M)</strong>, que representa una inversion puntual para proteger la estructura del conjunto. Sin este proyecto, el presupuesto ordinario crece apenas un 1,2% frente a 2025, por debajo de la inflacion.
+      </div>
+    </div>
+
+    <!-- TOP 3 VARIATIONS -->
+    <div class="variations-section">
+      <div class="section-title"><span class="icon">🔍</span> Los 3 rubros con mayor cambio (2023 vs. 2026)</div>
+      <div class="variations-grid">
+        <div class="var-card">
+          <div class="var-rank">1. Mayor incremento</div>
+          <div class="var-name">🧱 Restauracion de Fachadas</div>
+          <div class="var-numbers"><strong>$0</strong> (2023) &rarr; <strong>$807 M</strong> (2026)</div>
+          <div class="var-change">NUEVO</div>
+          <div class="var-reason"><strong>Proyecto con destinacion especifica.</strong> Las fachadas muestran deterioro que, de no atenderse ahora, generaria costos mucho mayores en reparaciones de emergencia y afectaria el valor de los apartamentos.</div>
+        </div>
+        <div class="var-card">
+          <div class="var-rank">2. Mayor incremento</div>
+          <div class="var-name">🛡️ Vigilancia y Seguridad</div>
+          <div class="var-numbers"><strong>$420 M</strong> &rarr; <strong>$705 M</strong></div>
+          <div class="var-change">+68%</div>
+          <div class="var-reason">Incremento acumulado por ajustes salariales del sector (salario minimo + prestaciones legales) y mejora en el esquema de seguridad 24/7 del conjunto.</div>
+        </div>
+        <div class="var-card">
+          <div class="var-rank">3. Mayor incremento</div>
+          <div class="var-name">🏊 Aseo, Piscina y Jardineros</div>
+          <div class="var-numbers"><strong>$336 M</strong> &rarr; <strong>$547 M</strong></div>
+          <div class="var-change">+63%</div>
+          <div class="var-reason">Aumento en costos de personal de servicios generales, ampliacion de cobertura de mantenimiento de zonas humedas y areas comunes.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STACKED BAR: CADA PESO -->
+    <div class="peso-section">
+      <div class="section-title"><span class="icon">💰</span> De cada $1.000 que pagas en administracion, asi se distribuyen</div>
+      <div class="peso-bar-container">
+        <div class="peso-stacked">
+          <div class="peso-seg" style="flex:20.2; background:#E76F51;"><span>$202</span></div>
+          <div class="peso-seg" style="flex:18.2; background:#468FAF;"><span>$182</span></div>
+          <div class="peso-seg" style="flex:16.9; background:#7B68AE;"><span>$169</span></div>
+          <div class="peso-seg" style="flex:16.4; background:#2A9D8F;"><span>$164</span></div>
+          <div class="peso-seg" style="flex:11.1; background:#C9A84C;"><span>$111</span></div>
+          <div class="peso-seg" style="flex:9.8; background:#708090;"><span>$98</span></div>
+          <div class="peso-seg" style="flex:6.5; background:#D4A574;"><span>$65</span></div>
+          <div class="peso-seg" style="flex:1.0; background:#6B8F71;"></div>
+        </div>
+        <div class="peso-labels">
+          <div class="peso-label-item"><span class="peso-dot" style="background:#E76F51"></span>Fachadas $202</div>
+          <div class="peso-label-item"><span class="peso-dot" style="background:#468FAF"></span>Seguridad $182</div>
+          <div class="peso-label-item"><span class="peso-dot" style="background:#7B68AE"></span>Serena del Mar $169</div>
+          <div class="peso-label-item"><span class="peso-dot" style="background:#2A9D8F"></span>Aseo y Zonas $164</div>
+          <div class="peso-label-item"><span class="peso-dot" style="background:#C9A84C"></span>Mant. Equipos $111</div>
+          <div class="peso-label-item"><span class="peso-dot" style="background:#708090"></span>Administracion $98</div>
+          <div class="peso-label-item"><span class="peso-dot" style="background:#D4A574"></span>Serv. Publicos $65</div>
+          <div class="peso-label-item"><span class="peso-dot" style="background:#6B8F71"></span>Reserva $10</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPERT INSIGHT -->
+    <div class="insight-section">
+      <div class="insight-box">
+        <div class="insight-icon">💡</div>
+        <div class="insight-content">
+          <h3>El Dato Clave del Director Financiero</h3>
+          <p>Aprobar el presupuesto con el proyecto de fachadas <strong>nos protege de una cuota extraordinaria</strong> en 2027. Las reparaciones de emergencia por deterioro estructural pueden costar <span class="highlight">entre 2x y 3x mas</span> que la intervencion preventiva planificada. Ademas, un conjunto con fachadas en buen estado <strong>preserva y aumenta el valor comercial</strong> de cada apartamento. <em>Invertir hoy es proteger nuestro patrimonio manana.</em></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <strong>Conjunto Residencial Burano</strong> &mdash; Presupuesto 2026 preparado para la Asamblea General &mdash; Cifras en millones de pesos colombianos (M = millones COP)<br>
+    Beneficio adicional: <strong>3% de descuento por pronto pago</strong> ($120 M en ahorro colectivo) &bull; Fondo de Reserva Legal: 1% del presupuesto
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estado Proyecto de Fachadas 2025-2027 BURANO</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  :root {
+    --navy: #1B2A4A;
+    --navy-light: #2C3E6B;
+    --blue-accent: #3B82C4;
+    --steel: #64748B;
+    --steel-light: #94A3B8;
+    --gray-50: #F8FAFC;
+    --gray-100: #F1F5F9;
+    --gray-200: #E2E8F0;
+    --gray-300: #CBD5E1;
+    --white: #FFFFFF;
+    --teal: #0D9488;
+    --teal-light: #14B8A6;
+    --teal-bg: #ECFDF5;
+    --amber: #D97706;
+    --amber-bg: #FFFBEB;
+    --red-soft: #DC2626;
+    --orange: #EA580C;
+    --orange-bg: #FFF7ED;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--gray-100);
+    color: var(--navy);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page { max-width: 1340px; margin: 0 auto; padding: 40px 32px; }
+
+  /* ── HEADER ── */
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 28px;
+    border-bottom: 3px solid var(--navy);
+  }
+  .header-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 4px;
+    text-transform: uppercase; color: var(--steel); margin-bottom: 8px;
+  }
+  .header h1 { font-size: 26px; font-weight: 900; color: var(--navy); line-height: 1.2; margin-bottom: 4px; }
+  .header h1 span { color: var(--teal); }
+  .header-sub { font-size: 13px; font-weight: 500; color: var(--steel); letter-spacing: 1px; }
+
+  /* ── SECTION HEADING ── */
+  .section-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; margin-top: 8px; }
+  .section-num {
+    width: 30px; height: 30px; background: var(--navy); color: var(--white);
+    font-size: 13px; font-weight: 800; display: flex; align-items: center;
+    justify-content: center; border-radius: 6px; flex-shrink: 0;
+  }
+  .section-heading h2 { font-size: 17px; font-weight: 800; color: var(--navy); }
+
+  /* ── SCOPE BAR ── */
+  .scope-bar {
+    background: var(--white); border-radius: 14px; padding: 28px;
+    margin-bottom: 36px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .scope-top {
+    display: flex; align-items: center; justify-content: center; gap: 40px;
+    margin-bottom: 24px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-200);
+  }
+  .scope-hero { text-align: center; }
+  .scope-hero-val { font-size: 48px; font-weight: 900; color: var(--navy); line-height: 1; }
+  .scope-hero-lbl { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--steel); margin-top: 4px; }
+  .scope-divider { width: 2px; height: 60px; background: var(--gray-200); }
+  .scope-detail { text-align: center; }
+  .scope-detail-val { font-size: 28px; font-weight: 800; color: var(--teal); }
+  .scope-detail-lbl { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--steel); margin-top: 2px; }
+
+  .scope-bottom {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;
+  }
+  .scope-year-item {
+    text-align: center; padding: 14px; border-radius: 10px;
+    background: var(--gray-50); border: 1px solid var(--gray-200);
+  }
+  .scope-year-item.active { background: var(--navy); border-color: var(--navy); }
+  .scope-year-item.active .sy-year,
+  .scope-year-item.active .sy-val { color: var(--white); }
+  .sy-year { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--steel); margin-bottom: 2px; }
+  .sy-val { font-size: 24px; font-weight: 900; color: var(--navy); }
+  .sy-lbl { font-size: 10px; font-weight: 600; letter-spacing: 1px; color: var(--steel); text-transform: uppercase; }
+  .scope-year-item.active .sy-lbl { color: rgba(255,255,255,0.7); }
+
+  /* Color codes */
+  .c-2025 { color: var(--navy); }
+  .c-exec { color: var(--orange); }
+  .c-2026 { color: var(--teal); }
+
+  /* ── THREE-COLUMN COMPARE ── */
+  .compare-three {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 36px;
+  }
+  .col-card {
+    background: var(--white); border-radius: 14px; padding: 24px 22px 22px;
+    position: relative; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .col-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; }
+  .col-approved::before { background: var(--navy); }
+  .col-executed::before { background: var(--orange); }
+  .col-projected::before { background: var(--teal); }
+
+  .col-tag {
+    display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; padding: 3px 10px; border-radius: 4px; margin-bottom: 12px;
+  }
+  .col-approved .col-tag { background: var(--gray-200); color: var(--steel); }
+  .col-executed .col-tag { background: var(--orange-bg); color: var(--orange); }
+  .col-projected .col-tag { background: var(--teal-bg); color: var(--teal); }
+
+  .col-title { font-size: 14px; font-weight: 800; margin-bottom: 16px; line-height: 1.3; }
+  .col-approved .col-title { color: var(--navy); }
+  .col-executed .col-title { color: var(--orange); }
+  .col-projected .col-title { color: var(--teal); }
+
+  .col-total { font-size: 26px; font-weight: 900; margin-bottom: 2px; font-variant-numeric: tabular-nums; }
+  .col-total-label { font-size: 10px; font-weight: 600; color: var(--steel); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px; }
+
+  .col-breakdown { border-top: 1px solid var(--gray-200); padding-top: 16px; }
+  .col-executed .col-breakdown { border-top-color: #FDBA74; }
+  .col-projected .col-breakdown { border-top-color: #A7F3D0; }
+
+  .breakdown-row {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding: 10px 0; border-bottom: 1px solid var(--gray-100);
+  }
+  .breakdown-row:last-child { border-bottom: none; }
+  .br-label { font-size: 12px; font-weight: 500; color: var(--steel); flex: 1; line-height: 1.4; }
+  .br-value { font-size: 13px; font-weight: 700; text-align: right; min-width: 110px; font-variant-numeric: tabular-nums; }
+
+  .col-footer {
+    margin-top: 16px; padding-top: 14px; border-top: 2px solid var(--gray-200);
+  }
+  .col-executed .col-footer { border-top-color: #FDBA74; }
+  .col-projected .col-footer { border-top-color: #A7F3D0; }
+  .cf-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .cf-label { font-size: 11px; font-weight: 600; color: var(--steel); }
+  .cf-value { font-size: 15px; font-weight: 800; }
+
+  /* ── PERCENTAGE BADGE ── */
+  .pct-badge {
+    display: inline-flex; align-items: center; gap: 3px;
+    font-size: 13px; font-weight: 800; padding: 4px 10px; border-radius: 20px;
+    margin-top: 4px;
+  }
+  .pct-up { background: #FEE2E2; color: #DC2626; }
+  .pct-down { background: #D1FAE5; color: #059669; }
+  .pct-ref { background: var(--gray-200); color: var(--steel); }
+
+  /* Large pct inside card */
+  .pct-large {
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 10px;
+  }
+  .pct-large .pct-badge { font-size: 16px; padding: 6px 14px; }
+
+  /* Tower icons row */
+  .towers-row { display: flex; gap: 5px; justify-content: center; margin-top: 14px; }
+  .tw { width: 14px; height: 38px; border-radius: 2px 2px 0 0; }
+  .col-approved .tw { background: var(--navy); }
+  .col-executed .tw { background: var(--orange); }
+  .col-projected .tw { background: var(--teal); }
+
+  /* ── ANALYSIS CARDS ── */
+  .analysis-panel {
+    background: var(--white); border-radius: 14px; padding: 28px;
+    margin-bottom: 36px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .analysis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .an-card {
+    border: 2px solid var(--gray-200); border-radius: 12px; padding: 22px;
+    position: relative;
+  }
+  .an-card-h { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .an-icon {
+    width: 40px; height: 40px; border-radius: 10px; display: flex;
+    align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .an-icon.i1 { background: #FEF3C7; color: var(--amber); }
+  .an-icon.i2 { background: #DBEAFE; color: var(--blue-accent); }
+  .an-icon.i3 { background: #FCE7F3; color: #DB2777; }
+  .an-icon.i4 { background: #D1FAE5; color: var(--teal); }
+  .an-title { font-size: 13px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: var(--navy); }
+  .an-value-row { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
+  .an-val { font-size: 24px; font-weight: 900; color: var(--navy); }
+  .an-pct {
+    font-size: 18px; font-weight: 900; padding: 3px 12px; border-radius: 6px;
+  }
+  .an-pct-red { background: #FEE2E2; color: #DC2626; }
+  .an-pct-green { background: #D1FAE5; color: #059669; }
+  .an-pct-amber { background: #FEF3C7; color: var(--amber); }
+  .an-pct-teal { background: var(--teal-bg); color: var(--teal); }
+  .an-desc {
+    font-size: 14px; font-weight: 500; color: #374151; line-height: 1.6;
+  }
+
+  /* ── TIMELINE ── */
+  .tl-panel {
+    background: var(--white); border-radius: 14px; padding: 28px;
+    margin-bottom: 36px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .tl-rows { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  .tl-row { display: flex; align-items: center; gap: 16px; padding: 16px 20px; border-radius: 10px; }
+  .tl-row.tl-orig { background: var(--gray-100); border: 2px solid var(--gray-200); }
+  .tl-row.tl-real { background: var(--teal-bg); border: 2px solid #A7F3D0; }
+  .tl-label { width: 150px; flex-shrink: 0; }
+  .tl-label-tag { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2px; }
+  .tl-orig .tl-label-tag { color: var(--steel); }
+  .tl-real .tl-label-tag { color: var(--teal); }
+  .tl-label-name { font-size: 15px; font-weight: 800; }
+  .tl-orig .tl-label-name { color: var(--navy); }
+  .tl-real .tl-label-name { color: var(--teal); }
+
+  .tl-track { flex: 1; display: flex; align-items: center; gap: 4px; height: 56px; }
+  .tl-seg {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    height: 48px; border-radius: 8px; padding: 0 10px;
+  }
+  .tl-seg-yr { font-size: 10px; font-weight: 700; letter-spacing: 1px; margin-bottom: 1px; }
+  .tl-seg-val { font-size: 13px; font-weight: 800; }
+
+  .tl-orig .tl-seg:nth-child(1) { flex: 6; background: var(--navy); color: var(--white); }
+  .tl-orig .tl-seg:nth-child(2) { flex: 8; background: var(--steel-light); color: var(--white); }
+  .tl-orig .tl-seg:nth-child(3) { flex: 3; background: var(--gray-300); color: var(--navy); }
+  .tl-real .tl-seg { flex: 1; background: var(--teal); color: var(--white); }
+
+  /* ── FOOTER ── */
+  .footer { text-align: center; padding-top: 24px; border-top: 2px solid var(--gray-200); }
+  .footer-text { font-size: 11px; font-weight: 500; color: var(--steel-light); letter-spacing: 1px; }
+
+  @media print { body { background: white; } .page { padding: 20px; } }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-label">Conjunto Residencial BURANO &mdash; Asamblea de Copropietarios</div>
+    <h1>Rendición de Cuentas: <span>Proyecto de Fachadas y Pérgolas</span></h1>
+    <div class="header-sub">Proyecto a 3 Años &mdash; Aprobado Asamblea 2025 / Ejecución 2025 / Proyectado Asamblea 2026</div>
+  </header>
+
+  <!-- 1. ALCANCE -->
+  <div class="section-heading">
+    <div class="section-num">1</div>
+    <h2>Alcance Total del Proyecto</h2>
+  </div>
+
+  <div class="scope-bar">
+    <div class="scope-top">
+      <div class="scope-hero">
+        <div class="scope-hero-val">17</div>
+        <div class="scope-hero-lbl">Torres Totales</div>
+      </div>
+      <div class="scope-divider"></div>
+      <div class="scope-detail">
+        <div class="scope-detail-val">32.000 M²</div>
+        <div class="scope-detail-lbl">Fachada Externa (Balcones)</div>
+      </div>
+      <div class="scope-divider"></div>
+      <div class="scope-detail">
+        <div class="scope-detail-val" style="font-size:22px;">+ Pérgolas</div>
+        <div class="scope-detail-lbl">Mantenimiento Incluido</div>
+      </div>
+    </div>
+    <div class="scope-bottom">
+      <div class="scope-year-item active">
+        <div class="sy-year">2025</div>
+        <div class="sy-val">6</div>
+        <div class="sy-lbl">Torres</div>
+      </div>
+      <div class="scope-year-item">
+        <div class="sy-year">2026</div>
+        <div class="sy-val">8</div>
+        <div class="sy-lbl">Torres</div>
+      </div>
+      <div class="scope-year-item">
+        <div class="sy-year">2027</div>
+        <div class="sy-val">3</div>
+        <div class="sy-lbl">Torres</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. COMPARATIVO PRESUPUESTAL -->
+  <div class="section-heading">
+    <div class="section-num">2</div>
+    <h2>Comparativo Presupuestal por Vigencia</h2>
+  </div>
+
+  <div class="compare-three">
+    <!-- APROBADO 2025 -->
+    <div class="col-card col-approved">
+      <span class="col-tag">Asamblea 2025</span>
+      <div class="col-title">PROYECTO APROBADO</div>
+      <div class="col-total c-2025">$242.818.305</div>
+      <div class="col-total-label">Monto Total Aprobado &mdash; 6 Torres</div>
+      <div class="col-breakdown">
+        <div class="breakdown-row">
+          <div class="br-label">Cuadrilla de Alpinistas<br>(Intervención Fachadas)</div>
+          <div class="br-value c-2025">$145.315.305</div>
+        </div>
+        <div class="breakdown-row">
+          <div class="br-label">Materiales Intervención<br>(Fachada Externa e Interna)</div>
+          <div class="br-value c-2025">$97.503.000</div>
+        </div>
+      </div>
+      <div class="col-footer">
+        <div class="cf-row">
+          <div class="cf-label">Costo por Torre</div>
+          <div class="cf-value c-2025">$40.469.718</div>
+        </div>
+        <div class="pct-large">
+          <span class="pct-badge pct-ref">BASE DE REFERENCIA</span>
+        </div>
+      </div>
+      <div class="towers-row">
+        <div class="tw"></div><div class="tw"></div><div class="tw"></div>
+        <div class="tw"></div><div class="tw"></div><div class="tw"></div>
+      </div>
+    </div>
+
+    <!-- EJECUTADO 2025 -->
+    <div class="col-card col-executed">
+      <span class="col-tag">Ejecución Real 2025</span>
+      <div class="col-title">EJECUTADO POR ADMINISTRACIÓN</div>
+      <div class="col-total c-exec">$356.611.731</div>
+      <div class="col-total-label">Monto Ejecutado &mdash; 6 Torres</div>
+      <div class="col-breakdown">
+        <div class="breakdown-row">
+          <div class="br-label">Cuadrilla de Alpinistas<br>(Intervención Fachadas)</div>
+          <div class="br-value c-exec">$0</div>
+        </div>
+        <div class="breakdown-row">
+          <div class="br-label">Materiales Intervención<br>(Fachada Externa e Interna)</div>
+          <div class="br-value c-exec">$356.611.731</div>
+        </div>
+      </div>
+      <div class="col-footer">
+        <div class="cf-row">
+          <div class="cf-label">Costo por Torre</div>
+          <div class="cf-value c-exec">$59.435.289</div>
+        </div>
+        <div class="pct-large">
+          <span class="pct-badge pct-up">+46,9% vs Aprobado</span>
+        </div>
+        <div style="text-align:center;margin-top:6px;">
+          <span class="pct-badge pct-up" style="font-size:11px;">Costo Torre: +46,9%</span>
+        </div>
+      </div>
+      <div class="towers-row">
+        <div class="tw"></div><div class="tw"></div><div class="tw"></div>
+        <div class="tw"></div><div class="tw"></div><div class="tw"></div>
+      </div>
+    </div>
+
+    <!-- PROYECTADO 2026 -->
+    <div class="col-card col-projected">
+      <span class="col-tag">Propuesta Asamblea 2026</span>
+      <div class="col-title">PRESUPUESTO PROYECTADO</div>
+      <div class="col-total c-2026">$807.089.820</div>
+      <div class="col-total-label">Monto Proyectado &mdash; 8 Torres</div>
+      <div class="col-breakdown">
+        <div class="breakdown-row">
+          <div class="br-label">Cuadrilla de Alpinistas<br>(Intervención Fachadas)</div>
+          <div class="br-value c-2026">$0</div>
+        </div>
+        <div class="breakdown-row">
+          <div class="br-label">Materiales Intervención<br>(Fachada Externa e Interna)</div>
+          <div class="br-value c-2026">$807.089.820</div>
+        </div>
+      </div>
+      <div class="col-footer">
+        <div class="cf-row">
+          <div class="cf-label">Costo por Torre</div>
+          <div class="cf-value c-2026">$100.886.228</div>
+        </div>
+        <div class="pct-large">
+          <span class="pct-badge pct-up">+232,3% vs Aprobado</span>
+        </div>
+        <div style="text-align:center;margin-top:6px;">
+          <span class="pct-badge pct-up" style="font-size:11px;">Costo Torre: +149,3%</span>
+        </div>
+      </div>
+      <div class="towers-row">
+        <div class="tw"></div><div class="tw"></div><div class="tw"></div><div class="tw"></div>
+        <div class="tw"></div><div class="tw"></div><div class="tw"></div><div class="tw"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. ANÁLISIS DE DIFERENCIAS -->
+  <div class="section-heading">
+    <div class="section-num">3</div>
+    <h2>Análisis de Diferencias Técnicas</h2>
+  </div>
+
+  <div class="analysis-panel">
+    <div class="analysis-grid">
+      <div class="an-card">
+        <div class="an-card-h">
+          <div class="an-icon i1">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="an-title">Sobreejecución 2025 vs Aprobado</div>
+        </div>
+        <div class="an-value-row">
+          <div class="an-val">+$113.793.426</div>
+          <div class="an-pct an-pct-red">+46,9%</div>
+        </div>
+        <div class="an-desc">La ejecución real del año 2025 ($356,6M) superó en $113,8M lo aprobado por asamblea ($242,8M) para las mismas 6 torres intervenidas.</div>
+      </div>
+
+      <div class="an-card">
+        <div class="an-card-h">
+          <div class="an-icon i2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          </div>
+          <div class="an-title">Reasignación de Conceptos</div>
+        </div>
+        <div class="an-value-row">
+          <div class="an-val">Alpinistas → $0</div>
+          <div class="an-pct an-pct-green">-100%</div>
+        </div>
+        <div class="an-desc">El rubro de cuadrilla de alpinistas, aprobado en $145.315.305, no registra ejecución en 2025 ni proyección en 2026. Todo el presupuesto se concentra en materiales de intervención.</div>
+      </div>
+
+      <div class="an-card">
+        <div class="an-card-h">
+          <div class="an-icon i3">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div class="an-title">Incremento Costo por Torre (2025)</div>
+        </div>
+        <div class="an-value-row">
+          <div class="an-val">+$18.965.571</div>
+          <div class="an-pct an-pct-amber">+46,9%</div>
+        </div>
+        <div class="an-desc">El costo unitario por torre pasó de $40,5M (aprobado) a $59,4M (ejecutado) en 2025. Cada torre costó casi la mitad más de lo previsto inicialmente en asamblea.</div>
+      </div>
+
+      <div class="an-card">
+        <div class="an-card-h">
+          <div class="an-icon i4">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="an-title">Proyección Costo Torre 2026</div>
+        </div>
+        <div class="an-value-row">
+          <div class="an-val">$100.886.228</div>
+          <div class="an-pct an-pct-red">+149,3%</div>
+        </div>
+        <div class="an-desc">El costo proyectado por torre para 2026 es de $100,9M, lo que representa un incremento del 149,3% respecto al valor unitario aprobado en la asamblea de 2025 ($40,5M).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. CRONOGRAMA -->
+  <div class="section-heading">
+    <div class="section-num">4</div>
+    <h2>Cronograma de Intervención — Plan Aprobado a 3 Años</h2>
+  </div>
+
+  <div class="tl-panel">
+    <div class="tl-rows">
+      <div class="tl-row tl-orig">
+        <div class="tl-label">
+          <div class="tl-label-tag">Plan Aprobado</div>
+          <div class="tl-label-name">Escalonado 3 Años</div>
+        </div>
+        <div class="tl-track">
+          <div class="tl-seg"><div class="tl-seg-yr">2025</div><div class="tl-seg-val">6 Torres</div></div>
+          <div class="tl-seg"><div class="tl-seg-yr">2026</div><div class="tl-seg-val">8 Torres</div></div>
+          <div class="tl-seg"><div class="tl-seg-yr">2027</div><div class="tl-seg-val">3 Torres</div></div>
+        </div>
+      </div>
+      <div class="tl-row tl-real">
+        <div class="tl-label">
+          <div class="tl-label-tag">Ejecución Real</div>
+          <div class="tl-label-name">Vigencia 2025</div>
+        </div>
+        <div class="tl-track">
+          <div class="tl-seg"><div class="tl-seg-yr">2025</div><div class="tl-seg-val">6 Torres Ejecutadas &mdash; $356.611.731</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-text">DOCUMENTO DE RENDICIÓN DE CUENTAS &mdash; PROYECTO FACHADAS Y PÉRGOLAS &mdash; CONJUNTO RESIDENCIAL BURANO</div>
+  </div>
+
+</div>
+
+</body>
+</html>
