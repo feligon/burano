@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Estado Proyecto de Fachadas 2025-2027 BURANO</title>
+<title>Rendición de Cuentas — Proyecto de Fachadas BURANO</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
@@ -29,27 +29,16 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   body {
     font-family: 'Inter', -apple-system, sans-serif;
-    background: var(--gray-100);
-    color: var(--navy);
+    background: var(--gray-100); color: var(--navy);
     -webkit-font-smoothing: antialiased;
   }
-
   .page { max-width: 1340px; margin: 0 auto; padding: 40px 32px; }
 
   /* ── HEADER ── */
-  .header {
-    text-align: center;
-    margin-bottom: 40px;
-    padding-bottom: 28px;
-    border-bottom: 3px solid var(--navy);
-  }
-  .header-label {
-    font-size: 11px; font-weight: 700; letter-spacing: 4px;
-    text-transform: uppercase; color: var(--steel); margin-bottom: 8px;
-  }
+  .header { text-align: center; margin-bottom: 40px; padding-bottom: 28px; border-bottom: 3px solid var(--navy); }
+  .header-label { font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--steel); margin-bottom: 8px; }
   .header h1 { font-size: 26px; font-weight: 900; color: var(--navy); line-height: 1.2; margin-bottom: 4px; }
   .header h1 span { color: var(--teal); }
   .header-sub { font-size: 13px; font-weight: 500; color: var(--steel); letter-spacing: 1px; }
@@ -64,14 +53,8 @@
   .section-heading h2 { font-size: 17px; font-weight: 800; color: var(--navy); }
 
   /* ── SCOPE BAR ── */
-  .scope-bar {
-    background: var(--white); border-radius: 14px; padding: 28px;
-    margin-bottom: 36px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-  }
-  .scope-top {
-    display: flex; align-items: center; justify-content: center; gap: 40px;
-    margin-bottom: 24px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-200);
-  }
+  .scope-bar { background: var(--white); border-radius: 14px; padding: 28px; margin-bottom: 36px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .scope-top { display: flex; align-items: center; justify-content: center; gap: 40px; margin-bottom: 24px; padding-bottom: 24px; border-bottom: 2px solid var(--gray-200); }
   .scope-hero { text-align: center; }
   .scope-hero-val { font-size: 48px; font-weight: 900; color: var(--navy); line-height: 1; }
   .scope-hero-lbl { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--steel); margin-top: 4px; }
@@ -79,95 +62,54 @@
   .scope-detail { text-align: center; }
   .scope-detail-val { font-size: 28px; font-weight: 800; color: var(--teal); }
   .scope-detail-lbl { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--steel); margin-top: 2px; }
-
-  .scope-bottom {
-    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;
-  }
-  .scope-year-item {
-    text-align: center; padding: 14px; border-radius: 10px;
-    background: var(--gray-50); border: 1px solid var(--gray-200);
-  }
+  .scope-bottom { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .scope-year-item { text-align: center; padding: 14px; border-radius: 10px; background: var(--gray-50); border: 1px solid var(--gray-200); }
   .scope-year-item.active { background: var(--navy); border-color: var(--navy); }
-  .scope-year-item.active .sy-year,
-  .scope-year-item.active .sy-val { color: var(--white); }
+  .scope-year-item.active .sy-year, .scope-year-item.active .sy-val { color: var(--white); }
   .sy-year { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--steel); margin-bottom: 2px; }
   .sy-val { font-size: 24px; font-weight: 900; color: var(--navy); }
   .sy-lbl { font-size: 10px; font-weight: 600; letter-spacing: 1px; color: var(--steel); text-transform: uppercase; }
   .scope-year-item.active .sy-lbl { color: rgba(255,255,255,0.7); }
 
-  /* Color codes */
   .c-2025 { color: var(--navy); }
   .c-exec { color: var(--orange); }
   .c-2026 { color: var(--teal); }
 
   /* ── THREE-COLUMN COMPARE ── */
-  .compare-three {
-    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 36px;
-  }
-  .col-card {
-    background: var(--white); border-radius: 14px; padding: 24px 22px 22px;
-    position: relative; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-  }
+  .compare-three { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 36px; }
+  .col-card { background: var(--white); border-radius: 14px; padding: 24px 22px 22px; position: relative; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
   .col-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; }
   .col-approved::before { background: var(--navy); }
   .col-executed::before { background: var(--orange); }
   .col-projected::before { background: var(--teal); }
-
-  .col-tag {
-    display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 2px;
-    text-transform: uppercase; padding: 3px 10px; border-radius: 4px; margin-bottom: 12px;
-  }
+  .col-tag { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 3px 10px; border-radius: 4px; margin-bottom: 12px; }
   .col-approved .col-tag { background: var(--gray-200); color: var(--steel); }
   .col-executed .col-tag { background: var(--orange-bg); color: var(--orange); }
   .col-projected .col-tag { background: var(--teal-bg); color: var(--teal); }
-
   .col-title { font-size: 14px; font-weight: 800; margin-bottom: 16px; line-height: 1.3; }
   .col-approved .col-title { color: var(--navy); }
   .col-executed .col-title { color: var(--orange); }
   .col-projected .col-title { color: var(--teal); }
-
   .col-total { font-size: 26px; font-weight: 900; margin-bottom: 2px; font-variant-numeric: tabular-nums; }
   .col-total-label { font-size: 10px; font-weight: 600; color: var(--steel); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px; }
-
   .col-breakdown { border-top: 1px solid var(--gray-200); padding-top: 16px; }
   .col-executed .col-breakdown { border-top-color: #FDBA74; }
   .col-projected .col-breakdown { border-top-color: #A7F3D0; }
-
-  .breakdown-row {
-    display: flex; justify-content: space-between; align-items: flex-start;
-    padding: 10px 0; border-bottom: 1px solid var(--gray-100);
-  }
+  .breakdown-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--gray-100); }
   .breakdown-row:last-child { border-bottom: none; }
   .br-label { font-size: 12px; font-weight: 500; color: var(--steel); flex: 1; line-height: 1.4; }
   .br-value { font-size: 13px; font-weight: 700; text-align: right; min-width: 110px; font-variant-numeric: tabular-nums; }
-
-  .col-footer {
-    margin-top: 16px; padding-top: 14px; border-top: 2px solid var(--gray-200);
-  }
+  .col-footer { margin-top: 16px; padding-top: 14px; border-top: 2px solid var(--gray-200); }
   .col-executed .col-footer { border-top-color: #FDBA74; }
   .col-projected .col-footer { border-top-color: #A7F3D0; }
   .cf-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
   .cf-label { font-size: 11px; font-weight: 600; color: var(--steel); }
   .cf-value { font-size: 15px; font-weight: 800; }
-
-  /* ── PERCENTAGE BADGE ── */
-  .pct-badge {
-    display: inline-flex; align-items: center; gap: 3px;
-    font-size: 13px; font-weight: 800; padding: 4px 10px; border-radius: 20px;
-    margin-top: 4px;
-  }
+  .pct-badge { display: inline-flex; align-items: center; gap: 3px; font-size: 13px; font-weight: 800; padding: 4px 10px; border-radius: 20px; }
   .pct-up { background: #FEE2E2; color: #DC2626; }
-  .pct-down { background: #D1FAE5; color: #059669; }
   .pct-ref { background: var(--gray-200); color: var(--steel); }
-
-  /* Large pct inside card */
-  .pct-large {
-    display: flex; align-items: center; justify-content: center;
-    margin-top: 10px;
-  }
+  .pct-large { display: flex; align-items: center; justify-content: center; margin-top: 10px; }
   .pct-large .pct-badge { font-size: 16px; padding: 6px 14px; }
-
-  /* Tower icons row */
   .towers-row { display: flex; gap: 5px; justify-content: center; margin-top: 14px; }
   .tw { width: 14px; height: 38px; border-radius: 2px 2px 0 0; }
   .col-approved .tw { background: var(--navy); }
@@ -175,20 +117,11 @@
   .col-projected .tw { background: var(--teal); }
 
   /* ── ANALYSIS CARDS ── */
-  .analysis-panel {
-    background: var(--white); border-radius: 14px; padding: 28px;
-    margin-bottom: 36px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-  }
+  .analysis-panel { background: var(--white); border-radius: 14px; padding: 28px; margin-bottom: 36px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
   .analysis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .an-card {
-    border: 2px solid var(--gray-200); border-radius: 12px; padding: 22px;
-    position: relative;
-  }
+  .an-card { border: 2px solid var(--gray-200); border-radius: 12px; padding: 22px; }
   .an-card-h { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
-  .an-icon {
-    width: 40px; height: 40px; border-radius: 10px; display: flex;
-    align-items: center; justify-content: center; flex-shrink: 0;
-  }
+  .an-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .an-icon.i1 { background: #FEF3C7; color: var(--amber); }
   .an-icon.i2 { background: #DBEAFE; color: var(--blue-accent); }
   .an-icon.i3 { background: #FCE7F3; color: #DB2777; }
@@ -196,22 +129,103 @@
   .an-title { font-size: 13px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: var(--navy); }
   .an-value-row { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
   .an-val { font-size: 24px; font-weight: 900; color: var(--navy); }
-  .an-pct {
-    font-size: 18px; font-weight: 900; padding: 3px 12px; border-radius: 6px;
-  }
+  .an-pct { font-size: 18px; font-weight: 900; padding: 3px 12px; border-radius: 6px; }
   .an-pct-red { background: #FEE2E2; color: #DC2626; }
   .an-pct-green { background: #D1FAE5; color: #059669; }
   .an-pct-amber { background: #FEF3C7; color: var(--amber); }
   .an-pct-teal { background: var(--teal-bg); color: var(--teal); }
-  .an-desc {
-    font-size: 14px; font-weight: 500; color: #374151; line-height: 1.6;
+  .an-desc { font-size: 14px; font-weight: 500; color: #374151; line-height: 1.6; }
+
+  /* ── QUESTIONS SECTION ── */
+  .questions-panel {
+    background: var(--white); border-radius: 14px; padding: 32px;
+    margin-bottom: 36px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    border: 2px solid var(--navy);
+  }
+  .questions-intro {
+    font-size: 14px; font-weight: 500; color: var(--steel); line-height: 1.6;
+    margin-bottom: 28px; padding-bottom: 20px; border-bottom: 2px solid var(--gray-200);
   }
 
-  /* ── TIMELINE ── */
-  .tl-panel {
-    background: var(--white); border-radius: 14px; padding: 28px;
-    margin-bottom: 36px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  .q-group { margin-bottom: 28px; }
+  .q-group:last-child { margin-bottom: 0; }
+  .q-group-header {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
   }
+  .q-group-icon {
+    width: 44px; height: 44px; border-radius: 10px; display: flex;
+    align-items: center; justify-content: center; flex-shrink: 0; font-size: 20px;
+  }
+  .q-group-icon.qg-owner { background: #DBEAFE; color: var(--blue-accent); }
+  .q-group-icon.qg-cfo { background: #FEF3C7; color: var(--amber); }
+  .q-group-icon.qg-eng { background: #D1FAE5; color: var(--teal); }
+
+  .q-group-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--steel);
+  }
+  .q-group-title {
+    font-size: 16px; font-weight: 800; color: var(--navy);
+  }
+
+  .q-list { display: flex; flex-direction: column; gap: 10px; }
+  .q-item {
+    display: flex; gap: 14px; padding: 16px 18px; border-radius: 10px;
+    align-items: flex-start;
+  }
+  .q-item.q-owner { background: #EFF6FF; border-left: 4px solid var(--blue-accent); }
+  .q-item.q-cfo { background: #FFFBEB; border-left: 4px solid var(--amber); }
+  .q-item.q-eng { background: #ECFDF5; border-left: 4px solid var(--teal); }
+
+  .q-number {
+    width: 26px; height: 26px; border-radius: 50%; display: flex;
+    align-items: center; justify-content: center; flex-shrink: 0;
+    font-size: 12px; font-weight: 800; color: var(--white);
+  }
+  .q-owner .q-number { background: var(--blue-accent); }
+  .q-cfo .q-number { background: var(--amber); }
+  .q-eng .q-number { background: var(--teal); }
+
+  .q-text {
+    font-size: 15px; font-weight: 600; color: var(--navy); line-height: 1.55;
+    flex: 1;
+  }
+  .q-highlight {
+    font-weight: 800; padding: 1px 6px; border-radius: 4px; font-size: 14px;
+  }
+  .q-highlight-red { background: #FEE2E2; color: #DC2626; }
+  .q-highlight-amber { background: #FEF3C7; color: #92400E; }
+  .q-highlight-blue { background: #DBEAFE; color: #1E40AF; }
+  .q-highlight-teal { background: #D1FAE5; color: #065F46; }
+
+  .q-data-callout {
+    margin-top: 8px; padding: 10px 14px; background: rgba(0,0,0,0.04);
+    border-radius: 8px; font-size: 13px; font-weight: 500; color: var(--steel);
+    line-height: 1.5;
+  }
+  .q-data-callout strong { color: var(--navy); font-weight: 700; }
+
+  /* Alert group */
+  .q-group-icon.qg-alert { background: #FEE2E2; color: #DC2626; }
+  .q-item.q-alert { background: #FEF2F2; border-left: 4px solid #DC2626; }
+  .q-alert .q-number { background: #DC2626; }
+
+  .q-alert-banner {
+    display: flex; align-items: flex-start; gap: 16px; padding: 20px;
+    background: #FEF2F2; border: 2px solid #FECACA; border-radius: 12px;
+    margin-bottom: 20px;
+  }
+  .q-alert-icon {
+    width: 44px; height: 44px; background: #DC2626; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    color: white; font-size: 20px;
+  }
+  .q-alert-title { font-size: 14px; font-weight: 800; color: #991B1B; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .q-alert-body { font-size: 14px; font-weight: 600; color: #7F1D1D; line-height: 1.6; }
+  .q-alert-body strong { font-weight: 800; }
+  .q-alert-ref { font-size: 12px; font-weight: 600; color: #991B1B; margin-top: 6px; font-style: italic; }
+
+  /* ── TIMELINE ── */
+  .tl-panel { background: var(--white); border-radius: 14px; padding: 28px; margin-bottom: 36px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
   .tl-rows { display: grid; grid-template-columns: 1fr; gap: 20px; }
   .tl-row { display: flex; align-items: center; gap: 16px; padding: 16px 20px; border-radius: 10px; }
   .tl-row.tl-orig { background: var(--gray-100); border: 2px solid var(--gray-200); }
@@ -223,15 +237,10 @@
   .tl-label-name { font-size: 15px; font-weight: 800; }
   .tl-orig .tl-label-name { color: var(--navy); }
   .tl-real .tl-label-name { color: var(--teal); }
-
   .tl-track { flex: 1; display: flex; align-items: center; gap: 4px; height: 56px; }
-  .tl-seg {
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    height: 48px; border-radius: 8px; padding: 0 10px;
-  }
+  .tl-seg { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 48px; border-radius: 8px; padding: 0 10px; }
   .tl-seg-yr { font-size: 10px; font-weight: 700; letter-spacing: 1px; margin-bottom: 1px; }
   .tl-seg-val { font-size: 13px; font-weight: 800; }
-
   .tl-orig .tl-seg:nth-child(1) { flex: 6; background: var(--navy); color: var(--white); }
   .tl-orig .tl-seg:nth-child(2) { flex: 8; background: var(--steel-light); color: var(--white); }
   .tl-orig .tl-seg:nth-child(3) { flex: 3; background: var(--gray-300); color: var(--navy); }
@@ -425,7 +434,6 @@
         </div>
         <div class="an-desc">La ejecución real del año 2025 ($356,6M) superó en $113,8M lo aprobado por asamblea ($242,8M) para las mismas 6 torres intervenidas.</div>
       </div>
-
       <div class="an-card">
         <div class="an-card-h">
           <div class="an-icon i2">
@@ -439,7 +447,6 @@
         </div>
         <div class="an-desc">El rubro de cuadrilla de alpinistas, aprobado en $145.315.305, no registra ejecución en 2025 ni proyección en 2026. Todo el presupuesto se concentra en materiales de intervención.</div>
       </div>
-
       <div class="an-card">
         <div class="an-card-h">
           <div class="an-icon i3">
@@ -453,7 +460,6 @@
         </div>
         <div class="an-desc">El costo unitario por torre pasó de $40,5M (aprobado) a $59,4M (ejecutado) en 2025. Cada torre costó casi la mitad más de lo previsto inicialmente en asamblea.</div>
       </div>
-
       <div class="an-card">
         <div class="an-card-h">
           <div class="an-icon i4">
@@ -470,9 +476,215 @@
     </div>
   </div>
 
-  <!-- 4. CRONOGRAMA -->
+  <!-- 4. PREGUNTAS DE LA ASAMBLEA -->
   <div class="section-heading">
     <div class="section-num">4</div>
+    <h2>Preguntas para la Administración — Asamblea de Copropietarios</h2>
+  </div>
+
+  <div class="questions-panel">
+    <div class="questions-intro">
+      Las siguientes preguntas surgen del análisis de las cifras presentadas y deben ser resueltas por la administración ante la asamblea, desde tres perspectivas complementarias: la del copropietario, la financiera y la técnica.
+    </div>
+
+    <!-- ALERTA: CIRCULAR 031 -->
+    <div class="q-alert-banner">
+      <div class="q-alert-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <div>
+        <div class="q-alert-title">Antecedente Clave — Circular 031-2025 (11 de agosto de 2025)</div>
+        <div class="q-alert-body">
+          El Consejo de Administración, en reunión del <strong>5 de agosto de 2025</strong>, seleccionó a la empresa <strong>SOLUCIONES ESBO S.A.S.</strong> con sede en <strong>Bogotá</strong> para la intervención de lavado y pintura de las Torres 8, 9, 10, 11, 13 y 15. A la fecha: no se conoce el valor del contrato, no se ha presentado evidencia de experiencia en mantenimiento de fachadas en zona costera, y la circular indica que los contratos se encontraban "en proceso de legalización".
+        </div>
+        <div class="q-alert-ref">Fuente: Circular 031-2025, firmada por Darling E. Zapata Jiménez — Synergia S&S S.A.S., Representante Legal del Conjunto Residencial Burano.</div>
+      </div>
+    </div>
+
+    <!-- GRUPO: CONTRATISTA Y CIRCULAR 031 -->
+    <div class="q-group">
+      <div class="q-group-header">
+        <div class="q-group-icon qg-alert">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+        </div>
+        <div>
+          <div class="q-group-label">Sobre el Contratista Seleccionado</div>
+          <div class="q-group-title">SOLUCIONES ESBO S.A.S. — Circular 031-2025</div>
+        </div>
+      </div>
+      <div class="q-list">
+        <div class="q-item q-alert">
+          <div class="q-number">1</div>
+          <div class="q-text">
+            ¿Cuál es el <strong>valor del contrato suscrito con SOLUCIONES ESBO S.A.S.</strong>? La Circular 031 del 11 de agosto de 2025 anuncia la selección pero <span class="q-highlight q-highlight-red">no revela el monto</span>. Los copropietarios tienen derecho a conocer el valor exacto de la contratación.
+          </div>
+        </div>
+        <div class="q-item q-alert">
+          <div class="q-number">2</div>
+          <div class="q-text">
+            ¿Existe formalmente el contrato? La circular indicaba que se encontraban <span class="q-highlight q-highlight-amber">"en proceso de legalización de los respectivos contratos y suscripción de pólizas"</span>. ¿Se firmó? ¿Dónde está? ¿Qué pólizas amparan la ejecución?
+          </div>
+        </div>
+        <div class="q-item q-alert">
+          <div class="q-number">3</div>
+          <div class="q-text">
+            SOLUCIONES ESBO S.A.S. tiene sede en <span class="q-highlight q-highlight-red">Bogotá</span>. ¿Cuál es su <strong>experiencia demostrable en lavado y pintura de fachadas en zona costera</strong> (Cartagena: salinidad, humedad, radiación UV)? ¿Se verificó su capacidad técnica, financiera y su registro en Cámara de Comercio con objeto social afín?
+          </div>
+        </div>
+        <div class="q-item q-alert">
+          <div class="q-number">4</div>
+          <div class="q-text">
+            ¿Cuántas empresas participaron en el proceso de selección? ¿Se recibieron <strong>propuestas de empresas locales de Cartagena</strong> con experiencia comprobada en fachadas de edificios residenciales en zona costera? ¿Por qué se escogió una empresa de otra ciudad?
+          </div>
+        </div>
+        <div class="q-item q-alert">
+          <div class="q-number">5</div>
+          <div class="q-text">
+            ¿Cuáles fueron los <strong>criterios de evaluación y ponderación</strong> que usó el Consejo de Administración para seleccionar a SOLUCIONES ESBO S.A.S. sobre las demás propuestas? ¿Existe un acta con la matriz de evaluación comparativa?
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRUPO: COPROPIETARIO -->
+    <div class="q-group">
+      <div class="q-group-header">
+        <div class="q-group-icon qg-owner">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div>
+          <div class="q-group-label">Perspectiva del Copropietario</div>
+          <div class="q-group-title">Transparencia y Rendición de Cuentas</div>
+        </div>
+      </div>
+      <div class="q-list">
+        <div class="q-item q-owner">
+          <div class="q-number">6</div>
+          <div class="q-text">
+            En 2025 se gastaron <span class="q-highlight q-highlight-red">más de $356 millones</span> en fachadas de algo más de <span class="q-highlight q-highlight-blue">11.000 M² de las torres 8, 9, 10, 11, 13 y 15</span>. Ahora se proponen <span class="q-highlight q-highlight-amber">~15.000 M² en 8 torres por $807 millones</span>. La regla de tres no cuadra: si 11.000 M² costaron $356M, los 15.000 M² deberían costar aproximadamente $485M, no $807M. <strong>¿Qué explica esa diferencia de más de $320 millones?</strong>
+            <div class="q-data-callout">
+              <strong>Cálculo de referencia:</strong> $356.611.731 ÷ 11.000 M² = <strong>$32.419/M²</strong> en 2025 → 15.000 M² × $32.419 = <strong>~$486M</strong> esperado vs <strong>$807M</strong> proyectado = <strong>diferencia de $321M (+66%)</strong>
+            </div>
+          </div>
+        </div>
+        <div class="q-item q-owner">
+          <div class="q-number">7</div>
+          <div class="q-text">
+            ¿De dónde sale el valor de <span class="q-highlight q-highlight-red">$100.886.228 por torre</span> para 2026? ¿Existe un <strong>análisis de precios unitarios (APU)</strong> que soporte técnicamente lo que se va a ejecutar y a qué costo?
+          </div>
+        </div>
+        <div class="q-item q-owner">
+          <div class="q-number">8</div>
+          <div class="q-text">
+            Si el presupuesto aprobado en 2025 incluía <span class="q-highlight q-highlight-blue">$145.315.305 para cuadrilla de alpinistas</span> y ese rubro se ejecutó en $0, ¿a dónde fueron esos recursos? ¿Se redireccionaron a materiales sin autorización de la asamblea?
+          </div>
+        </div>
+        <div class="q-item q-owner">
+          <div class="q-number">9</div>
+          <div class="q-text">
+            ¿Cuándo exactamente se van a intervenir las 8 torres de 2026? <strong>No se ha presentado un cronograma de ejecución</strong> con fechas de inicio y fin por torre.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRUPO: CFO -->
+    <div class="q-group">
+      <div class="q-group-header">
+        <div class="q-group-icon qg-cfo">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div>
+          <div class="q-group-label">Perspectiva Financiera (CFO)</div>
+          <div class="q-group-title">Flujo de Caja, Recaudo y Viabilidad</div>
+        </div>
+      </div>
+      <div class="q-list">
+        <div class="q-item q-cfo">
+          <div class="q-number">10</div>
+          <div class="q-text">
+            ¿Cuál fue el <strong>flujo de caja real de 2025</strong> para este proyecto? Necesitamos ver mes a mes: el recaudo efectivo de los copropietarios vs. los desembolsos realizados por la administración. ¿Se usaron recursos de otras partidas para cubrir el déficit?
+          </div>
+        </div>
+        <div class="q-item q-cfo">
+          <div class="q-number">11</div>
+          <div class="q-text">
+            Si el total de los dineros de la cuota extraordinaria 2026 se termina de recaudar en <span class="q-highlight q-highlight-amber">diciembre de 2026</span>, y la obra requiere contratación y compras previas, <strong>¿la ejecución real sería para 2027?</strong> ¿Se está presupuestando una obra sin los recursos completos?
+          </div>
+        </div>
+        <div class="q-item q-cfo">
+          <div class="q-number">12</div>
+          <div class="q-text">
+            ¿Cuál es el <strong>índice de morosidad actual</strong> de la copropiedad? ¿Qué porcentaje del recaudo proyectado es realmente factible? Un recaudo del 80% cambiaría completamente la viabilidad del proyecto de $807M.
+          </div>
+        </div>
+        <div class="q-item q-cfo">
+          <div class="q-number">13</div>
+          <div class="q-text">
+            El costo por torre pasó de <span class="q-highlight q-highlight-red">$40,5M → $59,4M → $100,9M</span> en apenas dos vigencias. Eso es una <strong>escalada del 149% en el valor unitario</strong>. ¿Existe una justificación técnica-financiera documentada para esta trayectoria o se está indexando sin control?
+          </div>
+        </div>
+        <div class="q-item q-cfo">
+          <div class="q-number">14</div>
+          <div class="q-text">
+            ¿Se realizaron <strong>mínimo tres cotizaciones comparativas</strong> para la intervención de 2026, tal como lo exige la Ley 675 de 2001 para ejecuciones que superen cierto monto? ¿Dónde está el cuadro comparativo de ofertas?
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRUPO: INGENIERO CIVIL -->
+    <div class="q-group">
+      <div class="q-group-header">
+        <div class="q-group-icon qg-eng">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01"/><path d="M17 12h.01"/><path d="M7 12h.01"/></svg>
+        </div>
+        <div>
+          <div class="q-group-label">Perspectiva Técnica (Ingeniero Civil)</div>
+          <div class="q-group-title">Soporte Técnico y Especificaciones de Obra</div>
+        </div>
+      </div>
+      <div class="q-list">
+        <div class="q-item q-eng">
+          <div class="q-number">15</div>
+          <div class="q-text">
+            ¿Se realizó un <strong>diagnóstico técnico previo</strong> (informe de patología de fachadas) para cada una de las 8 torres a intervenir en 2026? Sin diagnóstico, no se puede justificar un presupuesto de $807M.
+          </div>
+        </div>
+        <div class="q-item q-eng">
+          <div class="q-number">16</div>
+          <div class="q-text">
+            ¿Dónde está el <strong>Análisis de Precios Unitarios (APU)</strong> desglosado por actividad? Necesitamos ver el costo unitario por M² de: lavado, resane de fisuras, reposición de estuco, pintura Koraza, siliconado de ventanería, limpieza de vidrios y mantenimiento de pérgolas.
+          </div>
+        </div>
+        <div class="q-item q-eng">
+          <div class="q-number">17</div>
+          <div class="q-text">
+            El costo por M² pasó de <span class="q-highlight q-highlight-red">~$32.419/M² (2025) a ~$53.806/M² (2026)</span>, un incremento del <strong>66%</strong>. ¿Se cambió la especificación técnica de los materiales? ¿Se incluyeron actividades nuevas no contempladas originalmente?
+            <div class="q-data-callout">
+              <strong>2025:</strong> $356.611.731 ÷ 11.000 M² = $32.419/M² &nbsp;|&nbsp; <strong>2026:</strong> $807.089.820 ÷ 15.000 M² = $53.806/M² &nbsp;|&nbsp; <strong>Δ = +66%</strong>
+            </div>
+          </div>
+        </div>
+        <div class="q-item q-eng">
+          <div class="q-number">18</div>
+          <div class="q-text">
+            ¿Cuál es el <strong>plan de interventoría o supervisión técnica</strong> para la ejecución de 2026? ¿Quién certifica cantidades de obra, calidad de materiales y cumplimiento de especificaciones? ¿Está ese costo incluido en los $807M?
+          </div>
+        </div>
+        <div class="q-item q-eng">
+          <div class="q-number">19</div>
+          <div class="q-text">
+            ¿Se contempla una <strong>póliza de garantía y estabilidad de obra</strong> por parte del ejecutor? ¿De cuánto tiempo? Un proyecto de pintura exterior con exposición a salinidad y UV sin garantía mínima de 3 años no protege la inversión de los copropietarios.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. CRONOGRAMA -->
+  <div class="section-heading">
+    <div class="section-num">5</div>
     <h2>Cronograma de Intervención — Plan Aprobado a 3 Años</h2>
   </div>
 
