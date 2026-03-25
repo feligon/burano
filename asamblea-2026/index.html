@@ -3,608 +3,1283 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Presupuesto 2026 - Conjunto Residencial Burano</title>
+<title>Presupuesto 2026 — Conjunto Residencial BURANO</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700&display=swap');
-
-  :root {
-    --navy: #1B2A4A;
-    --navy-light: #2D4373;
-    --gold: #C9A84C;
-    --gold-light: #E8D48B;
-    --teal: #2A9D8F;
-    --coral: #E76F51;
-    --sky: #468FAF;
-    --lavender: #7B68AE;
-    --sage: #6B8F71;
-    --sand: #D4A574;
-    --rose: #C97B84;
-    --slate: #708090;
-    --bg: #F8F6F1;
-    --text: #2C2C2C;
-    --text-light: #5A5A5A;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: 'Inter', sans-serif;
+:root {
+    --rose: #9B2335;
+    --rose-light: #C14A5C;
+    --rose-pale: #E8A0AD;
+    --blush: #F4C2CB;
+    --blush-light: #FDE8EC;
+    --coral: #D4726A;
+    --peach: #F2B08E;
+    --mauve: #7B5078;
+    --mauve-light: #C9A3C5;
+    --teal: #1A8A7A;
+    --teal-light: #A8DDD5;
+    --indigo: #3D4F8F;
+    --indigo-light: #A8B4D8;
+    --sage: #3D8B5E;
+    --sage-light: #A8D4B8;
+    --amber: #B8860B;
+    --amber-light: #F5DEB3;
+    --slate: #5A6275;
+    --slate-light: #C5CAD5;
+    --bg: #FDF5F7;
+    --card-bg: #FFFFFF;
+    --border: #F0D4DA;
+    --text-primary: #2D1F25;
+    --text-secondary: #5E4A54;
+    --text-muted: #A8929A;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
     background: var(--bg);
-    color: var(--text);
-    line-height: 1.5;
-  }
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 20px; }
 
-  .page {
-    width: 1100px;
-    margin: 0 auto;
-    padding: 40px 48px;
-    background: white;
-    min-height: 100vh;
-  }
-
-  /* ===== HEADER ===== */
-  .header {
-    text-align: center;
-    padding-bottom: 28px;
-    border-bottom: 3px solid var(--navy);
+/* HEADER */
+.header {
+    background: linear-gradient(135deg, var(--rose) 0%, var(--rose-light) 60%, var(--coral) 100%);
+    color: white;
+    padding: 44px 40px;
+    border-radius: 16px;
     margin-bottom: 28px;
+    text-align: center;
     position: relative;
-  }
-  .header::after {
+    overflow: hidden;
+}
+.header::before {
     content: '';
     position: absolute;
-    bottom: -3px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: 3px;
-    background: var(--gold);
-  }
-  .header-badge {
+    top: -60%;
+    right: -15%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+}
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: -10%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 50%;
+}
+.header-badge {
     display: inline-block;
-    background: var(--navy);
-    color: white;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    padding: 6px 20px;
+    background: rgba(255,255,255,0.18);
+    padding: 6px 18px;
     border-radius: 20px;
-    margin-bottom: 14px;
-  }
-  .header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    color: var(--navy);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+}
+.header h1 {
+    font-size: 30px;
+    font-weight: 800;
     margin-bottom: 6px;
-    line-height: 1.2;
-  }
-  .header h1 em {
-    font-style: normal;
-    color: var(--gold);
-  }
-  .header .subtitle {
-    font-size: 14px;
-    color: var(--text-light);
-    font-weight: 400;
-  }
+    letter-spacing: -0.5px;
+    position: relative;
+    z-index: 1;
+}
+.header p { font-size: 15px; opacity: 0.85; font-weight: 300; position: relative; z-index: 1; }
+.header .subtitle-strong { font-weight: 600; opacity: 1; font-size: 16px; margin-top: 6px; }
 
-  /* ===== CONCEPT BANNER ===== */
-  .concept-banner {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-    color: white;
+/* SECTIONS */
+.section {
+    background: var(--card-bg);
     border-radius: 14px;
-    padding: 20px 28px;
+    padding: 32px;
     margin-bottom: 24px;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.section-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: white;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+.section-header {
     display: flex;
     align-items: center;
-    gap: 20px;
-  }
-  .concept-icon {
-    font-size: 42px;
-    flex-shrink: 0;
-  }
-  .concept-text h2 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 4px;
-    color: var(--gold-light);
-  }
-  .concept-text p {
-    font-size: 13px;
-    line-height: 1.5;
-    opacity: 0.92;
-  }
-
-  /* ===== MAIN GRID ===== */
-  .main-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
     margin-bottom: 24px;
-  }
+}
+.section-title {
+    font-size: 20px;
+    font-weight: 700;
+}
+.section-subtitle {
+    font-size: 13px;
+    font-weight: 400;
+    margin-left: 44px;
+    margin-top: -16px;
+    margin-bottom: 20px;
+}
 
-  /* ===== SECTION TITLES ===== */
-  .section-title {
+/* === SECTION-SPECIFIC COLORS === */
+.s-rose .section-number { background: var(--rose); }
+.s-rose .section-title { color: var(--rose); }
+.s-rose .section-subtitle { color: var(--rose-light); }
+
+.s-mauve .section-number { background: var(--mauve); }
+.s-mauve .section-title { color: var(--mauve); }
+.s-mauve .section-subtitle { color: #9E7A9B; }
+
+.s-teal .section-number { background: var(--teal); }
+.s-teal .section-title { color: var(--teal); }
+.s-teal .section-subtitle { color: #3FA898; }
+
+.s-indigo .section-number { background: var(--indigo); }
+.s-indigo .section-title { color: var(--indigo); }
+.s-indigo .section-subtitle { color: #6B7BB5; }
+
+.s-coral .section-number { background: var(--coral); }
+.s-coral .section-title { color: var(--coral); }
+.s-coral .section-subtitle { color: #E09080; }
+
+.s-sage .section-number { background: var(--sage); }
+.s-sage .section-title { color: var(--sage); }
+.s-sage .section-subtitle { color: #6AAF80; }
+
+.s-amber .section-number { background: var(--amber); }
+.s-amber .section-title { color: #7A5C1E; }
+.s-amber .section-subtitle { color: var(--amber); }
+
+.s-slate .section-number { background: var(--slate); }
+.s-slate .section-title { color: var(--slate); }
+.s-slate .section-subtitle { color: #8890A0; }
+
+/* NARRATIVE BOX */
+.narrative-box {
+    background: var(--blush-light);
+    border-left: 4px solid var(--rose);
+    border-radius: 0 10px 10px 0;
+    padding: 24px 28px;
+}
+.narrative-box p { font-size: 15px; line-height: 1.8; color: var(--text-secondary); }
+
+/* COMPARATIVO CARDS */
+.comparativo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+.comp-card {
+    border-radius: 12px;
+    padding: 20px;
+    border: 2px solid;
+    text-align: center;
+}
+.comp-card.y2023 { background: #F5EFF5; border-color: var(--mauve-light); }
+.comp-card.y2024 { background: #FFF5EE; border-color: var(--peach); }
+.comp-card.y2025 { background: #E8F5F2; border-color: var(--teal-light); }
+.comp-card.y2026 { background: #FBE4E8; border-color: var(--rose-pale); }
+.comp-year {
     font-size: 13px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1.8px;
-    color: var(--navy);
-    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+.comp-card.y2023 .comp-year { color: var(--mauve); }
+.comp-card.y2024 .comp-year { color: var(--coral); }
+.comp-card.y2025 .comp-year { color: var(--teal); }
+.comp-card.y2026 .comp-year { color: var(--rose); }
+.comp-total { font-size: 22px; font-weight: 800; margin-bottom: 4px; }
+.comp-card.y2023 .comp-total { color: var(--mauve); }
+.comp-card.y2024 .comp-total { color: var(--coral); }
+.comp-card.y2025 .comp-total { color: var(--teal); }
+.comp-card.y2026 .comp-total { color: var(--rose); }
+.comp-detail { font-size: 12px; color: var(--text-secondary); }
+.comp-change {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 8px;
+    color: white;
+}
+.change-mauve { background: var(--mauve); }
+.change-coral { background: var(--coral); }
+.change-teal { background: var(--teal); }
+.change-rose { background: var(--rose); }
+
+/* CALLOUT */
+.callout {
+    border-left: 4px solid var(--rose);
+    background: var(--blush-light);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+.callout strong { font-weight: 700; }
+.callout.c-teal { border-left-color: var(--teal); background: #E8F5F2; }
+.callout.c-teal strong { color: var(--teal); }
+.callout.c-sage { border-left-color: var(--sage); background: #EAF5EE; }
+.callout.c-sage strong { color: var(--sage); }
+.callout.c-rose strong { color: var(--rose); }
+.callout.c-amber { border-left-color: var(--amber); background: #FFFBF0; }
+.callout.c-amber strong { color: #7A5C1E; }
+.callout.c-coral { border-left-color: var(--coral); background: #FFF0ED; }
+.callout.c-coral strong { color: var(--coral); }
+.callout.c-indigo { border-left-color: var(--indigo); background: #EEF0F8; }
+.callout.c-indigo strong { color: var(--indigo); }
+
+/* ====== EXECUTION BARS (IMPROVED) ====== */
+.exec-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+.exec-stat {
+    background: #E8F5F2;
+    border-radius: 10px;
+    padding: 18px;
+    text-align: center;
+    border: 2px solid var(--teal-light);
+}
+.exec-stat .big { font-size: 28px; font-weight: 900; color: var(--teal); line-height: 1.2; }
+.exec-stat .label { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
+.exec-stat.alert { background: #FFF0ED; border-color: var(--peach); }
+.exec-stat.alert .big { color: var(--coral); }
+
+.exec-row {
+    display: grid;
+    grid-template-columns: 160px 1fr 80px;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.exec-row:last-of-type { border-bottom: none; }
+.exec-label { font-size: 13px; font-weight: 500; color: var(--text-primary); }
+.exec-bargroup { position: relative; height: 32px; }
+.exec-bar {
+    position: absolute;
+    height: 14px;
+    border-radius: 4px;
+    transition: width 0.3s;
+}
+.exec-bar.planned {
+    top: 0;
+    background: var(--teal-light);
+    border: 1px solid var(--teal);
+    opacity: 0.5;
+}
+.exec-bar.actual {
+    top: 17px;
+    background: var(--teal);
+}
+.exec-bar.actual.over { background: var(--coral); }
+.exec-pct {
+    font-size: 13px;
+    font-weight: 700;
+    text-align: right;
+}
+.exec-pct.ok { color: var(--teal); }
+.exec-pct.over { color: var(--coral); }
+.exec-legend {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 16px;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+.exec-legend span::before {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 8px;
+    border-radius: 2px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+.exec-legend .l-plan::before { background: var(--teal-light); border: 1px solid var(--teal); opacity: 0.5; }
+.exec-legend .l-exec::before { background: var(--teal); }
+.exec-legend .l-over::before { background: var(--coral); }
+
+/* DONUT */
+.donut-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin: 24px 0;
+    flex-wrap: wrap;
+}
+.donut-svg { flex: 0 0 260px; height: 260px; }
+.donut-legend { flex: 1; min-width: 280px; }
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+.legend-color {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+.legend-label { flex: 1; color: var(--text-secondary); }
+.legend-value { font-weight: 700; margin-left: 10px; }
+
+/* TABLE */
+.table-responsive { overflow-x: auto; margin: 20px 0; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+table thead { background: var(--indigo); color: white; }
+table th { padding: 12px 10px; text-align: right; font-weight: 600; font-size: 12px; }
+table th:first-child { text-align: left; }
+table td { padding: 10px; border-bottom: 1px solid #e8e8e8; text-align: right; }
+table td:first-child { text-align: left; font-weight: 500; color: var(--text-primary); }
+table tbody tr:hover { background: #EEF0F8; }
+table tbody tr.highlight-row { background: rgba(61,79,143,0.06); font-weight: 500; }
+.v-green { color: var(--sage); font-weight: 700; }
+.v-amber { color: var(--amber); font-weight: 700; }
+.v-red { color: #C0392B; font-weight: 700; }
+/* Execution diff column highlight */
+.exec-diff-cell { font-weight: 600; }
+.exec-diff-over { color: var(--coral); background: #FFF0ED; padding: 2px 6px; border-radius: 4px; }
+.exec-diff-under { color: var(--teal); }
+/* Variation pill */
+.var-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 12px;
+}
+.pill-green { background: #EAF5EE; color: var(--sage); }
+.pill-amber { background: #FFF8E1; color: var(--amber); }
+.pill-red { background: #FDEDEC; color: #C0392B; }
+
+/* TOP VARIACIONES */
+.var-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+.var-card {
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-top: 4px solid;
+}
+.var-card.c-coral { border-top-color: var(--coral); background: #FFF8F6; }
+.var-card.c-amber { border-top-color: var(--amber); background: #FFFBF0; }
+.var-card.c-indigo { border-top-color: var(--indigo); background: #F0F2F9; }
+.var-card .var-icon { font-size: 32px; margin-bottom: 10px; }
+.var-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.var-card.c-coral h3 { color: var(--coral); }
+.var-card.c-amber h3 { color: #7A5C1E; }
+.var-card.c-indigo h3 { color: var(--indigo); }
+.var-card .var-change { font-size: 14px; font-weight: 700; margin-bottom: 10px; }
+.var-card.c-coral .var-change { color: var(--coral); }
+.var-card.c-amber .var-change { color: var(--amber); }
+.var-card.c-indigo .var-change { color: var(--indigo); }
+.var-card p { font-size: 13px; line-height: 1.6; color: var(--text-secondary); }
+
+/* STACKED BAR */
+.stacked-wrap {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid var(--border);
+}
+.bar-segment {
+    display: inline-block;
+    height: 52px;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 52px;
+    border-right: 2px solid white;
+}
+.bar-segment:last-child { border-right: none; }
+.seg-1 { background: var(--rose); }
+.seg-2 { background: var(--coral); }
+.seg-3 { background: var(--peach); color: var(--text-primary); }
+.seg-4 { background: var(--mauve); }
+.seg-5 { background: var(--amber); }
+.seg-6 { background: var(--slate); }
+.seg-7 { background: var(--sage); }
+.seg-8 { background: var(--indigo); }
+.stacked-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+    font-size: 13px;
+}
+.info-item {
+    padding: 10px 12px;
+    background: white;
+    border-radius: 6px;
+    border-left: 3px solid;
+}
+.info-label { font-size: 11px; color: var(--slate); margin-bottom: 2px; }
+.info-value { font-weight: 700; font-size: 14px; }
+
+/* REVISORIA FISCAL */
+.section-rf {
+    background: #FFFBF0;
+    border: 2px solid var(--amber-light);
+    border-radius: 14px;
+    padding: 32px;
+    margin-bottom: 24px;
+}
+.rf-timeline {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin: 18px 0;
+}
+.rf-report {
+    background: white;
+    border-radius: 10px;
+    padding: 18px;
+    border: 1px solid var(--amber-light);
+}
+.rf-report-date {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    color: var(--amber);
+}
+.rf-report-title { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+.rf-report-detail { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+.rf-report-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    margin-top: 8px;
+}
+.tag-ok { background: #E8F5E9; color: #2E7D32; }
+.tag-warn { background: #FFF3E0; color: #E65100; }
+.tag-info { background: #E3E8F0; color: var(--slate); }
+.rf-findings-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin: 18px 0;
+}
+.rf-finding {
+    background: white;
+    border-radius: 8px;
+    padding: 16px;
+    border: 1px solid var(--amber-light);
+    border-left: 4px solid;
+}
+.rf-finding .finding-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.rf-finding .finding-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+.rf-verdict {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    border: 2px solid var(--sage);
+    margin-top: 18px;
+    text-align: center;
+}
+.rf-verdict .verdict-title { font-size: 15px; font-weight: 800; color: var(--sage); margin-bottom: 6px; }
+.rf-verdict .verdict-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; max-width: 700px; margin: 0 auto; }
+
+/* ALERT BOX */
+.alert-box {
+    border: 2px solid #C0392B;
+    background: #FDEDEC;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 18px;
+}
+.alert-box .alert-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #C0392B;
+    margin-bottom: 8px;
     display: flex;
     align-items: center;
     gap: 8px;
-  }
-  .section-title::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: #ddd;
-  }
-  .section-title .icon { font-size: 16px; }
+}
+.alert-box .alert-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+.alert-box .alert-desc strong { color: #C0392B; }
 
-  /* ===== DONUT CHART ===== */
-  .donut-section { }
-  .donut-container {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-  .donut-svg-wrap {
-    flex-shrink: 0;
-    position: relative;
-    width: 210px;
-    height: 210px;
-  }
-  .donut-center {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
-  .donut-center .amount {
-    font-size: 15px;
-    font-weight: 800;
-    color: var(--navy);
-    display: block;
-  }
-  .donut-center .label {
-    font-size: 9px;
-    color: var(--text-light);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .legend {
-    list-style: none;
-    font-size: 11.5px;
-  }
-  .legend li {
-    display: flex;
-    align-items: flex-start;
-    gap: 7px;
-    margin-bottom: 6px;
-    line-height: 1.35;
-  }
-  .legend .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 3px;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-  .legend .cat-name {
-    font-weight: 600;
-    color: var(--text);
-  }
-  .legend .cat-pct {
-    font-weight: 700;
-    color: var(--navy);
-  }
-  .legend .cat-val {
-    color: var(--text-light);
-    font-size: 10px;
-  }
-
-  /* ===== BAR CHART ===== */
-  .bar-section { }
-  .bar-chart {
-    margin-top: 8px;
-  }
-  .bar-year {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    gap: 10px;
-  }
-  .bar-year .year-label {
-    width: 38px;
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--navy);
-    text-align: right;
-  }
-  .bar-track {
-    flex: 1;
-    height: 28px;
-    background: #EEE;
-    border-radius: 6px;
-    overflow: hidden;
-    position: relative;
-  }
-  .bar-fill {
-    height: 100%;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 10px;
-    font-size: 11px;
-    font-weight: 700;
-    color: white;
-    transition: width 0.5s;
-  }
-  .bar-growth {
-    font-size: 11px;
-    font-weight: 700;
-    width: 55px;
-    text-align: left;
-  }
-  .growth-positive { color: var(--coral); }
-
-  /* ===== TOP 3 VARIATIONS ===== */
-  .variations-section {
-    grid-column: 1 / -1;
-  }
-  .variations-grid {
+/* CFO ANALYSIS */
+.cfo-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 14px;
-  }
-  .var-card {
-    border-radius: 12px;
-    padding: 16px 18px;
-    position: relative;
-    overflow: hidden;
-  }
-  .var-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 4px;
-    height: 100%;
-  }
-  .var-card:nth-child(1) { background: #FFF5F3; }
-  .var-card:nth-child(1)::before { background: var(--coral); }
-  .var-card:nth-child(2) { background: #F0F7FF; }
-  .var-card:nth-child(2)::before { background: var(--sky); }
-  .var-card:nth-child(3) { background: #F2FBF5; }
-  .var-card:nth-child(3)::before { background: var(--teal); }
-
-  .var-rank {
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 6px;
-    opacity: 0.7;
-  }
-  .var-name {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 4px;
-  }
-  .var-numbers {
-    font-size: 11px;
-    color: var(--text-light);
-    margin-bottom: 6px;
-  }
-  .var-numbers strong {
-    color: var(--text);
-  }
-  .var-change {
-    display: inline-block;
-    font-size: 13px;
-    font-weight: 800;
-    padding: 2px 10px;
-    border-radius: 12px;
-    margin-bottom: 8px;
-  }
-  .var-card:nth-child(1) .var-change { background: #FCDDD6; color: var(--coral); }
-  .var-card:nth-child(2) .var-change { background: #D6E8F7; color: var(--sky); }
-  .var-card:nth-child(3) .var-change { background: #D4F0DC; color: var(--sage); }
-  .var-reason {
-    font-size: 11px;
-    color: var(--text-light);
-    line-height: 1.45;
-    border-top: 1px solid rgba(0,0,0,0.06);
-    padding-top: 6px;
-  }
-
-  /* ===== PESO BREAKDOWN ===== */
-  .peso-section {
-    grid-column: 1 / -1;
-  }
-  .peso-bar-container {
-    margin-top: 8px;
-    margin-bottom: 10px;
-  }
-  .peso-stacked {
-    display: flex;
-    height: 40px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  }
-  .peso-seg {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    font-weight: 700;
-    color: white;
-    transition: flex 0.3s;
-    position: relative;
-  }
-  .peso-seg span { z-index: 1; }
-  .peso-labels {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 18px;
-    margin-top: 8px;
-  }
-  .peso-label-item {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 10.5px;
-  }
-  .peso-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 2px;
-    flex-shrink: 0;
-  }
-
-  /* ===== INSIGHT BOX ===== */
-  .insight-section {
-    grid-column: 1 / -1;
-  }
-  .insight-box {
-    background: linear-gradient(135deg, #FFFBEB 0%, #FFF8E1 100%);
-    border: 2px solid var(--gold);
-    border-radius: 14px;
-    padding: 18px 24px;
-    display: flex;
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-    align-items: flex-start;
-  }
-  .insight-icon {
-    font-size: 32px;
-    flex-shrink: 0;
-  }
-  .insight-content h3 {
-    font-size: 14px;
-    font-weight: 800;
-    color: var(--navy);
-    margin-bottom: 6px;
-  }
-  .insight-content p {
-    font-size: 12.5px;
-    color: var(--text);
-    line-height: 1.55;
-  }
-  .insight-content .highlight {
-    font-weight: 700;
-    color: var(--coral);
-  }
+    margin: 18px 0;
+}
+.cfo-card {
+    background: #F3F4F8;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid var(--slate-light);
+}
+.cfo-card h3 { font-size: 14px; font-weight: 700; color: var(--slate); margin-bottom: 8px; }
+.cfo-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+.cfo-card .cfo-highlight {
+    font-size: 22px;
+    font-weight: 900;
+    margin: 6px 0;
+}
+.cfo-card .cfo-sub { font-size: 12px; color: var(--text-muted); }
 
-  /* ===== FOOTER ===== */
-  .footer {
+/* NOTA */
+.nota-box {
+    background: var(--bg);
+    border-left: 4px solid var(--slate);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 14px;
+}
+.nota-box h3 { font-size: 14px; margin-bottom: 4px; font-weight: 700; }
+.nota-box p { font-size: 14px; line-height: 1.7; color: var(--text-secondary); }
+.nota-box p strong { color: var(--text-primary); font-weight: 600; }
+
+/* FOOTER */
+.footer {
     text-align: center;
-    padding-top: 18px;
-    border-top: 2px solid var(--navy);
-    margin-top: 8px;
-    font-size: 11px;
-    color: var(--text-light);
-  }
-  .footer strong { color: var(--navy); }
+    padding: 24px;
+    color: var(--slate);
+    font-size: 12px;
+    line-height: 1.8;
+}
 
-  /* ===== PRINT ===== */
-  @media print {
+/* PRINT */
+@media print {
     body { background: white; }
-    .page { width: 100%; padding: 24px 32px; box-shadow: none; }
-  }
+    .container { max-width: 100%; padding: 10px; }
+    .section, .section-rf { break-inside: avoid; box-shadow: none; }
+    .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+@media (max-width: 768px) {
+    .comparativo-grid, .var-grid, .rf-timeline, .rf-findings-grid, .cfo-grid { grid-template-columns: 1fr; }
+    .stacked-info { grid-template-columns: repeat(2, 1fr); }
+    .donut-container { flex-direction: column; }
+    .donut-svg { flex: 0 0 220px; height: 220px; }
+    .exec-summary { grid-template-columns: 1fr; }
+    .exec-row { grid-template-columns: 120px 1fr 60px; }
+}
 </style>
 </head>
 <body>
-<div class="page">
+<div class="container">
 
-  <!-- HEADER -->
-  <div class="header">
-    <div class="header-badge">Asamblea General 2026</div>
-    <h1>Invirtiendo en el Valor <em>de Nuestro Hogar</em></h1>
-    <div class="subtitle">Conjunto Residencial Burano &mdash; Presupuesto Anual 2026</div>
-  </div>
+<!-- HEADER -->
+<div class="header">
+    <div class="header-badge">Informe para Asamblea General 2026</div>
+    <h1>Presupuesto 2026 — Conjunto Residencial BURANO</h1>
+    <p>Cartagena de Indias &bull; Serena del Mar</p>
+    <p class="subtitle-strong">Análisis Integral: Ejecución 2025, Propuesta 2026 y Revisoría Fiscal</p>
+</div>
 
-  <!-- CONCEPT BANNER -->
-  <div class="concept-banner">
-    <div class="concept-icon">🏗️</div>
-    <div class="concept-text">
-      <h2>2026: El año de la recuperacion de nuestras fachadas</h2>
-      <p>Este presupuesto prioriza la <strong>restauracion integral de fachadas</strong>, un proyecto que protege la estructura del edificio, evita daños mayores y <strong>preserva el valor de cada apartamento</strong>. Cada peso invertido hoy nos ahorra costos mucho mas altos manana.</p>
+<!-- 1. CONCEPTO -->
+<div class="section s-rose">
+    <div class="section-header">
+        <div class="section-number">1</div>
+        <div class="section-title">Conoce tu presupuesto, decide con información</div>
     </div>
-  </div>
-
-  <div class="main-grid">
-
-    <!-- LEFT: DONUT CHART -->
-    <div class="donut-section">
-      <div class="section-title"><span class="icon">📊</span> A donde va cada peso de tu cuota</div>
-      <div class="donut-container">
-        <div class="donut-svg-wrap">
-          <svg viewBox="0 0 200 200" width="210" height="210">
-            <!-- Donut segments - calculated from percentages -->
-            <!-- Total: 3,998,683,832 -->
-            <!-- Fachadas 20.2%, Seguridad 18.2%, Serena 16.9%, Aseo 16.4%, Mant 11.1%, Admin 9.8%, Serv.Pub 6.5%, Reserva 1.0% -->
-            <circle cx="100" cy="100" r="70" fill="none" stroke="#F0F0F0" stroke-width="32"/>
-            <!-- Fachadas 20.2% = 72.7deg -->
-            <circle cx="100" cy="100" r="70" fill="none" stroke="#E76F51" stroke-width="32"
-              stroke-dasharray="88.6 351.9" stroke-dashoffset="110" transform="rotate(-90 100 100)"/>
-            <!-- Seguridad 18.2% = 65.5deg -->
-            <circle cx="100" cy="100" r="70" fill="none" stroke="#468FAF" stroke-width="32"
-              stroke-dasharray="80.1 360.4" stroke-dashoffset="21.4" transform="rotate(-90 100 100)"/>
-            <!-- Serena del Mar 16.9% = 60.8deg -->
-            <circle cx="100" cy="100" r="70" fill="none" stroke="#7B68AE" stroke-width="32"
-              stroke-dasharray="74.3 366.2" stroke-dashoffset="-58.7" transform="rotate(-90 100 100)"/>
-            <!-- Aseo/Piscina 16.4% = 59deg -->
-            <circle cx="100" cy="100" r="70" fill="none" stroke="#2A9D8F" stroke-width="32"
-              stroke-dasharray="72.1 368.4" stroke-dashoffset="-133" transform="rotate(-90 100 100)"/>
-            <!-- Mantenimiento 11.1% = 40deg -->
-            <circle cx="100" cy="100" r="70" fill="none" stroke="#C9A84C" stroke-width="32"
-              stroke-dasharray="48.9 391.6" stroke-dashoffset="-205.1" transform="rotate(-90 100 100)"/>
-            <!-- Admin 9.8% = 35.1deg -->
-            <circle cx="100" cy="100" r="70" fill="none" stroke="#708090" stroke-width="32"
-              stroke-dasharray="42.9 397.6" stroke-dashoffset="-254" transform="rotate(-90 100 100)"/>
-            <!-- Serv. Publicos 6.5% = 23.2deg -->
-            <circle cx="100" cy="100" r="70" fill="none" stroke="#D4A574" stroke-width="32"
-              stroke-dasharray="28.4 412.1" stroke-dashoffset="-296.9" transform="rotate(-90 100 100)"/>
-            <!-- Fondo Reserva 1.0% = 3.5deg -->
-            <circle cx="100" cy="100" r="70" fill="none" stroke="#6B8F71" stroke-width="32"
-              stroke-dasharray="4.4 436.1" stroke-dashoffset="-325.3" transform="rotate(-90 100 100)"/>
-          </svg>
-          <div class="donut-center">
-            <span class="amount">$4.000 M</span>
-            <span class="label">Presupuesto 2026</span>
-          </div>
-        </div>
-        <ul class="legend">
-          <li><span class="dot" style="background:#E76F51"></span><div><span class="cat-name">Proyecto Fachadas</span> <span class="cat-pct">20,2%</span><br><span class="cat-val">$807 M</span></div></li>
-          <li><span class="dot" style="background:#468FAF"></span><div><span class="cat-name">Seguridad y Vigilancia</span> <span class="cat-pct">18,2%</span><br><span class="cat-val">$727 M</span></div></li>
-          <li><span class="dot" style="background:#7B68AE"></span><div><span class="cat-name">Cuota Serena del Mar</span> <span class="cat-pct">16,9%</span><br><span class="cat-val">$676 M</span></div></li>
-          <li><span class="dot" style="background:#2A9D8F"></span><div><span class="cat-name">Aseo, Piscina y Zonas</span> <span class="cat-pct">16,4%</span><br><span class="cat-val">$655 M</span></div></li>
-          <li><span class="dot" style="background:#C9A84C"></span><div><span class="cat-name">Mant. Equipos</span> <span class="cat-pct">11,1%</span><br><span class="cat-val">$446 M</span></div></li>
-          <li><span class="dot" style="background:#708090"></span><div><span class="cat-name">Administracion</span> <span class="cat-pct">9,8%</span><br><span class="cat-val">$390 M</span></div></li>
-          <li><span class="dot" style="background:#D4A574"></span><div><span class="cat-name">Servicios Publicos</span> <span class="cat-pct">6,5%</span><br><span class="cat-val">$258 M</span></div></li>
-          <li><span class="dot" style="background:#6B8F71"></span><div><span class="cat-name">Fondo Reserva</span> <span class="cat-pct">1,0%</span><br><span class="cat-val">$40 M</span></div></li>
-        </ul>
-      </div>
+    <div class="narrative-box">
+        <p>Este informe presenta de forma transparente y neutral la ejecución del presupuesto 2025, la propuesta para 2026 y los hallazgos de la Revisoría Fiscal, para que cada propietario pueda tomar una decisión informada en la Asamblea General. Todas las cifras provienen de los documentos oficiales del conjunto.</p>
     </div>
+</div>
 
-    <!-- RIGHT: BAR CHART - HISTORICAL -->
-    <div class="bar-section">
-      <div class="section-title"><span class="icon">📈</span> Evolucion del presupuesto</div>
-      <div class="bar-chart">
-        <div class="bar-year">
-          <span class="year-label">2023</span>
-          <div class="bar-track">
-            <div class="bar-fill" style="width:56.4%; background: linear-gradient(90deg, #B0C4DE, #708090);">$2.255 M</div>
-          </div>
-          <span class="bar-growth" style="color:#708090">&mdash;</span>
+<!-- 2. EVOLUCION HISTORICA -->
+<div class="section s-mauve">
+    <div class="section-header">
+        <div class="section-number">2</div>
+        <div class="section-title">Evolución Histórica del Presupuesto</div>
+    </div>
+    <div class="section-subtitle">Tendencia 2023 - 2026</div>
+    <div class="comparativo-grid">
+        <div class="comp-card y2023">
+            <div class="comp-year">2023</div>
+            <div class="comp-total">$2.255 M</div>
+            <div class="comp-detail">Año base</div>
         </div>
-        <div class="bar-year">
-          <span class="year-label">2024</span>
-          <div class="bar-track">
-            <div class="bar-fill" style="width:63.6%; background: linear-gradient(90deg, #93B5CF, #5A8FAF);">$2.544 M</div>
-          </div>
-          <span class="bar-growth growth-positive">+12,8%</span>
+        <div class="comp-card y2024">
+            <div class="comp-year">2024</div>
+            <div class="comp-total">$2.544 M</div>
+            <div class="comp-detail">vs 2023</div>
+            <div class="comp-change change-coral">+12.8%</div>
         </div>
-        <div class="bar-year">
-          <span class="year-label">2025</span>
-          <div class="bar-track">
-            <div class="bar-fill" style="width:78.9%; background: linear-gradient(90deg, #7BAAC7, #468FAF);">$3.153 M</div>
-          </div>
-          <span class="bar-growth growth-positive">+23,9%</span>
+        <div class="comp-card y2025">
+            <div class="comp-year">2025</div>
+            <div class="comp-total">$3.153 M</div>
+            <div class="comp-detail">vs 2024</div>
+            <div class="comp-change change-teal">+23.9%</div>
         </div>
-        <div class="bar-year">
-          <span class="year-label">2026</span>
-          <div class="bar-track">
-            <div class="bar-fill" style="width:100%; background: linear-gradient(90deg, var(--navy-light), var(--navy));">$3.999 M</div>
-          </div>
-          <span class="bar-growth growth-positive">+26,8%</span>
+        <div class="comp-card y2026">
+            <div class="comp-year">2026</div>
+            <div class="comp-total">$3.999 M</div>
+            <div class="comp-detail">vs 2025</div>
+            <div class="comp-change change-rose">+26.8%</div>
         </div>
-      </div>
-      <div style="margin-top:14px; padding:12px 16px; background:#F8F6F1; border-radius:10px; font-size:11.5px; color:var(--text-light); line-height:1.5;">
-        <strong style="color:var(--navy);">&#9432; Por que sube el presupuesto?</strong><br>
-        El crecimiento del 26,8% en 2026 se explica principalmente por el <strong style="color:var(--coral)">proyecto de restauracion de fachadas ($807 M)</strong>, que representa una inversion puntual para proteger la estructura del conjunto. Sin este proyecto, el presupuesto ordinario crece apenas un 1,2% frente a 2025, por debajo de la inflacion.
-      </div>
+    </div>
+    <div class="callout c-sage" style="margin-top:20px">
+        <strong>Dato clave:</strong> Si se excluye el rubro de fachadas (destinación especifica), el presupuesto ordinario de 2026 crece solo un <strong>1.2%</strong> frente a 2025. El principal impulsor del incremento total es el Proyecto de Fachadas ($807 M).
+    </div>
+</div>
+
+<!-- 3. EJECUCION 2025 (IMPROVED) -->
+<div class="section s-teal">
+    <div class="section-header">
+        <div class="section-number">3</div>
+        <div class="section-title">Ejecución del Presupuesto 2025</div>
+    </div>
+    <div class="section-subtitle">Presupuestado vs Ejecutado — Visión general y detalle del 1.3% no ejecutado</div>
+
+    <!-- SUMMARY CARDS -->
+    <div class="exec-summary">
+        <div class="exec-stat">
+            <div class="big">98.7%</div>
+            <div class="label">Ejecución Global</div>
+        </div>
+        <div class="exec-stat alert">
+            <div class="big">$39.5 M</div>
+            <div class="label">Saldo No Ejecutado (1.3%)</div>
+        </div>
+        <div class="exec-stat alert">
+            <div class="big">Servicios</div>
+            <div class="label">Concentra $58 M en ahorro<br>(compensado por sobreejecución en Mantenimientos +$40 M)</div>
+        </div>
     </div>
 
-    <!-- TOP 3 VARIATIONS -->
-    <div class="variations-section">
-      <div class="section-title"><span class="icon">🔍</span> Los 3 rubros con mayor cambio (2023 vs. 2026)</div>
-      <div class="variations-grid">
-        <div class="var-card">
-          <div class="var-rank">1. Mayor incremento</div>
-          <div class="var-name">🧱 Restauracion de Fachadas</div>
-          <div class="var-numbers"><strong>$0</strong> (2023) &rarr; <strong>$807 M</strong> (2026)</div>
-          <div class="var-change">NUEVO</div>
-          <div class="var-reason"><strong>Proyecto con destinacion especifica.</strong> Las fachadas muestran deterioro que, de no atenderse ahora, generaria costos mucho mayores en reparaciones de emergencia y afectaria el valor de los apartamentos.</div>
-        </div>
-        <div class="var-card">
-          <div class="var-rank">2. Mayor incremento</div>
-          <div class="var-name">🛡️ Vigilancia y Seguridad</div>
-          <div class="var-numbers"><strong>$420 M</strong> &rarr; <strong>$705 M</strong></div>
-          <div class="var-change">+68%</div>
-          <div class="var-reason">Incremento acumulado por ajustes salariales del sector (salario minimo + prestaciones legales) y mejora en el esquema de seguridad 24/7 del conjunto.</div>
-        </div>
-        <div class="var-card">
-          <div class="var-rank">3. Mayor incremento</div>
-          <div class="var-name">🏊 Aseo, Piscina y Jardineros</div>
-          <div class="var-numbers"><strong>$336 M</strong> &rarr; <strong>$547 M</strong></div>
-          <div class="var-change">+63%</div>
-          <div class="var-reason">Aumento en costos de personal de servicios generales, ampliacion de cobertura de mantenimiento de zonas humedas y areas comunes.</div>
-        </div>
-      </div>
+    <div class="callout c-teal" style="margin-top:0;margin-bottom:20px">
+        <strong>El 1.3% no ejecutado ($39.5 M):</strong> La mayor parte del ahorro se concentro en <strong>Servicios</strong> ($58.1 M por debajo del presupuesto) y <strong>Adecuaciones</strong> ($11.5 M). Sin embargo, <strong>Mantenimientos excedio</strong> en $39.7 M (106.2%), impulsado por el proyecto de fachadas ($356.6 M ejecutados vs $242.8 M presupuestados, <strong>+46.9%</strong>). El neto es un ahorro de $39.5 M.
     </div>
 
-    <!-- STACKED BAR: CADA PESO -->
-    <div class="peso-section">
-      <div class="section-title"><span class="icon">💰</span> De cada $1.000 que pagas en administracion, asi se distribuyen</div>
-      <div class="peso-bar-container">
-        <div class="peso-stacked">
-          <div class="peso-seg" style="flex:20.2; background:#E76F51;"><span>$202</span></div>
-          <div class="peso-seg" style="flex:18.2; background:#468FAF;"><span>$182</span></div>
-          <div class="peso-seg" style="flex:16.9; background:#7B68AE;"><span>$169</span></div>
-          <div class="peso-seg" style="flex:16.4; background:#2A9D8F;"><span>$164</span></div>
-          <div class="peso-seg" style="flex:11.1; background:#C9A84C;"><span>$111</span></div>
-          <div class="peso-seg" style="flex:9.8; background:#708090;"><span>$98</span></div>
-          <div class="peso-seg" style="flex:6.5; background:#D4A574;"><span>$65</span></div>
-          <div class="peso-seg" style="flex:1.0; background:#6B8F71;"></div>
-        </div>
-        <div class="peso-labels">
-          <div class="peso-label-item"><span class="peso-dot" style="background:#E76F51"></span>Fachadas $202</div>
-          <div class="peso-label-item"><span class="peso-dot" style="background:#468FAF"></span>Seguridad $182</div>
-          <div class="peso-label-item"><span class="peso-dot" style="background:#7B68AE"></span>Serena del Mar $169</div>
-          <div class="peso-label-item"><span class="peso-dot" style="background:#2A9D8F"></span>Aseo y Zonas $164</div>
-          <div class="peso-label-item"><span class="peso-dot" style="background:#C9A84C"></span>Mant. Equipos $111</div>
-          <div class="peso-label-item"><span class="peso-dot" style="background:#708090"></span>Administracion $98</div>
-          <div class="peso-label-item"><span class="peso-dot" style="background:#D4A574"></span>Serv. Publicos $65</div>
-          <div class="peso-label-item"><span class="peso-dot" style="background:#6B8F71"></span>Reserva $10</div>
-        </div>
-      </div>
+    <!-- LEGEND -->
+    <div class="exec-legend">
+        <span class="l-plan">Presupuestado</span>
+        <span class="l-exec">Ejecutado (&le;100%)</span>
+        <span class="l-over">Ejecutado (&gt;100%)</span>
     </div>
 
-    <!-- EXPERT INSIGHT -->
-    <div class="insight-section">
-      <div class="insight-box">
-        <div class="insight-icon">💡</div>
-        <div class="insight-content">
-          <h3>El Dato Clave del Director Financiero</h3>
-          <p>Aprobar el presupuesto con el proyecto de fachadas <strong>nos protege de una cuota extraordinaria</strong> en 2027. Las reparaciones de emergencia por deterioro estructural pueden costar <span class="highlight">entre 2x y 3x mas</span> que la intervencion preventiva planificada. Ademas, un conjunto con fachadas en buen estado <strong>preserva y aumenta el valor comercial</strong> de cada apartamento. <em>Invertir hoy es proteger nuestro patrimonio manana.</em></p>
+    <!-- BAR CHART -->
+    <div class="exec-row">
+        <div class="exec-label">Honorarios</div>
+        <div class="exec-bargroup">
+            <div class="exec-bar planned" style="width:30%;"></div>
+            <div class="exec-bar actual" style="width:29.3%;"></div>
         </div>
-      </div>
+        <div class="exec-pct ok">97.7%</div>
+    </div>
+    <div class="exec-row">
+        <div class="exec-label">Seguros</div>
+        <div class="exec-bargroup">
+            <div class="exec-bar planned" style="width:10%;"></div>
+            <div class="exec-bar actual" style="width:9.9%;"></div>
+        </div>
+        <div class="exec-pct ok">99.1%</div>
+    </div>
+    <div class="exec-row">
+        <div class="exec-label">Servicios</div>
+        <div class="exec-bargroup">
+            <div class="exec-bar planned" style="width:61.6%;"></div>
+            <div class="exec-bar actual" style="width:59.7%;"></div>
+        </div>
+        <div class="exec-pct ok">97.0%</div>
+    </div>
+    <div class="exec-row">
+        <div class="exec-label">Mantenimientos</div>
+        <div class="exec-bargroup">
+            <div class="exec-bar planned" style="width:20.5%;"></div>
+            <div class="exec-bar actual over" style="width:21.7%;"></div>
+        </div>
+        <div class="exec-pct over">106.2%</div>
+    </div>
+    <div class="exec-row">
+        <div class="exec-label">Adecuaciones</div>
+        <div class="exec-bargroup">
+            <div class="exec-bar planned" style="width:5.8%;"></div>
+            <div class="exec-bar actual" style="width:5.4%;"></div>
+        </div>
+        <div class="exec-pct ok">93.6%</div>
+    </div>
+    <div class="exec-row">
+        <div class="exec-label">Diversos</div>
+        <div class="exec-bargroup">
+            <div class="exec-bar planned" style="width:1.8%;"></div>
+            <div class="exec-bar actual" style="width:1.7%;"></div>
+        </div>
+        <div class="exec-pct ok">94.2%</div>
+    </div>
+    <div class="exec-row">
+        <div class="exec-label">Financiero</div>
+        <div class="exec-bargroup">
+            <div class="exec-bar planned" style="width:0.6%;"></div>
+            <div class="exec-bar actual" style="width:0.59%;"></div>
+        </div>
+        <div class="exec-pct ok">98.3%</div>
     </div>
 
-  </div>
+    <div style="margin-top:20px;padding-top:16px;border-top:2px solid var(--teal-light);display:flex;justify-content:space-between;font-weight:700;color:var(--teal);font-size:14px;">
+        <span>TOTAL</span>
+        <span>$3,127.0 M presupuestado &rarr; $3,087.5 M ejecutado (98.7%)</span>
+    </div>
+</div>
 
-  <!-- FOOTER -->
-  <div class="footer">
-    <strong>Conjunto Residencial Burano</strong> &mdash; Presupuesto 2026 preparado para la Asamblea General &mdash; Cifras en millones de pesos colombianos (M = millones COP)<br>
-    Beneficio adicional: <strong>3% de descuento por pronto pago</strong> ($120 M en ahorro colectivo) &bull; Fondo de Reserva Legal: 1% del presupuesto
-  </div>
+<!-- 4. PRESUPUESTO 2026 DONUT -->
+<div class="section s-rose">
+    <div class="section-header">
+        <div class="section-number">4</div>
+        <div class="section-title">Propuesta de Presupuesto 2026: $3.999 M</div>
+    </div>
+    <div class="section-subtitle">Distribución por categoría de gasto</div>
+
+    <div class="donut-container">
+        <svg class="donut-svg" viewBox="0 0 100 100">
+            <!-- r=30, C = 2*pi*30 = 188.496 -->
+            <circle cx="50" cy="50" r="30" fill="none" stroke="#9B2335" stroke-width="18"
+                stroke-dasharray="38.08 188.50" transform="rotate(-90 50 50)"/>
+            <circle cx="50" cy="50" r="30" fill="none" stroke="#D4726A" stroke-width="18"
+                stroke-dasharray="34.31 188.50" stroke-dashoffset="-38.08" transform="rotate(-90 50 50)"/>
+            <circle cx="50" cy="50" r="30" fill="none" stroke="#F2B08E" stroke-width="18"
+                stroke-dasharray="31.86 188.50" stroke-dashoffset="-72.38" transform="rotate(-90 50 50)"/>
+            <circle cx="50" cy="50" r="30" fill="none" stroke="#7B5078" stroke-width="18"
+                stroke-dasharray="30.91 188.50" stroke-dashoffset="-104.24" transform="rotate(-90 50 50)"/>
+            <circle cx="50" cy="50" r="30" fill="none" stroke="#B8860B" stroke-width="18"
+                stroke-dasharray="20.92 188.50" stroke-dashoffset="-135.15" transform="rotate(-90 50 50)"/>
+            <circle cx="50" cy="50" r="30" fill="none" stroke="#5A6275" stroke-width="18"
+                stroke-dasharray="18.47 188.50" stroke-dashoffset="-156.07" transform="rotate(-90 50 50)"/>
+            <circle cx="50" cy="50" r="30" fill="none" stroke="#3D8B5E" stroke-width="18"
+                stroke-dasharray="12.25 188.50" stroke-dashoffset="-174.55" transform="rotate(-90 50 50)"/>
+            <circle cx="50" cy="50" r="30" fill="none" stroke="#3D4F8F" stroke-width="18"
+                stroke-dasharray="1.88 188.50" stroke-dashoffset="-186.80" transform="rotate(-90 50 50)"/>
+            <circle cx="50" cy="50" r="20" fill="white"/>
+            <circle cx="50" cy="50" r="19" fill="none" stroke="#9B2335" stroke-width="0.4" stroke-opacity="0.25"/>
+            <text x="50" y="46" text-anchor="middle" font-size="7.5" font-weight="900" fill="#9B2335" font-family="Inter, sans-serif" letter-spacing="-0.3">$3.999</text>
+            <text x="50" y="53" text-anchor="middle" font-size="4.5" font-weight="700" fill="#9B2335" font-family="Inter, sans-serif">MILLONES</text>
+            <text x="50" y="58.5" text-anchor="middle" font-size="3.8" font-weight="500" fill="#5A6275" font-family="Inter, sans-serif">Ppto 2026</text>
+        </svg>
+        <div class="donut-legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background:#9B2335;"></div>
+                <div class="legend-label">Proyecto Fachadas</div>
+                <div class="legend-value" style="color:#9B2335;">$807 M (20.2%)</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background:#D4726A;"></div>
+                <div class="legend-label">Seguridad y Control</div>
+                <div class="legend-value" style="color:#D4726A;">$727 M (18.2%)</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background:#F2B08E;"></div>
+                <div class="legend-label">Cuota Serena del Mar</div>
+                <div class="legend-value" style="color:#C08050;">$676 M (16.9%)</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background:#7B5078;"></div>
+                <div class="legend-label">Aseo, Piscina, Zonas</div>
+                <div class="legend-value" style="color:#7B5078;">$655 M (16.4%)</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background:#B8860B;"></div>
+                <div class="legend-label">Mant. Equipos</div>
+                <div class="legend-value" style="color:#B8860B;">$446 M (11.1%)</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background:#5A6275;"></div>
+                <div class="legend-label">Administración</div>
+                <div class="legend-value" style="color:#5A6275;">$390 M (9.8%)</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background:#3D8B5E;"></div>
+                <div class="legend-label">Servicios Públicos</div>
+                <div class="legend-value" style="color:#3D8B5E;">$258 M (6.5%)</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background:#3D4F8F;"></div>
+                <div class="legend-label">Fondo de Reserva</div>
+                <div class="legend-value" style="color:#3D4F8F;">$40 M (1.0%)</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 5. RADIOGRAFIA (IMPROVED TABLE) -->
+<div class="section s-indigo">
+    <div class="section-header">
+        <div class="section-number">5</div>
+        <div class="section-title">Radiografia del Presupuesto</div>
+    </div>
+    <div class="section-subtitle">Planeado 2025 vs Ejecutado 2025 vs Propuesta 2026 — diferencias significativas resaltadas</div>
+
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>Rubro</th>
+                    <th>Ppto 2025</th>
+                    <th>Ejec 2025</th>
+                    <th>Dif Ejecución</th>
+                    <th>Ppto 2026</th>
+                    <th>Variación 25&rarr;26</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Honorarios Admon</td>
+                    <td>181.7 M</td>
+                    <td>181.6 M</td>
+                    <td class="exec-diff-cell exec-diff-under">&asymp;0%</td>
+                    <td>216.0 M</td>
+                    <td><span class="var-pill pill-amber">+18.9%</span></td>
+                </tr>
+                <tr>
+                    <td>Vigilancia</td>
+                    <td>537.1 M</td>
+                    <td>543.5 M</td>
+                    <td class="exec-diff-cell"><span style="color:var(--coral)">+1.2%</span></td>
+                    <td>705.2 M</td>
+                    <td><span class="var-pill pill-red">+31.3%</span></td>
+                </tr>
+                <tr>
+                    <td>Aseo-Piscina-Jardineros</td>
+                    <td>486.4 M</td>
+                    <td>454.2 M</td>
+                    <td class="exec-diff-cell exec-diff-under">-6.6%</td>
+                    <td>547.1 M</td>
+                    <td><span class="var-pill pill-amber">+12.5%</span></td>
+                </tr>
+                <tr>
+                    <td>Cuota Serena del Mar</td>
+                    <td>607.7 M</td>
+                    <td>610.8 M</td>
+                    <td class="exec-diff-cell"><span style="color:var(--coral)">+0.5%</span></td>
+                    <td>675.5 M</td>
+                    <td><span class="var-pill pill-amber">+11.2%</span></td>
+                </tr>
+                <tr>
+                    <td>Energia</td>
+                    <td>177.5 M</td>
+                    <td>164.3 M</td>
+                    <td class="exec-diff-cell exec-diff-under">-7.4%</td>
+                    <td>174.0 M</td>
+                    <td><span class="var-pill pill-green">-1.9%</span></td>
+                </tr>
+                <tr>
+                    <td>Acueducto</td>
+                    <td>82.9 M</td>
+                    <td>71.3 M</td>
+                    <td class="exec-diff-cell exec-diff-under">-13.9%</td>
+                    <td>75.9 M</td>
+                    <td><span class="var-pill pill-green">-8.4%</span></td>
+                </tr>
+                <tr>
+                    <td>Ascensores</td>
+                    <td>178.8 M</td>
+                    <td>178.8 M</td>
+                    <td class="exec-diff-cell exec-diff-under">&asymp;0%</td>
+                    <td>209.7 M</td>
+                    <td><span class="var-pill pill-amber">+17.3%</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td>Fachadas (dest. espec.)</td>
+                    <td>242.8 M</td>
+                    <td>356.6 M</td>
+                    <td class="exec-diff-cell"><span class="exec-diff-over">+46.9%</span></td>
+                    <td>807.1 M</td>
+                    <td><span class="var-pill pill-red">+232.4%</span></td>
+                </tr>
+                <tr>
+                    <td>Cubiertas</td>
+                    <td>21.0 M</td>
+                    <td>24.9 M</td>
+                    <td class="exec-diff-cell"><span style="color:var(--coral)">+18.4%</span></td>
+                    <td>31.2 M</td>
+                    <td><span class="var-pill pill-red">+48.6%</span></td>
+                </tr>
+                <tr>
+                    <td>Reparaciones Locativas</td>
+                    <td>111.8 M</td>
+                    <td>122.4 M</td>
+                    <td class="exec-diff-cell"><span style="color:var(--coral)">+9.4%</span></td>
+                    <td>95.8 M</td>
+                    <td><span class="var-pill pill-green">-14.4%</span></td>
+                </tr>
+                <tr>
+                    <td>Polizas Zonas Comunes</td>
+                    <td>78.9 M</td>
+                    <td>78.2 M</td>
+                    <td class="exec-diff-cell exec-diff-under">-0.9%</td>
+                    <td>83.6 M</td>
+                    <td><span class="var-pill pill-amber">+5.9%</span></td>
+                </tr>
+                <tr>
+                    <td>Gastos Convivencia</td>
+                    <td>5.0 M</td>
+                    <td>2.9 M</td>
+                    <td class="exec-diff-cell exec-diff-under">-43%</td>
+                    <td>10.0 M</td>
+                    <td><span class="var-pill pill-red">+100%</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="callout c-indigo">
+        <strong>Lectura rápida:</strong> Los rubros en <span class="var-pill pill-red" style="font-size:11px;">rojo</span> tienen variaciones superiores al 20%. En <span class="var-pill pill-amber" style="font-size:11px;">amarillo</span> entre 5% y 20%. En <span class="var-pill pill-green" style="font-size:11px;">verde</span> disminuciones o ajustes menores. Las diferencias de ejecución en <span style="color:var(--coral);font-weight:700;">naranja</span> indican sobreejecución vs presupuesto.
+    </div>
+</div>
+
+<!-- 6. TOP 3 VARIACIONES -->
+<div class="section s-coral">
+    <div class="section-header">
+        <div class="section-number">6</div>
+        <div class="section-title">Los 3 Rubros que Mas Cambian en 2026</div>
+    </div>
+    <div class="var-grid">
+        <div class="var-card c-coral">
+            <div class="var-icon">&#x1F9F1;</div>
+            <h3>Intervencion de Fachadas</h3>
+            <div class="var-change">$242.8M &rarr; $807.1M (+232%)</div>
+            <p>Proyecto con destinación especifica aprobado en Asamblea 2025. En 2025 se intervinieron 6 torres (8, 9, 10, 11, 13, 15) ejecutando $356.6M (+46.9% sobre presupuesto). Para 2026 se proyecta la fase más intensiva: 8 torres adicionales. Plan total: 17 torres + pérgolas (32.000 m2) en 3 fases (2025-2027).</p>
+        </div>
+        <div class="var-card c-amber">
+            <div class="var-icon">&#x1F6E1;&#xFE0F;</div>
+            <h3>Vigilancia y Seguridad</h3>
+            <div class="var-change">$537.1M &rarr; $705.2M (+31.3%)</div>
+            <p>Incremento por ajustes salariales del sector. La tarifa minima de vigilancia subio 31.8% a nivel nacional por el aumento del salario minimo a $1.750.905/mes en 2026.</p>
+        </div>
+        <div class="var-card c-indigo">
+            <div class="var-icon">&#x1F3E0;</div>
+            <h3>Mantenimiento Cubiertas</h3>
+            <div class="var-change">$21.0M &rarr; $31.2M (+48.6%)</div>
+            <p>Incremento preventivo para atender deterioro de cubiertas y evitar filtraciones en pisos superiores.</p>
+        </div>
+    </div>
+</div>
+
+<!-- 7. POR CADA $1,000 -->
+<div class="section s-sage">
+    <div class="section-header">
+        <div class="section-number">7</div>
+        <div class="section-title">De cada $1.000 de tu cuota mensual</div>
+    </div>
+    <div class="section-subtitle">Desglose del presupuesto 2026 — cómo se distribuye cada peso</div>
+
+    <div class="stacked-wrap">
+        <div class="bar-segment seg-1" style="width:20.2%;">$202</div><div class="bar-segment seg-2" style="width:18.2%;">$182</div><div class="bar-segment seg-3" style="width:16.9%;">$169</div><div class="bar-segment seg-4" style="width:16.4%;">$164</div><div class="bar-segment seg-5" style="width:11.1%;">$111</div><div class="bar-segment seg-6" style="width:9.8%;">$98</div><div class="bar-segment seg-7" style="width:6.5%;">$65</div><div class="bar-segment seg-8" style="width:1.0%;font-size:9px;">$10</div>
+
+        <div class="stacked-info">
+            <div class="info-item" style="border-left-color:#9B2335;">
+                <div class="info-label">Fachadas</div>
+                <div class="info-value" style="color:#9B2335;">$202</div>
+            </div>
+            <div class="info-item" style="border-left-color:#D4726A;">
+                <div class="info-label">Seguridad</div>
+                <div class="info-value" style="color:#D4726A;">$182</div>
+            </div>
+            <div class="info-item" style="border-left-color:#F2B08E;">
+                <div class="info-label">Serena del Mar</div>
+                <div class="info-value" style="color:#C08050;">$169</div>
+            </div>
+            <div class="info-item" style="border-left-color:#7B5078;">
+                <div class="info-label">Aseo y Zonas</div>
+                <div class="info-value" style="color:#7B5078;">$164</div>
+            </div>
+            <div class="info-item" style="border-left-color:#B8860B;">
+                <div class="info-label">Mantenimiento</div>
+                <div class="info-value" style="color:#B8860B;">$111</div>
+            </div>
+            <div class="info-item" style="border-left-color:#5A6275;">
+                <div class="info-label">Administración</div>
+                <div class="info-value" style="color:#5A6275;">$98</div>
+            </div>
+            <div class="info-item" style="border-left-color:#3D8B5E;">
+                <div class="info-label">Serv. Públicos</div>
+                <div class="info-value" style="color:#3D8B5E;">$65</div>
+            </div>
+            <div class="info-item" style="border-left-color:#3D4F8F;">
+                <div class="info-label">Reserva</div>
+                <div class="info-value" style="color:#3D4F8F;">$10</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 8. REVISORIA FISCAL -->
+<div class="section-rf">
+    <div class="section-header s-amber">
+        <div class="section-number">8</div>
+        <div class="section-title">Revisoría Fiscal — Resumen de Informes 2025</div>
+    </div>
+    <div class="section-subtitle" style="color:var(--amber);margin-left:44px;margin-top:-16px;margin-bottom:20px;font-size:13px;">Hallazgos de los informes emitidos por JURISCONTA Asesores Empresariales S.A.S. — Revisor Fiscal: Wilson Tarra Diaz (TP 74983-t)</div>
+
+    <div class="rf-timeline">
+        <div class="rf-report">
+            <div class="rf-report-date">Junio 2025 — Diagnóstico</div>
+            <div class="rf-report-title">Inicio del Periodo de Auditoria</div>
+            <div class="rf-report-detail">Revisión de contratos vigentes, seguros, SGSST. Identifico ausencia de manuales de procedimientos.</div>
+            <span class="rf-report-tag tag-info">Diagnóstico</span>
+        </div>
+        <div class="rf-report">
+            <div class="rf-report-date">Agosto 2025 — Informe Julio</div>
+            <div class="rf-report-title">Auditorias de Recibos y Egresos</div>
+            <div class="rf-report-detail">Causaciones auditadas al 100%. Conciliaciones bancarias al dia. Cuenta fachada #9883: $104 M.</div>
+            <span class="rf-report-tag tag-ok">Rutinario</span>
+        </div>
+        <div class="rf-report">
+            <div class="rf-report-date">Diciembre 2025 — Informe Oct</div>
+            <div class="rf-report-title">Cartera y Estado de Fondos</div>
+            <div class="rf-report-detail">Cartera vencida total ~$239 M: $107.2 M juridica, $29.2 M prejuridica, $90.8 M acuerdos incumplidos.</div>
+            <span class="rf-report-tag tag-warn">Cartera Alta</span>
+        </div>
+        <div class="rf-report">
+            <div class="rf-report-date">Marzo 2026 — Dictamen Final</div>
+            <div class="rf-report-title">Opinion para Asamblea</div>
+            <div class="rf-report-detail">Opinion: <strong style="color:var(--sage)">SIN SALVEDADES</strong>. Periodo: abril 1 – diciembre 31, 2025.</div>
+            <span class="rf-report-tag tag-ok">Sin Salvedades</span>
+        </div>
+    </div>
+
+    <div style="margin-top:20px;margin-bottom:10px;font-size:14px;font-weight:700;color:var(--sage)">Aspectos Positivos Verificados</div>
+    <div class="rf-findings-grid">
+        <div class="rf-finding" style="border-left-color:var(--sage)">
+            <div class="finding-title" style="color:var(--sage)">Gastos Contabilizados</div>
+            <div class="finding-desc">100% de egresos auditados con soportes de causaciones y facturas correctamente registrados.</div>
+        </div>
+        <div class="rf-finding" style="border-left-color:var(--sage)">
+            <div class="finding-title" style="color:var(--sage)">Conciliaciones y Tributarios</div>
+            <div class="finding-desc">Cuentas bancarias conciliadas. Retefuente y reteica presentados oportunamente.</div>
+        </div>
+    </div>
+
+    <div style="margin-top:20px;margin-bottom:10px;font-size:14px;font-weight:700;color:#7A5C1E">Puntos de Atencion</div>
+    <div class="rf-findings-grid">
+        <div class="rf-finding" style="border-left-color:var(--amber)">
+            <div class="finding-title" style="color:#7A5C1E">Cartera Vencida: ~$239 M</div>
+            <div class="finding-desc">4 procesos juridicos ($107.2 M), 3 prejuridicos ($29.2 M), 16 acuerdos de cobro incumplidos ($90.8 M).</div>
+        </div>
+        <div class="rf-finding" style="border-left-color:var(--amber)">
+            <div class="finding-title" style="color:#7A5C1E">Manuales Pendientes</div>
+            <div class="finding-desc">Caja menor, compras, contratación, políticas contables. Recomendación repetida desde junio sin evidencia de avance.</div>
+        </div>
+        <div class="rf-finding" style="border-left-color:var(--amber)">
+            <div class="finding-title" style="color:#7A5C1E">Fondo de Reserva: $141.5 M</div>
+            <div class="finding-desc">Disponible en inversiones $135.8 M, por consignar $5.7 M. Pendiente trasladar al fondo de inversiones.</div>
+        </div>
+        <div class="rf-finding" style="border-left-color:var(--amber)">
+            <div class="finding-title" style="color:#7A5C1E">Reclasificaciones Pendientes</div>
+            <div class="finding-desc">Salon social (cuenta 42200505) requiere reclasificacion. Reportado en julio y octubre sin correccion.</div>
+        </div>
+    </div>
+
+    <div class="rf-verdict">
+        <div class="verdict-title">Dictamen Final: Opinion Sin Salvedades</div>
+        <div class="verdict-desc">Los estados financieros del periodo abril–diciembre 2025 presentan razonablemente la situacion financiera del conjunto, de conformidad con las NIIF para PYMES.</div>
+    </div>
+
+    <!-- ALERTA INDEPENDENCIA -->
+    <div class="alert-box">
+        <div class="alert-title">&#x26A0;&#xFE0F; Alerta: Alcance y Limitaciones de la Revisoría Fiscal</div>
+        <div class="alert-desc">
+            <p style="margin-bottom:10px">La labor del Revisor Fiscal se ha limitado principalmente a <strong>verificar el registro contable</strong> de ingresos y egresos, conciliaciones bancarias y obligaciones tributarias. Sin embargo, <strong>no se evidencia en los informes un análisis de la razonabilidad de los gastos</strong> ni del cumplimiento de las decisiones de Asamblea.</p>
+            <p style="margin-bottom:10px">Ejemplo concreto: el rubro de <strong>fachadas se ejecutó un 46.9% por encima del presupuesto aprobado</strong> ($356.6 M vs $242.8 M), y los informes de revisoria no incluyen observaciones, alertas ni cuestionamientos sobre está desviación significativa. Tampoco se evidencia revisión de las aprobaciones del Consejo de Administración para este sobrecosto.</p>
+            <p style="margin-bottom:10px"><strong>Recomendación para la Asamblea:</strong> Evaluar la designación del Revisor Fiscal para 2026, considerando que su función debe ir más allá de la verificación contable. Un Revisor Fiscal independiente y con alcance ampliado debería:</p>
+            <p style="margin-left:20px;margin-bottom:6px">&bull; Alertar sobre desviaciones presupuestales superiores al 15%</p>
+            <p style="margin-left:20px;margin-bottom:6px">&bull; Verificar que las aprobaciones del Consejo tengan soporte adecuado</p>
+            <p style="margin-left:20px;margin-bottom:6px">&bull; Evaluar la razonabilidad de precios en contratos significativos</p>
+            <p style="margin-left:20px;margin-bottom:10px">&bull; Presentar informes con análisis de ejecución presupuestal, no solo contable</p>
+        </div>
+    </div>
+</div>
+
+<!-- 9. PREGUNTAS DE TRANSPARENCIA Y GESTION -->
+<div class="section" style="background:#FDF5F7;border:2px solid var(--rose-pale);">
+    <div class="section-header s-rose">
+        <div class="section-number" style="background:var(--rose);">9</div>
+        <div class="section-title" style="color:var(--rose);">Preguntas de Transparencia y Gestión</div>
+    </div>
+    <div class="section-subtitle" style="color:var(--rose-light);">Observaciones basadas en datos de presupuesto, ejecución y documentos disponibles — no constituyen información oficial</div>
+
+    <div class="callout c-rose" style="margin-bottom:24px;border-left-color:var(--rose);">
+        <strong>Nota importante:</strong> Las siguientes observaciones se formulan cómo preguntas a partir del análisis cruzado de: (a) presupuesto aprobado y ejecutado 2025, (b) propuesta 2026, (c) informes de revisoria fiscal, y (d) el diagnóstico de recibimiento de la administración actual (mayo 2025). No constituyen afirmaciones oficiales sino puntos para reflexión y debate en Asamblea.
+    </div>
+
+    <!-- CONTEXTO: TRANSICION ADMINISTRATIVA -->
+    <div style="font-size:14px;font-weight:700;color:var(--rose);margin-bottom:14px;">Contexto: Transicion Administrativa 2025</div>
+    <div class="nota-box" style="border-left-color:var(--mauve);background:#F5EFF5;">
+        <p>La administración anterior (ADPHOR SAS) operó hasta mediados de mayo 2025. La administración actual (Synergia Servicios y Suministros SAS) inició labores a <strong>mediados de mayo 2025</strong>, es decir, <strong>casi 3 meses después de aprobado el presupuesto 2025</strong> en Asamblea (15 de marzo 2025). Al asumir, Synergia elaboró un <strong>Diagnóstico Integral de Recibimiento</strong> (mayo 31, 2025) que permitió identificar el estado real del conjunto al momento de la transición.</p>
+    </div>
+
+    <!-- PREGUNTAS AGRUPADAS -->
+    <div style="font-size:14px;font-weight:700;color:#7A5C1E;margin-bottom:14px;margin-top:24px;">Sobre Ejecución Presupuestal y Contratos</div>
+
+    <div class="rf-findings-grid" style="margin-bottom:20px;">
+        <div class="rf-finding" style="border-left-color:var(--amber);background:#FFFBF0;">
+            <div class="finding-title" style="color:#7A5C1E;">Desbalances en ejecución presupuestal</div>
+            <div class="finding-desc">El diagnóstico financiero señaló: <strong>desbalances en rubros de mantenimiento y reparaciones locativas</strong>, con algunas partidas que presentaban <strong>sobre ejecución</strong>. Al cierre del año la ejecución global fue del 98.7%, pero ¿cómo se distribuyeron esos recursos? Mantenimientos se sobreejecutaron (+6.2%) mientras otros rubros como servicios quedaron por debajo (-3%). ¿Se realizó seguimiento mensual a la ejecución por partida?</div>
+        </div>
+        <div class="rf-finding" style="border-left-color:var(--coral);background:#FFF8F6;">
+            <div class="finding-title" style="color:var(--coral);">Concentración en un solo proveedor</div>
+            <div class="finding-desc">El diagnóstico identificó que <strong>Construcciones Instalaciones y Servicios SAS</strong> acumuló <strong>15 contratos de obra civil por $48 millones</strong>, <strong>sin pólizas de responsabilidad</strong>. ¿Se realizó proceso competitivo para estos contratos? ¿Quién aprobó la concentración en un solo proveedor?</div>
+        </div>
+        <div class="rf-finding" style="border-left-color:var(--amber);background:#FFFBF0;">
+            <div class="finding-title" style="color:#7A5C1E;">Contratos sin formalizar</div>
+            <div class="finding-desc">Al momento de la transición existían <strong>contratos sin firmar</strong>: Estilo (ascensores) con inconsistencias, Prevención Lineal (SGSST) sin formalizar, Gestión Integral (aseo) sin documentos de renovación. ¿Cómo se ejecutaron pagos sobre contratos no formalizados?</div>
+        </div>
+        <div class="rf-finding" style="border-left-color:var(--amber);background:#FFFBF0;">
+            <div class="finding-title" style="color:#7A5C1E;">Sobreejecución en fachadas: +46.9%</div>
+            <div class="finding-desc">Se presupuestaron $242.8 M para fachadas en 2025, pero se ejecutaron $356.6 M (<strong>$113.8 M por encima</strong>). ¿Quién autorizó este sobrecosto? ¿Fue aprobado por el Consejo? ¿Hay actas del Consejo que soporten esta decisión? Para 2026 se proponen $807 M — ¿qué garantías existen de que se respete este tope?</div>
+        </div>
+    </div>
+
+    <div style="font-size:14px;font-weight:700;color:var(--teal);margin-bottom:14px;">Sobre Estado de Equipos e Infraestructura</div>
+
+    <div class="rf-findings-grid" style="margin-bottom:20px;">
+        <div class="rf-finding" style="border-left-color:var(--teal);background:#E8F5F2;">
+            <div class="finding-title" style="color:var(--teal);">Equipos en estado critico</div>
+            <div class="finding-desc">El diagnóstico reporto: <strong>bombas con deterioro físico</strong> (vida útil comprometida pese a rehabilitación), <strong>sistema contra incendios con baterias inservibles</strong> y sensores con fallas, <strong>las 4 talanqueras vehiculares con fallas</strong> (2 sin suministro eléctrico, 2 energizadas pero sin respuesta de apertura/cierre), camaras CCTV con distorsión de imagen, y fuga en bomba de piscina. ¿Se destinó presupuesto suficiente en 2025 para estas reparaciones? ¿Están contempladas en 2026?</div>
+        </div>
+        <div class="rf-finding" style="border-left-color:var(--teal);background:#E8F5F2;">
+            <div class="finding-title" style="color:var(--teal);">Desbalances en mantenimiento</div>
+            <div class="finding-desc">El diagnóstico señaló <strong>desbalances en mantenimiento y reparaciones locativas</strong>. A pesar de que mantenimientos se sobreejecutaron en un 6.2% ($39.7 M adicionales), los equipos críticos se encontraban deteriorados. ¿A donde se dirigieron los recursos de mantenimiento ejecutados por encima del presupuesto?</div>
+        </div>
+    </div>
+
+    <div style="font-size:14px;font-weight:700;color:var(--indigo);margin-bottom:14px;">Sobre Transparencia y Comunicación</div>
+
+    <div class="rf-findings-grid" style="margin-bottom:20px;">
+        <div class="rf-finding" style="border-left-color:var(--indigo);background:#EEF0F8;">
+            <div class="finding-title" style="color:var(--indigo);">Aprobacion 2025 con margen estrecho</div>
+            <div class="finding-desc">El presupuesto 2025 fue aprobado con <strong>51.41% de asistentes pero solo 39.03% de coeficientes</strong>. Esto significa que la representación por participación patrimonial fue menor al 40%. ¿Se busca mejorar la participación en 2026? ¿Cómo afecta este margen la legitimidad de las decisiones presupuestales?</div>
+        </div>
+        <div class="rf-finding" style="border-left-color:var(--slate);background:#F3F4F8;">
+            <div class="finding-title" style="color:var(--slate);">Comunicación con residentes</div>
+            <div class="finding-desc">El diagnóstico reportó <strong>deficiente divulgación de información</strong> a residentes, quejas recurrentes por filtraciones sin atención, falta de respuesta a correos electrónicos. ¿Se han implementado mejoras en comunicación desde mayo 2025? ¿Hay canales efectivos para que los copropietarios hagan seguimiento al presupuesto?</div>
+        </div>
+        <div class="rf-finding" style="border-left-color:var(--slate);background:#F3F4F8;">
+            <div class="finding-title" style="color:var(--slate);">Manuales y procedimientos inexistentes</div>
+            <div class="finding-desc">No existían procedimientos documentados para compras, contratación ni atención al usuario. El Revisor Fiscal también recomendó la creación de manuales desde junio 2025, <strong>sin evidencia de avance a la fecha</strong>. ¿En que estado se encuentra la implementación de estos controles internos?</div>
+        </div>
+    </div>
+
+    <div class="callout c-rose" style="margin-top:6px;">
+        <strong>Reflexion:</strong> Estas preguntas no buscan señalar responsables sino promover una discusion informada en Asamblea. Los copropietarios tienen derecho a conocer cómo se ejecutaron los recursos aprobados, el estado real de la infraestructura, y los criterios con los que se elaboró la propuesta 2026. La transparencia fortalece la confianza en la gestión.
+    </div>
+</div>
+
+<!-- 10. NOTAS ASAMBLEA + ANALISIS CFO -->
+<div class="section s-slate">
+    <div class="section-header">
+        <div class="section-number">10</div>
+        <div class="section-title">Análisis y Notas para la Asamblea</div>
+    </div>
+    <div class="section-subtitle">Perspectiva financiera y comparativo con otros conjuntos de Serena del Mar</div>
+
+    <!-- CFO ANALYSIS -->
+    <div style="font-size:14px;font-weight:700;color:var(--slate);margin-bottom:14px">Análisis Financiero: ¿Cómo se compara Burano?</div>
+
+    <div class="cfo-grid">
+        <div class="cfo-card">
+            <h3>Cuota Mensual Promedio por Apartamento</h3>
+            <div class="cfo-highlight" style="color:var(--rose);">~$992.000/mes</div>
+            <div class="cfo-sub">$3.999 M ÷ 336 aptos ÷ 12 meses (promedio ponderado por coeficiente)</div>
+            <p style="margin-top:8px">Si se excluye fachadas, la cuota ordinaria promedio seria de <strong style="color:var(--teal)">~$791.000/mes</strong> (crecimiento de apenas 1.2% vs 2025).</p>
+        </div>
+        <div class="cfo-card">
+            <h3>Comparativo Serena del Mar</h3>
+            <div class="cfo-highlight" style="color:var(--indigo);">$700K - $992K</div>
+            <div class="cfo-sub">Rango estimado de cuotas mensuales en otros conjuntos del macroproyecto</div>
+            <p style="margin-top:8px">Otros conjuntos de Serena del Mar (Zinnia, Diporto) manejan cuotas en rango de $500K-$700K, <strong>sin incluir proyectos de fachadas</strong>. Burano sin fachadas ($791K) es comparable pero ligeramente superior.</p>
+        </div>
+        <div class="cfo-card">
+            <h3>Vigilancia: Impacto Nacional</h3>
+            <div class="cfo-highlight" style="color:var(--coral);">+31.8%</div>
+            <div class="cfo-sub">Incremento nacional en tarifa minima de vigilancia 2026</div>
+            <p style="margin-top:8px">El incremento de vigilancia en Burano (+31.3%) está alineado con la tarifa nacional que paso de $13.6 M a $17.1 M/mes por puesto, por efecto del salario minimo 2026 ($1.750.905).</p>
+        </div>
+        <div class="cfo-card">
+            <h3>Peso del Proyecto Fachadas</h3>
+            <div class="cfo-highlight" style="color:var(--amber);">$201/cada $1.000</div>
+            <div class="cfo-sub">20.2% de cada peso que paga un copropietario en 2026</div>
+            <p style="margin-top:8px">Sin este rubro, el presupuesto 2026 seria de $3.192 M (comparable a 2025: $3.153 M). Es el unico factor que genera un incremento significativo en la cuota para 2026.</p>
+        </div>
+    </div>
+
+    <div class="callout c-indigo" style="margin-top:20px;margin-bottom:20px">
+        <strong>Visión del Análisis:</strong> El presupuesto ordinario (sin fachadas) es estable y alineado con la inflación y ajustes salariales del sector. El incremento del 26.8% total se explica casi en su totalidad por el proyecto de fachadas, un gasto de destinación especifica aprobado en Asamblea 2025 con horizonte a 3 años (2025-2027). Considerar que: (1) la administración actual (Synergia) inició a mediados de mayo 2025, elaborando la propuesta 2026 con menos de un año de gestión directa; (2) el presupuesto 2025 fue administrado por dos entidades distintas (ADPHOR ene–mediados may, Synergia mediados may–dic); y (3) el descuento por pronto pago del 5%, aprobado en Asamblea 2025 y vigente desde enero 2026, debe estar contemplado en la proyección de recaudo del presupuesto 2026 desde el primer mes, pudiendo reducir ingresos reales en ~$120-140 M si el 60-70% de propietarios lo aplican.
+    </div>
+
+    <!-- NOTAS TRADICIONALES -->
+    <div style="font-size:14px;font-weight:700;color:var(--slate);margin-bottom:14px;margin-top:10px">Notas Generales</div>
+
+    <div class="nota-box">
+        <p>Todos los rubros están sujetos a la aprobación de los propietarios conforme a la Ley 675 de 2001 (régimen de propiedad horizontal). La Asamblea General es el órgano máximo de decisión.</p>
+    </div>
+    <div class="nota-box" style="border-left-color:var(--sage)">
+        <h3 style="color:var(--sage)">Incentivo financiero — Descuento por pronto pago 5%</h3>
+        <p><strong>Descuento por pronto pago: ~$200 M</strong> (5% del presupuesto total). Aprobado en Asamblea General de marzo 2025 (66.85% asistentes / 40.61% coeficientes). Aplica para pagos realizados <strong>dentro de los primeros 10 dias calendario</strong> de cada mes, <strong>vigente desde enero 2026</strong>. El presupuesto 2026 debe contemplar este descuento en su proyección de recaudo desde el primer mes del ano.</p>
+        <p style="margin-top:8px;color:var(--rose);font-weight:500"><strong>Pregunta:</strong> ¿Cómo impacta fiscalmente un descuento del 5% (~$200 M) en el flujo de caja del conjunto? Si el 60-70% de propietarios aplica el descuento, el ingreso real podría ser $120-140 M menor al presupuestado. ¿Está contemplado este efecto en la proyección de recaudo 2026 desde enero?</p>
+    </div>
+    <div class="nota-box" style="border-left-color:var(--indigo)">
+        <h3 style="color:var(--indigo)">Garantia financiera</h3>
+        <p><strong>Fondo de Reserva Legal: 1% del presupuesto ($39.6 M)</strong>. Constituido para atender emergencias estructurales, de seguridad o servicios que no puedan ser diferidas.</p>
+    </div>
+
+    <!-- PREGUNTAS PARA ASAMBLEA -->
+    <div style="font-size:14px;font-weight:700;color:var(--slate);margin-bottom:14px;margin-top:20px">Preguntas Sugeridas para la Asamblea</div>
+    <div class="nota-box" style="border-left-color:var(--rose);background:#FDE8EC;">
+        <p><strong style="color:var(--rose)">1.</strong> ¿Cuál es el cronograma, alcance y tope máximo de inversión para fachadas 2026 (8 torres, $807 M), y que mecanismos de control se implementarán para evitar sobrecostos cómo los de 2025 (+46.9%, $113.8 M por encima)?</p>
+    </div>
+    <div class="nota-box" style="border-left-color:var(--coral);background:#FFF0ED;">
+        <p><strong style="color:var(--coral)">2.</strong> ¿Cuál es el plan de recuperación de la cartera vencida (~$239 M)? ¿Cómo impacta el descuento pronto pago del 5% en el flujo de caja proyectado para 2026?</p>
+    </div>
+    <div class="nota-box" style="border-left-color:var(--amber);background:#FFFBF0;">
+        <p><strong style="color:var(--amber)">3.</strong> ¿Se presentarán propuestas de Revisoría Fiscal para 2026 con alcance ampliado (análisis de ejecución presupuestal, razonabilidad de contratos, verificación de aprobaciones del Consejo)?</p>
+    </div>
+    <div class="nota-box" style="border-left-color:var(--indigo);background:#EEF0F8;">
+        <p><strong style="color:var(--indigo)">4.</strong> ¿En que estado se encuentran las reparaciones de equipos críticos (bombas, sistema contra incendios, las 4 talanqueras vehiculares) identificados en el diagnóstico de recibimiento? ¿Están contempladas en el presupuesto 2026?</p>
+    </div>
+    <div class="nota-box" style="border-left-color:var(--mauve);background:#F5EFF5;">
+        <p><strong style="color:var(--mauve)">5.</strong> ¿Se han implementado procesos competitivos de contratación y pólizas de responsabilidad para contratos de obra civil, considerando la concentración de contratos detectada en la administración anterior?</p>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    Conjunto Residencial BURANO &bull; Cartagena de Indias &bull; Serena del Mar &bull; Documento preparado para Asamblea de Copropietarios 2026<br>
+    Cifras en millones de pesos colombiaños (M) &bull; Datos: Proyecto Presupuesto 2026, Informes Revisoría Fiscal 2025, Dictamen Dic 2025<br>
+    Fuentes adicionales: Acta Asamblea General Ordinaria 15 marzo 2025, Diagnóstico de Recibimiento mayo 2025<br>
+    Comparativos de mercado: fuentes publicas (MinTrabajo, SuperVigilancia, portales inmobiliarios)
+</div>
 
 </div>
 </body>
